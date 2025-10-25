@@ -1,0 +1,757 @@
+{% extends "base.html" %}
+
+{% block title %}Humanoid Obstacle Race - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <!-- Header -->
+        <div class="competition-header">
+            <div class="header-icon">🤖🏃</div>
+            <h1 class="competition-title">HUMANOID OBSTACLE RACE</h1>
+            <!--<p class="competition-subtitle">Autonomous Humanoid Robot Challenge with Stairs & Obstacles</p>-->
+        </div>
+
+        <!-- Age Categories -->
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORIES</h2>
+            <div class="age-categories-grid">
+                <div class="category-card">
+                    <h3>TEENS</h3>
+                    <p class="age">14 to 18 years old</p>
+                    <p class="level">Middle & High School</p>
+                </div>
+                <div class="category-card">
+                    <h3>ADULTS</h3>
+                    <p class="age">18+ years old</p>
+                    <p class="level">University & Individuals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section warning">
+            <h2>⚠️ IMPORTANT NOTES</h2>
+            <ul>
+                <li>The sport is held in one division: All robot types compete together</li>
+                <li>🚨 Both age categories compete together</li>
+                <li>🤖 Must be humanoid biped robot (walks on 2 legs)</li>
+                <li>📏 Max dimensions: 20cm × 20cm base, 50cm height</li>
+                <li>⚖️ Max weight: 3kg (3000g)</li>
+                <li>🏃 2 Challenges: Stair Climb (80 pts) + Obstacle Race (50 pts each obstacle)</li>
+                <li>⚡ Fully autonomous operation required</li>
+            </ul>
+        </div>
+
+        <!-- Registration Button -->
+        <div class="register-section">
+            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
+                ✍️ TEAM REGISTRATION
+            </a>
+        </div>
+
+        <!-- Rule Zero -->
+        <div class="rule-section">
+            <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+            <p class="rule-intro">In all sports, Rule ZERO applies, which states:</p>
+            <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+            <p>All rules are based on common sense, the spirit of the sport, and the safety of all participants.</p>
+            <p>Any deliberate misinterpretation, violation of the meaning of the rules, or attempt to exploit gray areas for unfair advantage will not be tolerated and may lead to team disqualification from the competition.</p>
+        </div>
+
+        <!-- Goal -->
+        <div class="info-section">
+            <h2>🎯 GOAL</h2>
+            <p>The Sport is about <strong>humanoid Robot Athletes</strong>.</p>
+            <p>Each Robot Athlete competes on a track where they must avoid obstacles and climb stairs.</p>
+            <p><strong>The Robot Athlete with the highest score wins!!!</strong></p>
+        </div>
+
+        <!-- Team & Coach -->
+        <div class="info-section">
+            <h2>👥 TEAM – COACH</h2>
+            
+            <h3>1. Form a Team or Compete as Individual</h3>
+            <ul>
+                <li><strong>1.1 Participation:</strong> Team-based or individual</li>
+                <li><strong>1.2 Team Size:</strong> 2-3 members per team</li>
+                <li><strong>1.3 Robot Athlete Technician:</strong> Each team designates up to 1 technician</li>
+                <li><strong>1.4 Access:</strong> Only technician allowed in waiting/competition area. Rest of team cannot wait in line or occupy additional spots (disqualification if violated)</li>
+                <li><strong>1.5 Technician Change:</strong> Allowed before each attempt (optional)</li>
+                <li><strong>1.6 Age Requirement:</strong> All members must be at least 10 years old</li>
+                <li><strong>1.7 Coach:</strong> Must be at least 20 years old</li>
+                <li><strong>1.8 Assistant Requirement:</strong> 1 assistant for every 3 teams registered</li>
+                <li><strong>1.9 Robot Limit:</strong> Only one robot per team</li>
+                <li><strong>1.10 No Changing:</strong> Changing robot during competition not allowed</li>
+                <li><strong>1.11 No Sharing:</strong> Teams cannot share the same robot</li>
+                <li><strong>1.12 Emergency Replacement:</strong> Only microcontroller/electronics with Head Judge permission</li>
+            </ul>
+        </div>
+
+        <!-- Robot Specifications -->
+        <div class="info-section robot-specs">
+            <h2>⚙️ ROBOT ATHLETE REQUIREMENTS – SPECIFICATIONS</h2>
+            
+            <h3>🤖 2. Robot Athlete Requirements</h3>
+            
+            <h4 style="margin-top: 20px;">⚙️ 2.1. GENERAL ROBOT SPECIFICATIONS</h4>
+            <ol>
+                <li>Any robot design allowed, if not subject to restrictions of section 2.2</li>
+                <li><strong>Dimensions:</strong> Must fit in 20cm × 20cm square (200mm). Max height: 50cm (500mm)</li>
+                <li><strong>Weight:</strong> Total mass at race start must be under 3kg (3000g)</li>
+                <li><strong>Humanoid Biped:</strong> Must walk on two legs and shift center of gravity to maintain balance</li>
+                <li><strong>Autonomous:</strong> All control components contained in robot. No external control systems allowed</li>
+                <li><strong>ID Number:</strong> Must display number supplied by organizers on outer casing (given after inspection)</li>
+            </ol>
+
+            <h4 style="margin-top: 30px;">🚫 2.2. ROBOT RESTRICTIONS</h4>
+            <ol>
+                <li><strong>Walking Mechanics:</strong> One leg should lift off floor while other leg balances</li>
+                <li><strong>Knee Angle:</strong> Balancing leg must have knee joint angle >90 degrees while walking</li>
+                <li><strong>Feet Requirements:</strong> Robot foot = part contacting arena surface (ground)</li>
+                <li><strong>Foot Length:</strong> Max foot length < 50% of robot's extended leg length</li>
+                <li><strong>Max Foot Size:</strong> < 20cm (200mm)</li>
+                <li><strong>No Overlap:</strong> Rectangular border around left and right legs should not overlap when standing/walking</li>
+                <li><strong>Arms:</strong> Must have 2 arms. Each extended arm length ≤ extended leg length</li>
+                <li><strong>Head:</strong> Robot must have a head</li>
+                <li><strong>No Jamming:</strong> Jamming devices (IR LEDs to saturate opposing sensors) not allowed</li>
+                <li><strong>No Damage:</strong> Components that could break or damage playing field not permitted</li>
+                <li><strong>No Storage:</strong> Devices storing liquid, powder, gas, or other substances not allowed</li>
+                <li><strong>No Combustibles:</strong> No combustible devices of any kind</li>
+                <li><strong>No Sticky Substances:</strong> Not allowed to improve adhesion</li>
+                <li><strong>Stationary Period:</strong> Must remain stationary 5 seconds before match start. After 5 seconds, can move</li>
+                <li><strong>Activation:</strong> Can be started by remote control or button on robot</li>
+            </ol>
+        </div>
+
+        <!-- Technical Control -->
+        <div class="info-section">
+            <h2>🧪 2.3 TECHNICAL CONTROL OF ROBOT ATHLETE</h2>
+            <ol>
+                <li>Initial technical inspection on game day at announced time/location</li>
+                <li>Technical control before start of each phase Robot Athlete may participate in</li>
+                <li>Failure to arrive on time = automatic disqualification from event</li>
+                <li>Only Robot Athlete's coaches responsible for submitting robot for inspection</li>
+                <li>Testing includes Robot Athlete specifications check. Non-compliance = automatic disqualification</li>
+                <li>During scrutineering, coaches must demonstrate program to scrutineering committee</li>
+            </ol>
+        </div>
+
+        <!-- Track Design with Image -->
+        <div class="info-section track-design">
+            <h2>🛤️ TRACK</h2>
+            
+            <h3>📐 3. Track Challenges - Design</h3>
+            <ol>
+                <li><strong>Track Shape:</strong> Rectangular, Width = 120cm, Length = 250cm</li>
+                <li><strong>Border:</strong> Using 2 surface pieces with 10cm height</li>
+                <li><strong>Start/Stop Line:</strong> Black, 1.5cm wide</li>
+                <li><strong>Obstacles:</strong> 4 square obstacles, 30cm × 30cm at different heights</li>
+                <li><strong>Stairs:</strong> At beginning of route, 2 steps 1.5cm high with 20cm step</li>
+            </ol>
+
+            <!-- Track Layout Image -->
+            <div class="track-image-section">
+                <h3>📷 TRACK LAYOUT VISUAL REFERENCE</h3>
+                <div class="track-image-container">
+                    <img src="{{ url_for('static', filename='images/weightlifting/track_layout.png') }}" 
+                         alt="Track Layout" 
+                         class="track-image">
+                    <div class="track-caption">
+                        <h4>🏟️ Obstacle Course Layout</h4>
+                        <p><strong>Track:</strong> 120cm (W) × 230cm (L)</p>
+                        <p><strong>Obstacles:</strong> 4 squares at 30cm × 30cm (varying heights)</p>
+                        <p><strong>Stairs:</strong> 2 steps at 120cm × 20cm × 1.5cm each</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competition Procedure -->
+        <div class="info-section">
+            <h2>🏆 COMPETITION</h2>
+            
+            <h3>📋 4. COMPETITION PROCEDURE</h3>
+            <p>Coaches/team members complete technical inspection of Robot Athlete, receive unique inspection number, and run laps to qualify.</p>
+            <p><strong>The winning Robot Athlete is the one who completes as many challenges as possible and earns the most points.</strong></p>
+            <p>The competition consists of <strong>2 challenges</strong>.</p>
+        </div>
+
+        <!-- Challenge 1 -->
+        <div class="info-section challenge-section">
+            <h2>🧗 4.1 CHALLENGE 1: CLIMB A STAIR</h2>
+            
+            <h3>🎯 4.1.1. Objective of the Challenge</h3>
+            <p>The Athlete robot must reach the top of the stair and enter the challenge area by climbing one step at a time using its legs.</p>
+
+            <h3 style="margin-top: 25px;">🧮 4.1.2. Challenge Points</h3>
+            <ul>
+                <li><strong>Complete Stair Climb:</strong> Robot entering challenge area after climbing = <strong>80 points</strong></li>
+                <li><strong>Partial Climb:</strong> 10 points for each rung climbed</li>
+                <li><strong>No Climb:</strong> 0 points</li>
+                <li><strong>Skip Option:</strong> Robot may skip stair climb and start in challenge arena (cannot claim 80 points)</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">🕒 4.1.3. Tries</h3>
+            <p>Robot Athlete coaches have testing time before/after efforts. Each Robot Athlete entitled to <strong>3 official attempts</strong> where points will be counted.</p>
+
+            <h3 style="margin-top: 25px;">🤖 4.1.4. Autonomous Control</h3>
+            <p>Once start signal given, robot must remain <strong>fully autonomous</strong> or will be disabled. Robot must be disconnected from any network during challenge to avoid external interference.</p>
+
+            <h3 style="margin-top: 25px;">🔁 4.1.5. Restarts</h3>
+            <ul>
+                <li>If robot falls down ladder or gets stuck = second chance to complete challenge in 1st attempt only</li>
+                <li>Up to 10 minutes given to resolve problem before retrying</li>
+                <li>Robot will be on first step when it restarts</li>
+                <li>In event of restart, best effort considered for score</li>
+                <li>If team denies second chance or robot cannot correct in given interval = first attempt considered for score</li>
+            </ul>
+        </div>
+
+        <!-- Challenge 2 -->
+        <div class="info-section challenge-section">
+            <h2>🏁 4.2 CHALLENGE 2: OBSTACLE RACE</h2>
+            
+            <h3>🎯 1. Objective of the Challenge</h3>
+            <p>The objective is for the bipedal Robot Athlete to complete an obstacle course while earning points.</p>
+
+            <h3 style="margin-top: 25px;">🛤️ 2. Challenge Course</h3>
+            <ul>
+                <li>Each Robot Athlete has total of <strong>3 attempts</strong></li>
+                <li><strong>Time Limit:</strong> 5 minutes to complete per attempt</li>
+                <li>If robot crashes, restart allowed. Robot restarts from starting position</li>
+                <li>If robot doesn't complete course in 5 minutes = stop, only earned points count</li>
+                <li>Final classification based on total points earned by Robot Athlete</li>
+                <li>Teams remain in reserved space until called to playing field</li>
+                <li>Each team called by event official when needed in waiting area</li>
+                <li>After completing attempt, teams return to reserved space</li>
+                <li>Each team responsible for following original schedule (website + team area)</li>
+                <li><strong>⚠️ If called to play and don't come in 5 minutes = Robot Athlete will not compete!</strong></li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">⛔ 4. Interruptions</h3>
+            <p>If Robot Athlete crashes for any reason, entitled to <strong>one restart</strong>. Robot must restart from starting position.</p>
+        </div>
+
+        <!-- Scoring -->
+        <div class="info-section scoring-section">
+            <h2>🧮 4.3. OBSTACLE RACE CHALLENGE RATING</h2>
+            
+            <h3>🏆 1. Points Per Obstacle</h3>
+            <p>For each obstacle the Athlete robot passes = <strong>50 points</strong></p>
+            <p>It should be obvious that obstacle has been passed. Robot athlete that stops for any reason in middle of obstacle will not receive points for that obstacle.</p>
+
+            <div class="scoring-summary">
+                <h4>📊 SCORING SUMMARY</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Challenge</th>
+                            <th>Task</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Challenge 1: Stair Climb</td>
+                            <td>Complete stair climb</td>
+                            <td><strong>80 points</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Per rung climbed (partial)</td>
+                            <td><strong>10 points each</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Challenge 2: Obstacle Race</td>
+                            <td>Per obstacle passed</td>
+                            <td><strong>50 points each</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Objections & Rules -->
+        <div class="info-section">
+            <h2>⚖️ 2. OBJECTIONS</h2>
+            <ul>
+                <li>There will be no objections to jury's decisions</li>
+                <li>If any problem with regulations, complaints, or deviations from rules observed = complaint addressed by team head to head judges</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🧩 3. FLEXIBILITY OF RULES</h3>
+            <ul>
+                <li>As long as concept and basic principles respected, rules flexible enough to accommodate changes in number of players and match content</li>
+                <li>Amendments or repeals of rules may be made by organization if published prior to event and maintained consistently throughout</li>
+            </ul>
+        </div>
+
+        <!-- Safety -->
+        <div class="info-section safety-section">
+            <h2>🛡️ 4. RESPONSIBILITIES</h2>
+            <ul>
+                <li><strong>1.</strong> Participating teams always responsible for safety of their own robots and any accidents caused by team members or robots</li>
+                <li><strong>2.</strong> The Organization will never be responsible for any incidents/accidents caused by participating teams and their robots</li>
+            </ul>
+        </div>
+
+        <!-- Winners -->
+        <div class="info-section winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>The 3 winners are those with the highest score. The best score is used to determine placement in:</p>
+            <div class="podium">
+                <div class="podium-item">
+                    <div class="medal gold">🥇</div>
+                    <p class="place">1st Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal silver">🥈</div>
+                    <p class="place">2nd Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal bronze">🥉</div>
+                    <p class="place">3rd Place</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px;"><strong>Final Ranking:</strong></p>
+            <ul>
+                <li>Made by adding points from both challenges for each Robot Athlete</li>
+                <li>Robot Athlete with highest number of points wins competition</li>
+                <li><strong>Tiebreaker:</strong> In case of tie, score of previous attempt counts, etc.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .competition-detail {
+        min-height: 100vh;
+        background: #f8fafc;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #8b5cf6;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    .competition-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    .competition-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        background-clip: text; -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .competition-subtitle {
+        font-size: 1.5rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+
+    .section-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .section-box h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .age-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .category-card .age {
+        font-size: 1.125rem;
+        margin-bottom: 5px;
+        opacity: 0.95;
+    }
+
+    .category-card .level {
+        font-size: 0.875rem;
+        opacity: 0.85;
+    }
+
+    .notes-section {
+        background: #fef3c7;
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 5px solid #f59e0b;
+        margin-bottom: 30px;
+    }
+
+    .notes-section h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #92400e;
+        margin-bottom: 15px;
+    }
+
+    .notes-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notes-section li {
+        padding: 8px 0;
+        color: #78350f;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .register-section {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .register-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        color: white;
+        padding: 20px 50px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.25rem;
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+    }
+
+    .rule-section {
+        background: #fee2e2;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        border: 3px solid #dc2626;
+    }
+
+    .rule-section h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #991b1b;
+        margin-bottom: 20px;
+    }
+
+    .rule-section p {
+        color: #7f1d1d;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .rule-section blockquote {
+        background: white;
+        padding: 20px;
+        border-left: 5px solid #dc2626;
+        margin: 20px 0;
+        font-style: italic;
+        font-weight: 600;
+        color: #991b1b;
+    }
+
+    .info-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .info-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #8b5cf6;
+        padding-bottom: 10px;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #475569;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .info-section h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #64748b;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .info-section p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .info-section ul, .info-section ol {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+
+    .info-section li {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .robot-specs {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 3px solid #f59e0b;
+    }
+
+    .track-design {
+        background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        border: 3px solid #3b82f6;
+    }
+
+    .track-image-section {
+        margin-top: 30px;
+        background: white;
+        padding: 60px;
+        border-radius: 15px;
+    }
+
+    .track-image-section h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #1e293b;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+       .track-image-container {
+        background: white;
+        border-radius: 15px;
+        overflow: visible;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+        .track-image {
+        width: 50%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+
+    
+
+    .track-caption {
+        padding: 25px;
+        background: #f8fafc;
+        border-top: 3px solid #3b82f6;
+    }
+
+    .track-caption h4 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #1e40af;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .track-caption p {
+        font-size: 1rem;
+        color: #475569;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .challenge-section {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border: 3px solid #16a34a;
+    }
+
+    .scoring-section {
+        background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+        border: 3px solid #ec4899;
+    }
+
+    .scoring-summary {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 25px;
+    }
+
+    .scoring-summary h4 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .scoring-summary table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .scoring-summary th {
+        background: #ec4899;
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .scoring-summary td {
+        padding: 15px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .scoring-summary tr:hover {
+        background: #fce7f3;
+    }
+
+    .safety-section {
+        background: #fef2f2;
+        border: 3px solid #ef4444;
+    }
+
+    .safety-section h2 {
+        color: #991b1b;
+        border-bottom-color: #ef4444;
+    }
+
+    .winners-section {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 3px solid #f59e0b;
+    }
+
+    .podium {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+    }
+
+    .podium-item {
+        text-align: center;
+    }
+
+    .medal {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .place {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #92400e;
+    }
+
+    @media (max-width: 768px) {
+        .competition-title {
+            font-size: 2rem;
+        }
+
+        .competition-subtitle {
+            font-size: 1.125rem;
+        }
+
+        .section-box, .info-section {
+            padding: 20px;
+        }
+
+        .age-categories-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .podium {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+</style>
+{% endblock %}
+
+
+
+

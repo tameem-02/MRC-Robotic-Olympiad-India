@@ -1,0 +1,1152 @@
+{% extends "base.html" %}
+
+{% block title %}Water Polo - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <!-- Header -->
+        <div class="competition-header">
+            <div class="header-icon">🤽</div>
+            <h1 class="competition-title">WATER POLO</h1>
+            <!--<p class="competition-subtitle">2v2 Aquatic Robot Competition</p>-->
+        </div>
+
+        <!-- Video Section 
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>-->
+
+        <!-- Age Categories -->
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORIES</h2>
+            <div class="age-categories-grid">
+                <div class="category-card">
+                    <h3>KIDS</h3>
+                    <p class="age">10 to 12 years old</p>
+                    <p class="level">Elementary School</p>
+                </div>
+                <div class="category-card">
+                    <h3>TEENS</h3>
+                    <p class="age">13 to 18 years old</p>
+                    <p class="level">Middle & High School</p>
+                </div>
+                <div class="category-card">
+                    <h3>ADULTS</h3>
+                    <p class="age">18+ years old</p>
+                    <p class="level">University & Individuals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Division -->
+        <div class="section-box">
+            <h2>🏆 DIVISION</h2>
+            <p class="intro-text">⚠️ The sport is held in one division:</p>
+            <div class="division-single">
+                <h3>All Robot Types</h3>
+                <p>All robot types compete together. Each age category competes separately.</p>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section warning">
+            <h2>⚠️ IMPORTANT NOTES</h2>
+            <ul>
+                <li>🚨 Each age category competes separately.</li>
+                <li>🤝 This is a 2v2 alliance-based competition (2 teams per alliance).</li>
+                <li>💧 Waterproof base required (25cm x 25cm max).</li>
+                <li>🎮 Remote control must be programmed by the team.</li>
+                <li>🏊 Alliances announced a few days before competition.</li>
+            </ul>
+        </div>
+
+        <!-- Rule Zero -->
+        <div class="rule-section">
+            <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+            <p class="rule-intro">In all sports, Rule ZERO applies, which states:</p>
+            <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+            <p>All rules are based on common sense, the spirit of the sport, and the safety of all participants.</p>
+            <p>Any deliberate misinterpretation, violation of the meaning of the rules, or attempt to exploit gray areas for unfair advantage will not be tolerated and may lead to team disqualification from the competition.</p>
+        </div>
+
+        <!-- Goal -->
+        <div class="info-section">
+            <h2>🎯 GOAL</h2>
+            <p><strong>The goal of the Water Polo Players of an alliance (2-in-1 alliance, 2x2 Water Polo), which consists of 2 robots is to score as many goals as possible for the opposing team.</strong></p>
+        </div>
+
+        <!-- Team & Coach -->
+        <div class="info-section">
+            <h2>👥 TEAM – COACH</h2>
+            <ul>
+                <li>Participation in the competition is team-based, not individual.</li>
+                <li>Each team may consist of two (2) to three (3) members.</li>
+                <li>Each team must designate up to one (1) Robot Athlete Technician. Only the Water Polo Player Technician is allowed in the waiting area or competition area. The rest of the team can watch the matches behind the control spots.</li>
+                <li>The team is allowed to change the designated Technician before each attempt on the track, to give all members the opportunity to be actively involved in the sport, although this is not mandatory.</li>
+                <li>All team members must be at least 10 years old (equivalent to 4th grade of primary school or above).</li>
+                <li>The team's coach must be at least 20 years old.</li>
+                <li>To ensure smooth participation in the competition, the coach must have 1 assistant for every 3 teams they register in the competition.</li>
+                <li>Each team is allowed to have only one robot. Changing the robot during the competition is not allowed.</li>
+                <li>Teams are not allowed to share the same robot.</li>
+                <li>If a team encounters a serious technical issue with their robot, they are allowed to replace only the microcontroller or the electronic components, after obtaining permission from the Head Judges.</li>
+            </ul>
+        </div>
+
+        <!-- Alliances -->
+        <div class="info-section alliance-section">
+            <h2>🤝 ALLIANCES</h2>
+            <ul>
+                <li>An alliance consists of 2 teams.</li>
+                <li>In every match, 2 opposing alliances collide.</li>
+                <li>During the matches each refer to an alliance will be with the registered alliance name and not by the names of the teams that make it up. Coaches should ensure that their teams know the name of the alliance.</li>
+                <li>If on the day of the games a team does not come then the alliance competes with 1 team.</li>
+                <li>If no teams from the same alliance do not attend then the other alliance get a win.</li>
+                <li>If for any reason an alliance is disqualified from the Sport then victory will be awarded to the opposing alliance at any stage of the competition in which this occurs.</li>
+                <li><strong>The alliances will be announced a few days before the competition.</strong></li>
+            </ul>
+        </div>
+
+        <!-- Robot Requirements -->
+        <div class="info-section">
+            <h2>⚙️ ROBOT TECHNICAL SPECIFICATIONS</h2>
+            <ul>
+                <li>The Competition is for Water Polo Robots regardless of the robotic package or hardware used.</li>
+                <li>All Robot Soccer Players compete together in each age category.</li>
+                <li><strong>The Water Polo Robot must be remote-controlled with a program made on a Computer - Laptop.</strong></li>
+                <li>The use of a remote control is only allowed if it is programmed to connect to the Water Polo Robot.</li>
+                <li>Off-the-shelf remote control apps that were not programmed by the team to operate the Water Polo Robot are prohibited.</li>
+                <li>If your remote control is connected via wifi to your Water Polo Robot you should consider that during the competition the stadium network is not available for the teams and visitors, but only for the needs of the Referees and the Organization Team.</li>
+                <li>The maximum dimensions of the Water Polo Robot must be 25cm Width x 25cm Length regardless of weight and height.</li>
+                <li>To confirm the specifications listed above, the Water Polo Robot must comfortably fit in a control box.</li>
+                <li>The control box measures 25 x 25 cm plus two (2) mm tolerance.</li>
+                <li>The Water Polo Robot should be placed in the control box without applying pressure.</li>
+                <li>The Water Polo Robot must not wear or damage the pitch or pose a threat to spectators in any way.</li>
+                <li><strong>The Robot Athlete must have a waterproof base with maximum dimensions of 25cm X 25cm.</strong></li>
+                <li>Any extension of the robot, either through mechanisms or moving parts, that exceeds the allowed dimensions is strictly prohibited.</li>
+                <li>The addition of small barriers on the right and left sides of the robot is permitted under the following conditions. The length of the barriers must not exceed half the diameter of the ball. The barriers must not trap or wedge the ball in any way.</li>
+                <li><strong>The Robot Athlete is prohibited from trapping the ball for any reason or kicking it. It can only push the ball.</strong></li>
+                <li>To facilitate the teams, MRC has designed and will provide at a cost of €49.60 including VAT, a special base on which the team can build its robot. The team can construct its own base. (Rowing Base)</li>
+                <li>Teams must ensure the safety of their Water Polo Robots from water.</li>
+                <li>The Organization bears no responsibility for any damage that may occur to the robot during the competition, both on and off the track.</li>
+                <li>The Water Polo Robot may use any propulsion method in the water as long as it does not harm the track and the opposing Robot Athlete.</li>
+                <li>Ready-made remote-controlled boats that are not open-source and have not been programmed by the teams are prohibited.</li>
+                <li>Each Water Polo Robot is allowed a maximum of 4 motors, 4 sensors and 1 single microprocessor.</li>
+                <li>The Water Polo Robot must have a start and stop button.</li>
+                <li><strong>For ball will be used LEGO Mindstorms ball – Part Number 41250 (diameter 52mm) red or blue color.</strong></li>
+                <li>The Water Polo Robot of an alliance should bring in a visible place of their construction some "signature" that the alliance should have agreed on in advance, for example a flag, label, color combination, etc., so that one is immediately recognized by the referee in which alliance belongs.</li>
+                <li>The flag, label will be given to the team at the day of the competition and after the inspection.</li>
+            </ul>
+        </div>
+
+        <!-- Technical Inspection -->
+        <div class="info-section">
+            <h2>🧪 TECHNICAL INSPECTION</h2>
+            <ul>
+                <li>The initial technical inspection will take place on the day of the Games at a place and time to be determined by the organizers.</li>
+                <li>During the initial technical check the team will be asked questions on the critical points of the robot and controller program. The team should bring their laptop with the robot program open. If the questions show that a team does not have knowledge of the program then that team is excluded from the Sport. In such a case the alliance will continue with only 1 team. If 2 teams from the same alliance are eliminated from the Sport then the opposite alliance will win the games.</li>
+                <li>The technical inspection includes inspection of the Water Polo Robot and controller according to the conditions described above. If he does not meet the specifications, he will not be allowed to compete and will be automatically disqualified from the event.</li>
+                <li>If a team is not in place during the initial scrutineering, this results in the team being automatically disqualified from the match.</li>
+                <li>After the completion of the initial inspection, the Robot Athlete is assigned its unique ID code and a flag.</li>
+                <li>A secondary technical check is also carried out before each match by the assistant referee.</li>
+                <li>If, during the competition procedure, the referee determines that a Water Polo Robot is violating or failing to meet the prescribed specifications, the referee has the right to disqualify it immediately.</li>
+            </ul>
+        </div>
+
+        <!-- Field -->
+        <div class="info-section">
+            <h2>🏟️ FIELD (COMPETITION POOL)</h2>
+            <ul>
+                <li>The competition pool is rectangular with dimensions of 300 x 200 cm.</li>
+                <li>The depth of the competition pool is 60 cm.</li>
+                <li>Around the perimeter, there is a frame with a thickness of 2.5 cm for the safety of the robots, and the height of the frame is 10 cm above the water level.</li>
+                <li>The goals are 45 cm long, 12 cm high, and 8 cm deep.</li>
+            </ul>
+            
+            <div class="pool-specs">
+                <h3>📏 Pool Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec">
+                        <strong>Length:</strong> 300 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Width:</strong> 200 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Depth:</strong> 60 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Goal Size:</strong> 45cm x 12cm x 8cm
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Pool & Tournament Diagrams -->
+        <div class="waterpolo-diagrams-section">
+            <h2>🏊 POOL & TOURNAMENT LAYOUT</h2>
+            
+            <!-- Pool Field Diagrams -->
+            <div class="pool-diagrams-grid">
+                <!-- Top View Pool -->
+                <div class="diagram-card">
+                    <h3>📐 Pool Top View</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/water1.png') }}" 
+                         alt="Water Polo Pool Top View" 
+                         class="pool-diagram-img">
+                    <p>300cm × 200cm competition pool with 45cm goals and red goal zones (80mm × 450mm)</p>
+                </div>
+
+                <!-- Pool with Ball Positions -->
+                <div class="diagram-card">
+                    <h3>⚽ Starting Positions</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/water2.png') }}" 
+                         alt="Water Polo Starting Positions" 
+                         class="pool-diagram-img">
+                    <p>Alliance starting positions: robots touch goal walls (left/right), ball placed in center</p>
+                </div>
+
+                <!-- 3D Pool View -->
+                <div class="diagram-card full-width">
+                    <h3>🎯 3D Pool Rendering</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/water3.png') }}" 
+                         alt="3D Water Polo Pool" 
+                         class="pool-diagram-img">
+                    <p>Isometric view showing 60cm water depth, 10cm perimeter frame, and goal structures</p>
+                </div>
+            </div>
+
+            <!-- Tournament Structure Diagrams -->
+            <div class="tournament-diagrams-section">
+                <h3>🏆 Tournament Structure</h3>
+                
+                <div class="tournament-grid">
+                    <!-- Group Stage -->
+                    <div class="tournament-card">
+                        <h4>📋 Group Stage Format</h4>
+                        <img src="{{ url_for('static', filename='images/weightlifting/football3.png') }}" 
+                             alt="Group Stage Matches" 
+                             class="tournament-img">
+                        <p>Round-robin matches within groups (AL1 vs AL2, AL3 vs AL4, etc.)</p>
+                    </div>
+
+                    <!-- Tournament Bracket -->
+                    <div class="tournament-card">
+                        <h4>🥇 Knockout Bracket</h4>
+                        <img src="{{ url_for('static', filename='images/weightlifting/football2.png') }}" 
+                             alt="Tournament Bracket" 
+                             class="tournament-img">
+                        <p>8 Groups → Quarter-finals → Semi-finals → Finals + 3rd place match</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Competition Rules -->
+        <div class="info-section">
+            <h2>🏆 COMPETITION - GENERAL INFORMATION & RULES</h2>
+            
+            <h3>⚽ GOAL SCORING</h3>
+            <ul>
+                <li>A goal is counted when the ball completely crosses the goal line between the goalposts and below the crossbar.</li>
+                <li>If the ball, as it moves towards the goal, touches a defending robot whose part is inside the goal, then the referee will charge the defending alliance with a goal.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🧮 SCORE – GROUP STAGE SCORING</h3>
+            <p><strong>For the matches of a Group:</strong></p>
+            <ul>
+                <li>3 points will be awarded for each win.</li>
+                <li>1 point will be awarded for each tie.</li>
+                <li>For each defeat 0 points will be given.</li>
+                <li>The alliance with the most points from each Group advances to the quarterfinals.</li>
+                <li>If 2 or more alliances have the same points then the alliance with the most goals in all Group matches advances to the quarter finals.</li>
+                <li>If there is still a tie then the alliance that conceded the fewest goals in all Group matches advances to the quarter-finals.</li>
+            </ul>
+
+            <p style="margin-top: 20px;"><strong>📍 For the quarter-final, semi-final, short-final and final matches:</strong></p>
+            <ul>
+                <li>The alliance with the most goals advances to the next phase.</li>
+                <li>If there is a tie then extra time is given for "Golden Goal". Whichever alliance scores the first goal advances to the next phase.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">⏱️ TECHNICIAN SWITCH TIME</h3>
+            <p>Between the matches of a group, a time of 1 minute will be given to each alliance. In this minute if a team wishes, it can change Technician. If the new Technician does not arrive within 1 minute, the previous Technician will continue in the next match.</p>
+
+            <h3 style="margin-top: 30px;">⚽️ MATCH DURATION</h3>
+            <ul>
+                <li>The match lasts a total of 4 minutes.</li>
+                <li>There is no halftime; teams retain their accumulated score throughout the entire match.</li>
+                <li>Time runs continuously, with no stoppages during the game.</li>
+                <li>When not actively playing, teams may make adjustments to their Water Polo Robot.</li>
+                <li>Before each match, the Water Polo Robot must undergo a technical inspection conducted by the referee.</li>
+            </ul>
+        </div>
+
+        <!-- Match Procedures -->
+        <div class="info-section">
+            <h2>🎯 MATCH PREPARATION - START - PROCEDURE</h2>
+            <ul>
+                <li>At the start of the match, the ball is placed by the referee approximately in the middle of the pool. All Water Polo Robots must touch part of the side wall of the goal. One Robot Athlete is placed to the right, and the other is placed to the left of the goal.</li>
+                <li>The match starts with the referee's whistle. All Water Polo Robots should start moving after the referee's whistle.</li>
+                <li>If an alliance scores a goal, then, without stopping time, the ball is placed in the center of the pool by the referee and is free for both alliances to claim again. The match is not interrupted but continues until the end of the 4 minutes.</li>
+                <li>If there is a Water Polo Robot on the target point at that time, then the ball is placed as close as possible to the target, but not directly in front of the robot located there. The referee will place it as close as to the center pool, so that no advantage is given to any Water Polo Robot.</li>
+                <li>If some of the Water Polo Robots get stuck together, then the referee can separate them by moving them as little as possible.</li>
+            </ul>
+        </div>
+
+        <!-- Restrictions -->
+        <div class="info-section">
+            <h2>⚠️ RESTRICTIONS / FOULS</h2>
+            <ul>
+                <li>The referee will blow the whistle for "illegal marking" if a Water Polo Robot attempting to get the ball behind an opposing Water Polo Robot is found to be pushing and dragging him onto the pool. After the whistle, the ball is placed in the center of the pool and play continues, without stopping time. If a goal is scored due to pushing, it is disallowed.</li>
+                <li>The referee will whistle a "red card" if any Water Polo Robot is found to be deliberately trying to injure an opponent. In this case the Water Polo Robot is kicked out of the match and the alliance continues with 1 Water Polo Robot. The referee places the ball back in the center of the pool and the match continues with the Water Polo Robots in the position they were in when the referee blew the "red card" whistle.</li>
+                <li>The Technicians are not allowed to touch their Water Polo Robots throughout the match without the permission of the referee. In such a case the referee blew the "red card" whistle.</li>
+                <li>If the ball goes out, outside the boundaries of the pool or behind the goal posts, the referee places the ball back on the cue ball located in the center of the pool. If there is a Water Polo Robot on the target at that time, then the ball is placed as close as possible to the target, but not directly in front of the robot located there. The referee will place it as close as to the center, so that no advantage is given to any Water Polo Robot.</li>
+                <li>It is forbidden for any Water Polo Robot of the defending alliance to stand still in front of their goal intentionally or move parallel to the goal line for more than 3 seconds. If it is determined by the referee that the ball was thus prevented from heading towards the goal, the Water Polo Robot is rejected from that match and the alliance continues with 1 Water Polo Robot.</li>
+                <li>The decisions of the referees are final. Objection to these decisions can only be lodged with the Headjudges. Disputing the final decisions of the Headjudges may result in a team or alliance being disqualified.</li>
+            </ul>
+        </div>
+
+        <!-- Injury Rules -->
+        <div class="info-section">
+            <h2>🤕 WATER POLO ROBOT INJURY</h2>
+            <p><strong>A Water Polo Robot is deemed injured by the referee when:</strong></p>
+            <ul>
+                <li>some part of it has been disassembled,</li>
+                <li>remains stationary (lost connection to laptop, controller or tablet),</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Injury Procedures:</strong></p>
+            <ul>
+                <li>An injured Water Polo Robot remains out of the pool until repairs are completed by the team. After permission is given by the referee, he returns to the match. The returning Water Polo Robot is placed in the starting position of the match.</li>
+                <li>If a Water Polo Robot falls over for any reason, with the help of the referee it gets back up and continues the game.</li>
+                <li>If all Water Polo Robots in an alliance are injured and out of the game, time stops and restarts when even one Water Polo Robot returns to the field.</li>
+                <li>If a Water Polo Robot is injured during the match due to the fault of the referee, then the timer stops and the team is given time to repair. Time starts ticking again after the return of the Water Polo Robot. The players and the ball are placed in the starting position of a match.</li>
+            </ul>
+        </div>
+
+        <!-- Ball Control -->
+        <div class="info-section">
+            <h2>🎯 BALL CONTROL – SHOOTING</h2>
+            <ul>
+                <li><strong>A Water Polo Robot should not hold the ball in any way or shoot it.</strong></li>
+                <li>The ball may not penetrate more than 2cm in any part of the Water Polo Robot construction.</li>
+                <li>A Water Polo Robot is not allowed to pick up the ball by placing it on his body in any way.</li>
+                <li>A Water Polo Robot is not allowed to pick up the ball by placing it under his body.</li>
+                <li>If the referee detects that the ball is trapped in any way, he places the ball back in the center of the field and the Water Polo Robot away from it. If the blocking is repeated then it is considered intentional and the Water Polo Robot is disqualified from that match. The match will continue as normal with 1 Water Polo Robot for this alliance.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🎲 The Referee places the ball back in the center of the pool:</h3>
+            <ul>
+                <li>When the match starts.</li>
+                <li>When a goal is scored.</li>
+                <li>When the referee blows the whistle for "irregular marking" of an opponent.</li>
+                <li>When the referee whistles a "red card" on a Water Polo Robot.</li>
+                <li>When a Water Polo Robot traps the ball as above.</li>
+                <li>When the ball crosses the entire end line parallel to the goals.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📤 The Referee releases the ball:</h3>
+            <ul>
+                <li>When he unblocks 2 or more Water Polo Robots who have trapped the ball.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">↩️ A Water Polo Robot is placed in the starting place:</h3>
+            <ul>
+                <li>When an injured Water Polo Robot returns to the game.</li>
+            </ul>
+        </div>
+
+        <!-- Match Procedure -->
+        <div class="info-section tournament-section">
+            <h2>🧩 MATCH PROCEDURE – GROUPS</h2>
+            <ul>
+                <li>The competition is conducted with the Group system.</li>
+                <li>The ranking in the Groups will be done 10 days before the competition by the system which all teams will be notified to follow.</li>
+                <li>The number of synergies placed in a Group, as well as the number of matches between synergies in a Group will be adjusted according to the number of teams participating in the Sport.</li>
+                <li><strong>If the number of teams is not sufficient to create a group system, the Organizing Committee reserves the right to change the competition format, which will be announced here at least 10 days before the matches.</strong></li>
+            </ul>
+
+            <div class="tournament-flow">
+                <h3>Tournament Structure:</h3>
+                <div class="flow-boxes">
+                    <div class="flow-box">GROUP MATCHES</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-box">QUARTER-FINAL</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-box">SEMI-FINAL</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-box">FINAL</div>
+                </div>
+                <div class="flow-boxes" style="margin-top: 20px;">
+                    <div class="flow-box">SMALL FINAL</div>
+                    <div class="arrow-text">(3rd Place Match)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disqualification -->
+        <div class="notes-section danger">
+            <h2>🟥 TEAM DISQUALIFICATION</h2>
+            <p><strong>In the following cases the team is excluded from the Sport and will have to withdraw.</strong></p>
+            <p>Team results are not taken into account and are not included in the list of competition results.</p>
+            <ul>
+                <li>1. If the team's Water Polo Player does not comply with the requirements specified in the rules of the Sport and the team refuses to accommodate it.</li>
+                <li>2. If any Water Polo Player's Technician behaves in an inappropriate or disrespectful manner, swears at or provokes or verbally or otherwise attacks teammates or the referees.</li>
+                <li>3. If even one of the coaches of a team behaves in an inappropriate or indecent manner, swears or provokes or verbally or otherwise attacks other teams, teammates or the referees.</li>
+                <li>4. In cases indicated in the rules of the Sport above.</li>
+            </ul>
+        </div>
+
+        <!-- Allowed/Prohibited -->
+        <div class="allowed-prohibited-section">
+            <div class="row">
+                <div class="col-allowed">
+                    <h2>✅ ALLOWED</h2>
+                    <ul>
+                        <li>The use of wood, plastic, metal, rubber, styrofoam for base construction.</li>
+                        <li>The use of any material for sealing the robot.</li>
+                    </ul>
+                </div>
+                <div class="col-prohibited">
+                    <h2>❌ PROHIBITED</h2>
+                    <ul>
+                        <li>Water Polo Players using components that can harm spectators, referees, or Technicians.</li>
+                        <li>Breaking the Water Polo Player into pieces during the match.</li>
+                        <li>Autonomous extension of the Water Polo Player after the match begins.</li>
+                        <li>Using gases in any form to increase speed.</li>
+                        <li>The use of pneumatic in all categories of robots.</li>
+                        <li>The cases listed in the rules above.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Winners -->
+        <div class="winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>The alliances that achieve these placements are announced per Age Category, based on the score:</p>
+            <div class="podium">
+                <div class="place">🥇 1st Place</div>
+                <div class="place">🥈 2nd Place</div>
+                <div class="place">🥉 3rd Place</div>
+            </div>
+        </div>
+
+        <!-- Register Button -->
+        <div class="register-section">
+            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
+                ✍️ TEAM REGISTRATION
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+        /* Water Polo Pool & Tournament Diagrams */
+    .waterpolo-diagrams-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .waterpolo-diagrams-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 35px;
+        color: #1e293b;
+        text-align: center;
+    }
+
+    .pool-diagrams-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .diagram-card {
+        background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        padding: 25px;
+        border-radius: 15px;
+        border: 3px solid #209cff;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .diagram-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(32, 156, 255, 0.3);
+    }
+
+    .diagram-card.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .diagram-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #209cff;
+        margin-bottom: 20px;
+    }
+
+    .pool-diagram-img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        margin: 0 auto 15px auto;
+        display: block;
+        background: white;
+        padding: 15px;
+    }
+
+    .diagram-card p {
+        font-size: 0.95rem;
+        color: #475569;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .tournament-diagrams-section {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    .tournament-diagrams-section h3 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .tournament-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 25px;
+    }
+
+    .tournament-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        border: 3px solid #68e0cf;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .tournament-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(104, 224, 207, 0.3);
+    }
+
+    .tournament-card h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #68e0cf;
+        margin-bottom: 20px;
+    }
+
+    .tournament-img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 0 auto 15px auto;
+        display: block;
+        padding: 10px;
+        background: #f8fafc;
+    }
+
+    .tournament-card p {
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .pool-diagrams-grid,
+        .tournament-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .diagram-card.full-width {
+            grid-column: 1;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .competition-detail {
+        min-height: 100vh;
+        background: #f8fafc;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #209cff;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 4px 12px rgba(32, 156, 255, 0.3);
+    }
+
+    .competition-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .competition-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #209cff 0%, #68e0cf 100%);
+        background-clip: text; -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .competition-subtitle {
+        font-size: 1.5rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: 20px;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .section-box h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #1e293b;
+    }
+
+    .intro-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 20px;
+    }
+
+    .age-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        border: 3px solid #209cff;
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(32, 156, 255, 0.3);
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #209cff;
+        margin-bottom: 10px;
+    }
+
+    .category-card .age {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 5px;
+    }
+
+    .category-card .level {
+        font-size: 0.875rem;
+        color: #94a3b8;
+    }
+
+    .division-single {
+        background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 5px solid #68e0cf;
+    }
+
+    .division-single h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #68e0cf;
+        margin-bottom: 15px;
+    }
+
+    .division-single p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+    }
+
+    .notes-section {
+        background: #fef3c7;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border-left: 5px solid #f59e0b;
+    }
+
+    .notes-section.danger {
+        background: #fee2e2;
+        border-left-color: #ef4444;
+    }
+
+    .notes-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #92400e;
+    }
+
+    .notes-section.danger h2 {
+        color: #991b1b;
+    }
+
+    .notes-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notes-section li {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #78350f;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: rgba(255,255,255,0.5);
+        border-radius: 8px;
+    }
+
+    .notes-section.danger li {
+        color: #7f1d1d;
+    }
+
+    .notes-section p {
+        color: #78350f;
+        font-size: 1.125rem;
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+
+    .notes-section.danger p {
+        color: #7f1d1d;
+    }
+
+    .info-section, .rule-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .alliance-section {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        border-left: 5px solid #0ea5e9;
+    }
+
+    .tournament-section {
+        background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        border-left: 5px solid #209cff;
+    }
+
+    .info-section h2, .rule-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #1e293b;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #209cff;
+    }
+
+    .info-section p, .rule-section p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 15px;
+    }
+
+    .info-section ul, .rule-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .info-section li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .info-section li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #209cff;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .rule-section .rule-intro {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .rule-section blockquote {
+        background: #f1f5f9;
+        border-left: 4px solid #209cff;
+        padding: 20px 30px;
+        margin: 20px 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-style: italic;
+        color: #1e293b;
+    }
+
+    .pool-specs {
+        background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+
+    .pool-specs h3 {
+        color: #0c4a6e !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .spec {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid #209cff;
+    }
+
+    .spec strong {
+        color: #209cff;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.875rem;
+    }
+
+    .tournament-flow {
+        margin-top: 30px;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+    }
+
+    .tournament-flow h3 {
+        text-align: center;
+        color: #1e293b !important;
+        margin-bottom: 25px;
+    }
+
+    .flow-boxes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .flow-box {
+        background: linear-gradient(135deg, #209cff 0%, #68e0cf 100%);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-align: center;
+        min-width: 150px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        color: #209cff;
+        font-weight: bold;
+    }
+
+    .arrow-text {
+        font-size: 0.875rem;
+        color: #64748b;
+        font-style: italic;
+    }
+
+    .allowed-prohibited-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .allowed-prohibited-section .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .col-allowed {
+        background: #f0fdf4;
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid #10b981;
+    }
+
+    .col-prohibited {
+        background: #fef2f2;
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid #ef4444;
+    }
+
+    .col-allowed h2 {
+        color: #065f46;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .col-prohibited h2 {
+        color: #991b1b;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .col-allowed ul, .col-prohibited ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .col-allowed li, .col-prohibited li {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .col-allowed li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .col-prohibited li:before {
+        content: "✗";
+        position: absolute;
+        left: 0;
+        color: #ef4444;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .winners-section {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        padding: 50px 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    .winners-section h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .winners-section p {
+        font-size: 1.125rem;
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+
+    .podium {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .podium .place {
+        background: white;
+        color: #f59e0b;
+        padding: 20px 40px;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        font-weight: 800;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .register-section {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .register-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #209cff 0%, #68e0cf 100%);
+        color: white;
+        padding: 22px 60px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.5rem;
+        box-shadow: 0 10px 30px rgba(32, 156, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(32, 156, 255, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .competition-title {
+            font-size: 2rem;
+        }
+
+        .competition-subtitle {
+            font-size: 1.125rem;
+        }
+
+        .age-categories-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .allowed-prohibited-section .row {
+            grid-template-columns: 1fr;
+        }
+
+        .register-btn {
+            padding: 18px 40px;
+            font-size: 1.25rem;
+        }
+
+        .podium {
+            flex-direction: column;
+        }
+
+        .specs-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .flow-boxes {
+            flex-direction: column;
+        }
+
+        .arrow {
+            transform: rotate(90deg);
+        }
+    }
+</style>
+{% endblock %}
+
+
+
+

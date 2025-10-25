@@ -1,0 +1,1224 @@
+{% extends "base.html" %}
+
+{% block title %}Pentathlon - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <!-- Header -->
+        <div class="competition-header">
+            <div class="header-icon">🏅</div>
+            <h1 class="competition-title">PENTATHLON</h1>
+            <!--<p class="competition-subtitle">5-in-6 Multi-Sport Robot Challenge</p>-->
+        </div>
+
+        <!-- Video Section 
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>-->
+
+        <!-- Age Categories -->
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORIES</h2>
+            <div class="age-categories-grid">
+                <div class="category-card">
+                    <h3>KIDS</h3>
+                    <p class="age">10 to 12 years old</p>
+                    <p class="level">Elementary School</p>
+                </div>
+                <div class="category-card">
+                    <h3>TEENS</h3>
+                    <p class="age">13 to 18 years old</p>
+                    <p class="level">Middle & High School</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Division -->
+        <div class="section-box">
+            <h2>🏆 DIVISION</h2>
+            <p class="intro-text">⚠️ The sport is held in one division:</p>
+            <div class="division-single">
+                <h3>All Robot Types</h3>
+                <p>All robot types compete together. Each age category competes separately.</p>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section warning">
+            <h2>⚠️ IMPORTANT NOTES</h2>
+            <ul>
+                <li>🚨 Each age category competes separately.</li>
+                <li>🏅 Perform 5 out of 6 available sports.</li>
+                <li>⏱️ 4-minute time limit per round, 3 rounds total.</li>
+                <li>📦 Robot can expand after launch from 25x25cm base.</li>
+                <li>🔄 One attachment change allowed per round.</li>
+            </ul>
+        </div>
+
+        <!-- Downloads & Resources -->
+        <div class="downloads-section">
+            <h2>📥 DOWNLOAD ARENA & 3D OBJECTS</h2>
+            <p style="color: white; margin-bottom: 20px;">Arena dimensions: 300cm x 171.42cm | Print objects with 15% infill</p>
+            <div class="download-buttons">
+                <a href="https://drive.google.com/drive/folders/1gaO50D7fdvceyBR-miqDja3SUiNqC8ZO?usp=sharing" target="_blank" class="download-btn primary">
+                    📄 DOWNLOAD PENTATHLON ARENA AND OBJECTS
+                </a>
+            </div>
+        </div>
+
+        <!-- Goal -->
+        <div class="info-section">
+            <h2>🎯 GOAL</h2>
+            <p><strong>The goal of the Robot Athletes is to perform 5 of the 6 sports included in the track (Pentathlon).</strong></p>
+            <p>There is a time limit, 4 minutes in each round. Each team will compete in 3 rounds.</p>
+        </div>
+
+        <!-- Team & Coach -->
+        <div class="info-section">
+            <h2>👥 TEAM – COACH</h2>
+            <ul>
+                <li>Participation in the competition is team-based, not individual.</li>
+                <li>Each team may consist of two (2) to three (3) members.</li>
+                <li>Each team must designate up to one (1) Robot Athlete Technician. Only the Robot Athlete Technician is allowed in the waiting area or competition area. The rest of the team must remain in the competition venue but cannot wait in line.
+                    <br>➤ In other words, they cannot occupy an additional spot. If a team fails to comply with this rule, it will be disqualified.</li>
+                <li>The team is allowed to change the designated Technician before each attempt on the track, to give all members the opportunity to be actively involved in the sport, although this is not mandatory.</li>
+                <li>All team members must be at least 10 years old (equivalent to 4th grade of primary school or above).</li>
+                <li>The team's coach must be at least 20 years old.</li>
+                <li>To ensure smooth participation in the competition, the coach must have 1 assistant for every 3 teams they register in the competition.</li>
+                <li>Each team is allowed to have only one robot. Changing the robot during the competition is not allowed.</li>
+                <li>Teams are not allowed to share the same robot.</li>
+                <li>If a team encounters a serious technical issue with their robot, they are allowed to replace only the microcontroller or the electronic components, after obtaining permission from the Head Judges.</li>
+            </ul>
+        </div>
+
+        <!-- Robot Category -->
+        <div class="info-section">
+            <h2>🤖 ROBOT ATHLETE – ROBOT CATEGORY</h2>
+            <ul>
+                <li>The Competition is for all kind of robots.</li>
+                <li>Robot Athletes will compete separately in each age category.</li>
+            </ul>
+        </div>
+
+        <!-- Robot Requirements -->
+        <div class="info-section">
+            <h2>⚙️ ROBOT ATHLETE REQUIREMENTS – SPECIFICATIONS</h2>
+            <ul>
+                <li>The Robot Athlete must be autonomous.</li>
+                <li>Its maximum dimensions must be 25 cm Width x 25 cm Length. There is no height and weight restriction.</li>
+                <li><strong>The Robot Athlete must fit inside one of the launch bases. After launch it can be expanded without restrictions.</strong></li>
+                <li>The Robot Athlete must not wear or damage the track or pose a threat to spectators in any way.</li>
+                <li>The Robot Athlete must have a start and stop button.</li>
+                <li>Regardless of the Robot Athlete category, only one microprocessor, 4 motors and 4 sensors are allowed.</li>
+                <li>All Athletes should only use batteries or cells as recommended by the official brand of their kits.</li>
+                <li>Robot Athletes should not use Pullback motors.</li>
+                <li>Robot Athletes should not use pneumatics materials.</li>
+                <li><strong>Teams are allowed to have as many attachments as they want. Their limitation is that during startups the robot together with the accessory should be a maximum of 25x25 cm with no height limit and fit inside the base.</strong></li>
+                <li>The extra attachments that are not on the robot must be held by the technicians.</li>
+            </ul>
+        </div>
+
+        <!-- Technical Inspection -->
+        <div class="info-section">
+            <h2>🧪 TECHNICAL INSPECTION</h2>
+            <ul>
+                <li>The initial technical inspection takes place on the day of the competition, during the Robot Athlete's first attempt.</li>
+                <li>During the initial inspection, the team will be asked questions about the critical parts of the robot's program.
+                    <br>➤ The team must have their laptop with the robot's program open.
+                    <br>➤ If it becomes clear from the answers that the team does not understand the program, they will receive a penalty equal to -20% of the score they achieve in the event.</li>
+                <li>The technical inspection includes a robot examination based on the specifications described above.
+                    <br>➤ If the robot does not meet the requirements, it will not be allowed to compete and will be automatically disqualified from the event.</li>
+                <li>After the completion of the initial inspection, the Robot Athlete is assigned its unique ID code.</li>
+                <li>If a team is not present at the time of the initial technical inspection, it will result in automatic disqualification from the competition.</li>
+                <li>A secondary technical inspection is also conducted before each attempt, performed by the assistant referee.</li>
+            </ul>
+        </div>
+
+        <!-- Field -->
+        <div class="info-section">
+            <h2>🏟️ FIELD - PENTATHLON ARENA</h2>
+            <ul>
+                <li>The Arena of the competition is rectangular with dimensions of 171.42 cm Width and 300 cm Length.</li>
+                <li>Its material is a printable canvas.</li>
+                <li>Sports objects are 3D printing.</li>
+            </ul>
+            
+            <div class="arena-specs">
+                <h3>📏 Arena Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec">
+                        <strong>Width:</strong> 171.42 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Length:</strong> 300 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Line Thickness:</strong> 2 cm
+                    </div>
+                    <div class="spec">
+                        <strong>Bases:</strong> 2 (BASE 1 & BASE 2)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Stadium Overview Diagrams -->
+        <div class="pentathlon-stadium-section">
+            <h2>🏟️ PENTATHLON STADIUM OVERVIEW</h2>
+            
+            <!-- Full Stadium Views -->
+            <div class="stadium-main-grid">
+                <div class="stadium-card full-width">
+                    <h3>📐 Complete Stadium Layout</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/pentathlon2.png') }}" 
+                         alt="Full Pentathlon Stadium" 
+                         class="stadium-img">
+                    <p class="stadium-caption">Complete oval track with all 5 sports: Discus Throw, Croquet, Climbing, Volleyball, and Sumo</p>
+                </div>
+
+                <div class="stadium-card">
+                    <h3>🎯 Discus Throw Field</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/pentathlon1.png') }}" 
+                         alt="Discus Throw Field" 
+                         class="stadium-img">
+                    <p class="stadium-caption">100m scoring zones: 80, 85, 90, 95, 100 with "DISCUS THROW" center area</p>
+                </div>
+
+                <div class="stadium-card">
+                    <h3>🔝 Stadium Top View</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/pentathlon5.png') }}" 
+                         alt="Stadium Top View" 
+                         class="stadium-img">
+                    <p class="stadium-caption">Bird's eye view showing spatial arrangement and competition zones</p>
+                </div>
+            </div>
+
+            <!-- Half Stadium Views -->
+            <div class="stadium-half-grid">
+                <div class="stadium-half-card">
+                    <h3>⬅️ Left Half - Climbing & Croquet</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/pentathlon3.png') }}" 
+                         alt="Left Stadium Half" 
+                         class="stadium-half-img">
+                    <p class="half-caption">Shows Ramp, Climbing wall, and Croquet track areas</p>
+                </div>
+
+                <div class="stadium-half-card">
+                    <h3>➡️ Right Half - Volleyball</h3>
+                    <img src="{{ url_for('static', filename='images/weightlifting/pentathlon4.png') }}" 
+                         alt="Right Stadium Half" 
+                         class="stadium-half-img">
+                    <p class="half-caption">Volleyball court with scoring zones marked in red and blue</p>
+                </div>
+            </div>
+        </div>
+
+
+                <!-- Field Detail Views -->
+        <div class="pentathlon-details-section">
+            <h2>🔍 COMPETITION AREA DETAILS</h2>
+            
+            <!-- Croquet & Base Areas -->
+            <div class="detail-group">
+                <h3>🎯 Croquet Track & Base Zones</h3>
+                <div class="detail-images-grid">
+                    <div class="detail-img-card">
+                        <img src="{{ url_for('static', filename='images/weightlifting/pentathlon6.png') }}" 
+                             alt="Croquet Track Detail" 
+                             class="detail-img">
+                        <p class="img-caption">Croquet scoring system: 10, 20, 40, 80, 90 points to FINISH (100)</p>
+                    </div>
+                    <div class="detail-img-card">
+                        <img src="{{ url_for('static', filename='images/weightlifting/pentathlon7.png') }}" 
+                             alt="Base Zones Detail" 
+                             class="detail-img">
+                        <p class="img-caption">BASE 1 & 2 starting zones with 100m, 200m, 300m lane markings</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Croquet & Track Curves -->
+            <div class="detail-group">
+                <h3>🏃 Croquet Track & Stadium Curves</h3>
+                <div class="detail-images-grid">
+                    <div class="detail-img-card">
+                        <img src="{{ url_for('static', filename='images/weightlifting/pentathlon6.png') }}" 
+                             alt="Croquet Track Detail" 
+                             class="detail-img">
+                        <p class="img-caption">Croquet scoring progression with red ball start position</p>
+                    </div>
+                    <div class="detail-img-card">
+                        <img src="{{ url_for('static', filename='images/weightlifting/pentathlon8.png') }}" 
+                             alt="Track Curves Detail" 
+                             class="detail-img">
+                        <p class="img-caption">Stadium track curves showing lane boundaries and distance markings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sports Description -->
+        <div class="sports-section">
+            <h2>🏅 THE 6 ARENA SPORTS</h2>
+            
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🏐 VOLLEYBALL</h3>
+                    <span class="max-points">MAX: 400 points</span>
+                </div>
+                <p>In the center of the field there is two volley nets with a height of 12 cm length 19.5 cm. Behind each net there is one target box: a red box worth 200 points and a blue box worth 400 points. The Robot Athlete starts with the ball loaded on the robot and must throw it from behind the black shooting line, making the ball pass over the net (team can choose which net) and land inside one of the target boxes. If the ball lands outside the boxes, does not pass above the net, or if the robot crosses the black line, no points are awarded.</p>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🥏 DISCUS THROW</h3>
+                    <span class="max-points">VARIABLE POINTS</span>
+                </div>
+                <p>In the sport's area, there is a white square with a blue border. The Robot Athlete must remain within the square in order to throw the discus. The discus must be pre-positioned on the Robot Athlete's extension. Each team uses its own discus. The points awarded to the Robot Athlete are determined by the zone where the tip of the discus touches. In the case of the 100-point zone, if the discus is outside the zone, the Robot Athlete will not receive any points. There are no restrictions on how the discus is thrown.</p>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🎯 CROQUET</h3>
+                    <span class="max-points">MAX: 340 points</span>
+                </div>
+                <p>In the Croquet field, there are five gates (wickets) placed in a straight line, each with its own score written next to it. The Robot Athlete starts inside the START box, with the ball placed in the red circle, and must strike the ball from behind the black line. For each gate the ball successfully passes through, the Robot Athlete earns the points indicated beside that gate. If the ball finally reaches the FINISH zone, an additional 100 bonus points are awarded. If the ball fails to pass through a gate, no points are awarded for that gate.</p>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🧗 CLIMBING</h3>
+                    <span class="max-points">300 points</span>
+                </div>
+                <p>In the Climbing field, there is a ramp placed in the center of the arena. At the beginning of the attempt, a cube with dimensions of 5 cm is positioned inside the red square at the base of the ramp. The Robot Athlete starts behind the black line and must push or carry the cube upwards until it reaches the top of the ramp. The attempt is considered valid only if the cube is fully placed behind the embossed line at the top of the ramp. No points are awarded if the cube does not reach the valid scoring position.</p>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🏃‍♂️ COURSE 100M, 200M, 300M</h3>
+                    <span class="max-points">MAX: 400 points</span>
+                </div>
+                <p>For the track race, the Robot Athlete must start from Base 1, move forward until it detects the black line, and then begin following it. The track is divided into sections marked as 100m, 200m, and 300m.</p>
+                <ul style="margin-top: 15px;">
+                    <li><strong>100 points</strong> for 100m</li>
+                    <li><strong>200 points</strong> for 200m</li>
+                    <li><strong>300 points</strong> for 300m</li>
+                    <li><strong>+100 bonus points</strong> if the Robot Athlete continues to do the obstacle course without stopping</li>
+                </ul>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-header">
+                    <h3>🚧 OBSTACLE COURSE</h3>
+                    <span class="max-points">MAX: 500 points</span>
+                </div>
+                <p>For the hurdles event, the Robot Athlete can start from any base it chooses in order to pass over the 8 hurdles. There is a black line along the track that can be used to assist the robot's navigation.</p>
+                <ul style="margin-top: 15px;">
+                    <li><strong>50 points</strong> for each obstacle passed by the Robot Athlete</li>
+                    <li><strong>+100 bonus points</strong> if the robot passes all 8 obstacles</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Competition Rules -->
+        <div class="info-section">
+            <h2>🏆 COMPETITION - GENERAL INFORMATION & RULES</h2>
+            
+            <h3>🔁 ROUNDS - ATTEMPTS</h3>
+            <ul>
+                <li>Each competition round has a duration of four (4) minutes.</li>
+                <li>During a round, time runs continuously, without stopping the clock at all.</li>
+                <li><strong>Each team will compete in 3 rounds.</strong></li>
+                <li>Before each round the Robot Athlete will go through a secondary technical check by the referee.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📋 DECLARATION</h3>
+            <ul>
+                <li><strong>Before each round the Robot Athlete Technicians must declare the 5 Sports that the Robot Athlete will perform.</strong></li>
+                <li>A team is not allowed to perform more than 5 sports in one round.</li>
+                <li>The team is allowed to change sports in each of the 3 rounds and each time must declare to the referee the sports they will perform before the attempt.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🤖 VALID ATTEMPT</h3>
+            <p>A valid attempt means that the robot is placed on the field, uses the official arena objects if required, and executes at least one visible and intentional action clearly aimed at completing the task of each declared sport (e.g., pushing, throwing, climbing, or passing through the required course). Simply placing the robot on the field without demonstrating an actual effort to perform the declared sport does not count as an attempt.</p>
+            <p>(Example: the robot must clearly show design features or mechanisms indicating the intention to perform the sports declared by the team).</p>
+
+            <h3 style="margin-top: 30px;">🚫 NO INTENTION TO COMPETE</h3>
+            <p><strong>If, during the match, the referee determines that the team has no intention of competing in the declared sports and is only aiming to complete the Race and Obstacle Race, then the team will receive zero points in total and will not be ranked in the Pentathlon results.</strong></p>
+
+            <h3 style="margin-top: 30px;">⚖️ REFEREE AUTHORITY</h3>
+            <p>The referee's decision regarding the validity of an attempt and the team's intention is final and indisputable.</p>
+        </div>
+
+        <!-- General Rules -->
+        <div class="info-section">
+            <h2>📋 GENERAL RULES</h2>
+            <ul>
+                <li>The track has 2 bases, BASE 1 & BASE 2, that the Robot Athlete can be placed on to start.</li>
+                <li>The team can choose any base they wish to start. The other base is automatically considered as attachments change base.</li>
+                <li><strong>The Robot Athlete can only change attachments once and only if it is in the attachments change base.</strong></li>
+                <li>At the end of the execution of the 5 sports or at the end of the 4 minute time the Robot Athlete does not need to be inside a base.</li>
+                <li>The transition of the Robot Athlete from one base to another can only be done autonomously, that is, the Robot Athlete goes to it alone.</li>
+                <li><strong>If even one wheel of the Robot Athlete is inside the attachment change base only then the Technician that is responsible for, can grab the robot to change attachments. If a Technician catches the Robot Athlete earlier than he has partially entered the base then the referee gives a -100 point penalty.</strong></li>
+                <li>In the event that during the movement of the Robot Athlete on the arena, any of the objects needed to perform a Sport, e.g. discus ball, etc., fall from it, the Technicians are prohibited from picking it up and putting it back to the Robot Athlete throughout the round, even after restarting due to being stuck. The referee will remove the object from the arena in order to ensure the smooth running of the Robot Athlete.</li>
+                <li>There is no restriction on the movement of the Robot Athlete within the arena.</li>
+                <li>The thickness of the black line (for line follow) is 2 cm.</li>
+                <li>The objects needed to perform the Sports are provided by the organization and the teams do not need to keep their own (balls, discus, etc.).</li>
+                <li>There will be time for testing on the track before the competition.</li>
+            </ul>
+        </div>
+
+        <!-- Round Procedure -->
+        <div class="info-section">
+            <h2>🏁 ROUND PROCEDURE</h2>
+            <ol style="list-style: decimal; padding-left: 20px;">
+                <li style="margin-bottom: 12px;">The Robot Athlete Technicians declare to the referee the Sports they are going to perform.</li>
+                <li style="margin-bottom: 12px;">The Referee conducts the secondary technical check and then signals the Technicians to position their Robot Athlete.</li>
+                <li style="margin-bottom: 12px;">Technicians place their Robot Athlete on the base they chose to start.</li>
+                <li style="margin-bottom: 12px;">The Technicians take a position on a base each.</li>
+                <li style="margin-bottom: 12px;">The Robot Athlete should be open and the program on hold.</li>
+                <li style="margin-bottom: 12px;">The Technician at the starting base prepares the Robot Athlete for the first sports. Preparation time 1 minute.</li>
+                <li style="margin-bottom: 12px;">The Referee after the end of 1 minute starts a countdown 3,2,1, go.</li>
+                <li style="margin-bottom: 12px;">The Technician in charge at the starting base starts the Robot Athlete.</li>
+                <li style="margin-bottom: 12px;"><strong>The Robot Athlete can move as he pleases on the track. Technicians are strictly prohibited from touching the Robot Athlete. In such a case the Referee will give a penalty -80 points for each time the Technicians touch the Robot Athlete.</strong></li>
+                <li style="margin-bottom: 12px;"><strong>Accordingly, if the Robot Athlete gets stuck inside the track for any reason and the Technicians need to catch him, then the referee will give a penalty -50 points.</strong></li>
+                <li style="margin-bottom: 12px;">In both case 9 and case 10, the Robot Athlete can be restarted from any base chosen by the Technicians.</li>
+            </ol>
+        </div>
+
+        <!-- Penalties -->
+        <div class="penalties-section">
+            <h2>⚠️ PENALTIES</h2>
+            <div class="penalty-grid">
+                <div class="penalty-card">
+                    <div class="penalty-amount">-100 points</div>
+                    <p>Early grabbing of robot before entering base</p>
+                </div>
+                <div class="penalty-card">
+                    <div class="penalty-amount">-80 points</div>
+                    <p>Each time technician touches robot during round</p>
+                </div>
+                <div class="penalty-card">
+                    <div class="penalty-amount">-50 points</div>
+                    <p>Robot gets stuck and needs to be retrieved</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Attempt -->
+        <div class="info-section">
+            <h2>❌ END OF AN ATTEMPT</h2>
+            <p>An attempt ends when:</p>
+            <ul>
+                <li>When the Robot Athlete has completed the Sports it is competing in.</li>
+                <li>When the 4 minute time is up.</li>
+                <li>If the Robot Athlete for any reason is unable to complete the Sports and its Technicians ask the referee to end the round.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📊 SCORE</h3>
+            <p><strong>The score for a round is the sum of the points of the sports performed by the Robot Athlete in the round and after any penalties have been deducted.</strong></p>
+        </div>
+
+        <!-- Disqualification -->
+        <div class="notes-section danger">
+            <h2>🟥 TEAM DISQUALIFICATION</h2>
+            <p><strong>In the following cases the team is excluded from the Sport and will have to withdraw.</strong></p>
+            <p>Team results are not taken into account and are not included in the list of competition results.</p>
+            <ul>
+                <li>1. If the team's Robot Athlete's Technician does not comply with the requirements specified in the rules of the Sport and the team refuses to accommodate it.</li>
+                <li>2. If any Robot Athlete's Technician behaves in an inappropriate or disrespectful manner, swears at or provokes or verbally or otherwise attacks teammates or the referees.</li>
+                <li>3. If even one of the coaches of a team behaves in an inappropriate or indecent manner, swears or provokes or verbally or otherwise attacks other teams, teammates or the referees.</li>
+                <li>4. In cases indicated in the rules of the Sport above.</li>
+            </ul>
+        </div>
+
+        <!-- Allowed/Prohibited -->
+        <div class="allowed-prohibited-section">
+            <div class="row">
+                <div class="col-allowed">
+                    <h2>✅ ALLOWED</h2>
+                    <ul>
+                        <li>The expansion of the Robot Athlete after the start of a round.</li>
+                    </ul>
+                </div>
+                <div class="col-prohibited">
+                    <h2>❌ PROHIBITED</h2>
+                    <ul>
+                        <li>Robot Athletes to use parts that can harm spectators.</li>
+                        <li>Remote control.</li>
+                        <li>The wireless connection (bluetooth) with a computer or any other electronic device during the match. Teams found to have connected their robot wirelessly (team members or coaches) during the match will be disqualified from the sport.</li>
+                        <li>The restrictions stated in the Robot Athlete technical control section and the rules above.</li>
+                        <li>The use of pneumatic in all categories of robots.</li>
+                        <li>The use of pullback motors in all classes of robots.</li>
+                        <li>The cases listed in the rules above.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Winners -->
+        <div class="winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>The best effort (most points) from the 3 rounds is awarded to the team.</p>
+            <p>In case of a tie, the points from the second best attempt will count, etc.</p>
+            <p>The first three teams with the most points per age category receive:</p>
+            <div class="podium">
+                <div class="place">🥇 1st Place</div>
+                <div class="place">🥈 2nd Place</div>
+                <div class="place">🥉 3rd Place</div>
+            </div>
+        </div>
+
+        <!-- Register Button -->
+        <div class="register-section">
+            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
+                ✍️ TEAM REGISTRATION
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+        /* Pentathlon Field Details Section */
+    .pentathlon-details-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .pentathlon-details-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #1e293b;
+        text-align: center;
+    }
+
+    .detail-group {
+        background: linear-gradient(135deg, #fef9f3 0%, #fff7ed 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid #c471ed;
+        margin-bottom: 30px;
+    }
+
+    .detail-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .detail-group h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #c471ed;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .detail-images-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+    }
+
+    .detail-img-card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .detail-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        margin: 0 auto 15px auto;
+        display: block;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .img-caption {
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .detail-images-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .competition-detail {
+        min-height: 100vh;
+        background: #f8fafc;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #f59e0b;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .competition-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .competition-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        background-clip: text; -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .competition-subtitle {
+        font-size: 1.5rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: 20px;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .section-box h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #1e293b;
+    }
+
+    .intro-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 20px;
+    }
+
+    .age-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        border: 3px solid #f59e0b;
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #f59e0b;
+        margin-bottom: 10px;
+    }
+
+    .category-card .age {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 5px;
+    }
+
+    .category-card .level {
+        font-size: 0.875rem;
+        color: #94a3b8;
+    }
+
+    .division-single {
+        background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 5px solid #fbbf24;
+    }
+
+    .division-single h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #fbbf24;
+        margin-bottom: 15px;
+    }
+
+    .division-single p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+    }
+
+    .notes-section {
+        background: #fef3c7;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border-left: 5px solid #f59e0b;
+    }
+
+    .notes-section.danger {
+        background: #fee2e2;
+        border-left-color: #ef4444;
+    }
+
+    .notes-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #92400e;
+    }
+
+    .notes-section.danger h2 {
+        color: #991b1b;
+    }
+
+    .notes-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notes-section li {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #78350f;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: rgba(255,255,255,0.5);
+        border-radius: 8px;
+    }
+
+    .notes-section.danger li {
+        color: #7f1d1d;
+    }
+
+    .notes-section p {
+        color: #78350f;
+        font-size: 1.125rem;
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+
+    .notes-section.danger p {
+        color: #7f1d1d;
+    }
+
+    .downloads-section {
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        padding: 50px 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .downloads-section h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    .download-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .download-btn {
+        padding: 18px 40px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .download-btn.primary {
+        background: white;
+        color: #f59e0b;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .info-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #1e293b;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #f59e0b;
+    }
+
+    .info-section p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 15px;
+    }
+
+    .info-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .info-section li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .info-section li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #f59e0b;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .arena-specs {
+        background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+
+    .arena-specs h3 {
+        color: #f59e0b !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .spec {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid #f59e0b;
+    }
+
+    .spec strong {
+        color: #f59e0b;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.875rem;
+    }
+
+    .sports-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .sports-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #1e293b;
+        text-align: center;
+    }
+
+    .sport-card {
+        background: linear-gradient(135deg, #fef9f3 0%, #fff7ed 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border-left: 5px solid #f59e0b;
+    }
+
+    .sport-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sport-header h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #f59e0b;
+        margin: 0;
+    }
+
+    .max-points {
+        background: #f59e0b;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.875rem;
+    }
+
+    .sport-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+        margin: 0;
+    }
+
+    .sport-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sport-card li {
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 8px;
+    }
+
+    .sport-card li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #f59e0b;
+        font-weight: bold;
+    }
+
+    .penalties-section {
+        background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border-left: 5px solid #ef4444;
+    }
+
+    .penalties-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #991b1b;
+        text-align: center;
+    }
+
+    .penalty-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .penalty-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        border: 3px solid #ef4444;
+    }
+
+    .penalty-amount {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #ef4444;
+        margin-bottom: 15px;
+    }
+
+    .penalty-card p {
+        font-size: 1rem;
+        color: #475569;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .allowed-prohibited-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .allowed-prohibited-section .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .col-allowed {
+        background: #f0fdf4;
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid #10b981;
+    }
+
+    .col-prohibited {
+        background: #fef2f2;
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid #ef4444;
+    }
+
+    .col-allowed h2 {
+        color: #065f46;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .col-prohibited h2 {
+        color: #991b1b;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .col-allowed ul, .col-prohibited ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .col-allowed li, .col-prohibited li {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .col-allowed li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .col-prohibited li:before {
+        content: "✗";
+        position: absolute;
+        left: 0;
+        color: #ef4444;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .winners-section {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        padding: 50px 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    .winners-section h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .winners-section p {
+        font-size: 1.125rem;
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+
+    .podium {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .podium .place {
+        background: white;
+        color: #f59e0b;
+        padding: 20px 40px;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        font-weight: 800;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .register-section {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .register-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        color: white;
+        padding: 22px 60px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.5rem;
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .competition-title {
+            font-size: 2rem;
+        }
+
+        .competition-subtitle {
+            font-size: 1.125rem;
+        }
+
+        .age-categories-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .download-buttons {
+            flex-direction: column;
+        }
+
+        .download-btn {
+            width: 100%;
+        }
+
+        .allowed-prohibited-section .row {
+            grid-template-columns: 1fr;
+        }
+
+        .register-btn {
+            padding: 18px 40px;
+            font-size: 1.25rem;
+        }
+
+        .podium {
+            flex-direction: column;
+        }
+
+        .specs-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .penalty-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,453 @@
+{% extends "base.html" %}
+{% block title %}Hockey - MRC Global Olympiad{% endblock %}
+{% block content %}
+<section class="competition-detail" style="padding-top:100px">
+<div class="container">
+<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+Back to All Sports</a>
+<div class="competition-header">
+<div class="header-icon">🏒🤖</div>
+<h1 class="competition-title">HOCKEY</h1>
+<!--<p class="competition-subtitle">2v2 Alliance Remote-Controlled Robot Hockey Championship</p>-->
+</div>
+<div class="section-box">
+<h2>🎯 AGE CATEGORIES</h2>
+<div class="age-categories-grid">
+<div class="category-card kids"><h3>KIDS</h3><p class="age">10 to 12 years old</p><p class="level">Elementary School</p></div>
+<div class="category-card teens"><h3>TEENS</h3><p class="age">13 to 18 years old</p><p class="level">Middle & High School</p></div>
+<div class="category-card adults"><h3>ADULTS</h3><p class="age">18+ years old</p><p class="level">University & Individuals</p></div>
+</div>
+<p class="compete-note">🚨 <strong>Each age category competes separately</strong></p>
+<p class="division-note">⚠️ <strong>One Division:</strong> All robot types compete together</p>
+</div>
+<div class="notes-section warning">
+<h2>⚠️ IMPORTANT NOTES - 2v2 ALLIANCE FORMAT</h2>
+<ul>
+<li>🤝 <strong>2v2 ALLIANCE FORMAT:</strong> 2 teams form 1 alliance (2 robots per alliance)</li>
+<li>🚨 <strong>MANDATORY ROBOT:</strong> Only HockeyBot from RoboCore allowed</li>
+<li>🏫 <strong>2026 Rule:</strong> Alliance must be from same school/institution</li>
+<li>📱 Remote-controlled via Bluetooth (RoboCore Joystick app)</li>
+<li>⚖️ Specs: 17×16cm, 454g, 5cm height</li>
+<li>⏱️ Match: 5 minutes continuous time</li>
+<li>🏟️ Rink: 2.93-3.66m × 1.46-1.83m with 0.18m walls</li>
+<li>🥅 Goal: Puck must fully cross goal line (52cm × 18cm goals)</li>
+</ul>
+</div>
+<div class="register-section">
+<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
+<a href="#" class="guide-btn">📖 HOCKEY QUICK GUIDE</a>
+</div>
+<div class="rule-section">
+<h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+<blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+<p>All rules based on common sense, sport spirit, and safety. Deliberate misinterpretation or exploitation will not be tolerated and may lead to disqualification.</p>
+</div>
+<div class="info-section goal-section">
+<h2>🎯 GOAL</h2>
+<p>Goal of Robot Hockey Players of an <strong>alliance (2-in-1 alliance, 2x2 Hockey)</strong> consisting of 2 robots is to score as many goals as possible for opposing team.</p>
+<p><strong>For 2026:</strong> Alliance must be from same school/institution. School must have 2 teams, each with its own Hockey Player to form alliance to participate.</p>
+</div>
+<div class="info-section">
+<h2>👥 TEAM – COACH</h2>
+<ul>
+<li><strong>Participation:</strong> Team-based, not individual</li>
+<li><strong>Team Size:</strong> 2-3 members</li>
+<li><strong>Robot Athlete Technician:</strong> 1 designated technician. Only technician in waiting/competition area. Rest watch behind control spots</li>
+<li><strong>Technician Change:</strong> Allowed before each attempt (optional)</li>
+<li><strong>Age Requirement:</strong> All members ≥10 years old</li>
+<li><strong>Coach:</strong> Must be ≥20 years old</li>
+<li><strong>Assistant Requirement:</strong> 1 assistant for every 3 teams</li>
+<li><strong>Robot Limit:</strong> Only one robot per team. No changing during competition except cases below</li>
+<li><strong>No Sharing:</strong> Teams cannot share same robot</li>
+<li><strong>Emergency:</strong> Only microcontroller/electronics replacement with Head Judge permission</li>
+</ul>
+</div>
+<div class="info-section alliances-section">
+<h2>🤝 ALLIANCES</h2>
+<ul>
+<li>Alliance consists of <strong>2 teams</strong></li>
+<li>Every Hockey match: 2 opposing alliances collide</li>
+<li>During matches, alliance referred to by registered alliance name (not team names). Coaches ensure teams know alliance name</li>
+<li>If team doesn't come on game day = alliance competes with 1 team</li>
+<li>If 0 teams from alliance attend = victory awarded to opposing alliance</li>
+<li>If alliance disqualified = victory awarded to opposing alliance at any stage</li>
+</ul>
+</div>
+<div class="info-section robot-specs">
+<h2>⚙️ ROBOT TECHNICAL SPECIFICATIONS</h2>
+<div class="mandatory-robot">
+<h3>🚨 MANDATORY ROBOT MODEL</h3>
+<p><strong>Robot Hockey must be ONLY the model found at link below. Teams must have it.</strong></p>
+<p>⚠️ <strong>WARNING:</strong> No other option is acceptable.</p>
+<a href="https://www.robocore.net/robocore-robotic/hockeybot/yellow" target="_blank" class="hockeybot-link">🤖 HOCKEYBOT</a>
+<p class="discount-note">💶 <strong>Organizing Committee Discount:</strong> 22% discount secured. Contact after registration for code. <strong>Coupon: MRC</strong></p>
+<p>Operation manual: <a href="https://www.robocore.net/tutorials/hockeybot" target="_blank">https://www.robocore.net/tutorials/hockeybot</a></p>
+</div>
+
+<h3>Specifications:</h3>
+<ol>
+<li><strong>📱 Remote-Controlled:</strong> Robot Hockey Player must be remote-controlled</li>
+<li><strong>Controller:</strong> Only using application that accompanies robot</li>
+<li><strong>Connection:</strong> Bluetooth using RoboCore Joystick app</li>
+<li><strong>Max Dimensions:</strong> 17cm Width × 16cm Length</li>
+<li><strong>Weight:</strong> 454 grams</li>
+<li><strong>Height:</strong> 5cm (excluding team identifier - e.g., small flag may extend above robot)</li>
+<li><strong>Control Box:</strong> 17×16cm with ±1mm tolerance. Robot must fit without pressure</li>
+<li><strong>No Damage:</strong> Must not wear/damage pitch or pose threat to spectators</li>
+<li><strong>Power:</strong> Batteries and electric motors only. Battery: Li-Ion 7.4V 2500mAh with BMS</li>
+<li><strong>Motors:</strong> 2 × 6V 266RPM. <strong>Strictly forbidden to modify</strong></li>
+<li><strong>❌ No Weapons:</strong> No devices aimed at damaging opposing robots, rink, or puck. Organization reserves right to disqualify violators</li>
+<li><strong>Alliance Signature:</strong> Must bring visible "signature" agreed in advance (flag, label, color combination) for referee recognition</li>
+</ol>
+</div>
+<div class="info-section">
+<h2>🧪 TECHNICAL INSPECTION</h2>
+<ol>
+<li>Initial inspection on Games day at place/time determined by organizers</li>
+<li>Includes robot and controller inspection. Non-compliance = automatic disqualification</li>
+<li>Not present at initial inspection = automatic disqualification</li>
+<li>After initial inspection, Robot Hockey Athlete assigned unique ID code</li>
+<li>Secondary check before each match by assistant referee</li>
+<li>If referee determines violation during competition = immediate disqualification right</li>
+</ol>
+</div>
+<div class="info-section field-section">
+<h2>🏟️ FIELD</h2>
+<h3>Rink Specifications:</h3>
+<ul>
+<li><strong>Dimensions:</strong> 2.93m-3.66m length × 1.46m-1.83m width</li>
+<li><strong>Corner Curves:</strong> 0.24m-0.3m diameter</li>
+<li><strong>Goals:</strong> 0.52m × 0.18m, located on back walls, centered, facing center of rink</li>
+<li><strong>Walls:</strong> Approximately 0.18m high</li>
+<li><strong>Floor:</strong> Subject to location conditions. May have small irregularities (cement, MDF, steel, wood flooring, tile). All robots must be capable of moving over such surfaces</li>
+<li><strong>Puck:</strong> 3.17cm × 1.27cm</li>
+</ul>
+
+<div class="field-image-container">
+<img src="{{url_for('static',filename='images/weightlifting/hockey1.png')}}" alt="Hockey Rink" class="field-img">
+<p><strong>Hockey Rink Layout:</strong> Ice hockey-style field with goals and center circle</p>
+</div>
+</div>
+<div class="info-section competition-section">
+<h2>🏆 COMPETITION - GENERAL INFORMATION & RULES</h2>
+<p><strong>Robot hockey</strong> is game based on ice hockey. Aim is to score more points than opposing team by pushing or throwing puck into goal area, making for exciting and fast-paced game. Given nature of players, ice hockey rules have been highly modified and simplified.</p>
+</div>
+<div class="info-section goal-rules">
+<h2>⚽ GOAL</h2>
+<ul>
+<li>Goal scored when puck crosses entire goal line</li>
+<li>If puck (moving towards goal) touches defending robot whose part inside goal = defending alliance charged with goal</li>
+<li>If defending robot pushed into own goal by opposing robot and puck enters goal as result (fully crossing goal line) = goal awarded</li>
+</ul>
+</div>
+<div class="info-section barricade-section">
+<h2>🚨 PROHIBITION OF "BARRICADE" TACTICS (GOALIE CHARGING / DANCING)</h2>
+<h3>➤ Prohibition of Obstruction via Mechanical Movement</h3>
+<p>Prohibited for any defending robot to perform rapid, repetitive, non-tactical back-and-forth movement (perpendicular to goal line) with sole purpose of blocking goal. This behavior considered anti-football and aims for passive and non-creative defense.</p>
+
+<h3>➤ Violation Criteria</h3>
+<p>Violation deemed occurred if robot:</p>
+<ul>
+<li>(a) Repeats same small range of motion (e.g., <20cm) <strong>three (3) or more times within 5-second window</strong></li>
+<li>(b) Doesn't attempt to tactically respond to puck/opponents movement but merely "finger-taps" goal line</li>
+</ul>
+
+<h3>➤ Penalty</h3>
+<p>If referee determines violation:</p>
+<ul>
+<li>Game immediately halted</li>
+<li>Violating team penalized with direct free kick from point 30cm in front of center of their goal</li>
+<li>If violation systematic = robot may be penalized with temporary removal (2-minute "penalty box")</li>
+</ul>
+</div>
+<div class="info-section scoring-section">
+<h2>🧮 SCORE – GROUP STAGE SCORING</h2>
+<p><strong>No draws in robot hockey.</strong> If score tied at end of regulation time, match goes into overtime with sudden death (Golden Goal). During sudden death, additional time played as before, but match start with all robots from each team on their side of rink and outside central circle. First team to score = winner.</p>
+
+<h3>For Group Matches:</h3>
+<ul>
+<li>3 points for each win</li>
+<li>0 points for each defeat</li>
+<li>Alliance with most points from each Group advances to quarterfinals</li>
+<li>If tie = 2 minutes extra time for "Golden Goal". If still tied after 2-minute extra time = penalty shootout procedure</li>
+</ul>
+
+<h3>For Quarter-finals, Semi-finals, Short-final, Finals:</h3>
+<ul>
+<li>Alliance with most goals advances to next phase</li>
+<li>If tie = 2 minutes extra time for "Golden Goal". If still tied after 2-minute extra time = penalty shootout procedure</li>
+</ul>
+</div>
+<div class="info-section penalty-shootout">
+<h2>⚽ PENALTY SHOOTOUT PROCEDURE</h2>
+<h3>Positioning:</h3>
+<ul>
+<li>Puck placed by referee at center of rink (inside center circle and on red dot)</li>
+<li>Robot Hockey Athlete executing penalty positioned inside its own goal/net (alliance chooses which Robot Hockey Athlete takes penalty kicks)</li>
+</ul>
+
+<h3>The 3 Golden Rules:</h3>
+<ol>
+<li>Robot Hockey Athlete must first leave goal/net before touching puck</li>
+<li>Robot Hockey Athlete may only hit puck while inside center circle</li>
+<li>After hitting puck, Robot Hockey Athlete must brake before exiting circle</li>
+</ol>
+
+<h3>Execution:</h3>
+<ul>
+<li>At referee's signal, Robot Hockey Athlete starts</li>
+<li>Must gain momentum, exit goal, enter center circle, and while inside circle, hit puck toward opposing goal</li>
+<li>Immediately after hitting puck, must stop (brake) within circle</li>
+<li>Has <strong>20 seconds</strong> to complete entire process</li>
+</ul>
+
+<h3>When Goal Counts:</h3>
+<p>Only if puck fully crosses goal line of opposing goal under its own momentum, without Robot Hockey Athlete touching it outside circle.</p>
+
+<h3>Violations & Invalid Attempts:</h3>
+<ul>
+<li>If any rule violated = attempt doesn't count, considered miss (0)</li>
+<li>If Robot Hockey Athlete hits puck outside circle or continues to push it = goal CANCELLED</li>
+<li>If 20 seconds elapse without goal = attempt doesn't count</li>
+</ul>
+
+<h3>Determining Winner:</h3>
+<ul>
+<li>Each alliance executes 3 penalties (taken alternately)</li>
+<li>Alliance with most goals wins</li>
+<li>If tied = sudden-death shootout (one attempt per alliance alternately) until winner determined</li>
+</ul>
+</div>
+<div class="info-section">
+<h2>⏱️ TECHNICIAN SWITCH TIME</h2>
+<p>Between group matches, 1 minute given to each alliance. If team wishes, can change Technician. If new Technician doesn't arrive within 1 minute, previous Technician continues in next match.</p>
+</div>
+<div class="info-section match-duration">
+<h2>⚽️ MATCH DURATION</h2>
+<ul>
+<li>Match lasts total of <strong>5 (five) minutes</strong></li>
+<li>No halftime; teams retain accumulated score throughout entire match</li>
+<li>Time runs continuously, no stoppages during game</li>
+<li>Before each match, Robot Hockey Athlete must undergo technical inspection by referee</li>
+</ul>
+</div>
+<div class="info-section match-procedure">
+<h2>🎯 MATCH PREPARATION - START - RESTRICTIONS</h2>
+<ul>
+<li><strong>Match Progression:</strong> Designed for quick movements and continuous action with few interruptions</li>
+<li>Match starts with all robots from each team on their side of rink outside central circle</li>
+<li>Referee throws puck approximately into center, match begins</li>
+<li>During restart (goal or any occasion), robots may move anywhere within rink anytime. No exclusion zones or penalties for entering any area</li>
+<li>Marking and blocking opposing robots allowed anytime. No penalties for damage caused during marking/blocking. Intentionally damaging discouraged, may lead to unsportsmanlike conduct penalty</li>
+<li>To score goal, robots must move puck into opponent's goal. Goal can occur by pushing or throwing puck</li>
+<li>Puck must completely cross goal line within goalposts for goal to be scored</li>
+<li>Pucks thrown/flipped out of rink = penalty goal scored against team that threw/caused puck to leave. Pucks leaving due to collision or deflected by opposing robot/rink don't count as foul</li>
+<li>Whenever goal scored or puck leaves rink, match time paused, robots unlocked, and if requested by team to referees, will be flipped back/substituted</li>
+<li>Winner = team with most goals</li>
+<li>Referee decisions final. Objection only to Headjudges. Disputing final decisions may result in team/alliance disqualification</li>
+</ul>
+</div>
+<div class="info-section injury-section">
+<h2>🤕 ROBOT HOCKEY ATHLETE INJURY</h2>
+<p><strong>Robot Hockey Player deemed injured by referee when:</strong></p>
+<ul>
+<li>Some part disassembled</li>
+<li>Remains stationary (lost connection to controller)</li>
+</ul>
+
+<h3>Injury Procedures:</h3>
+<ul>
+<li>Injured Robot Hockey Athlete remains out of field until repairs completed. After referee permission, returns to match</li>
+<li>Returning Robot Hockey Player placed in corner of defense area (right or left, players' choice). Forbidden to place in position giving advantage in puck possession (e.g., right in front of puck). Referee can indicate which side if advantage being created</li>
+<li>If Robot Hockey Athlete falls over = referee helps it get back up, continues game</li>
+<li>If all Robot Hockey Athletes in alliance injured and out = time stops, restarts when even one returns</li>
+<li>If Robot Hockey Athlete injured due to referee fault = timer stops, team given repair time. Time starts after return. Players and ball placed in starting position</li>
+<li>If need to replace robot due to injury during match, technician informs referee. Referee gives permission without stopping match</li>
+<li>If robot damaged with exposed internal parts (especially battery), referees can pause round if safety risk. Referees remove problematic robot, match restarted without injured Robot Hockey Athlete. Problematic robot cannot return without repair/replacement</li>
+<li>If Robot Hockey Athlete thrown out of rink = can return only after next goal</li>
+</ul>
+
+<h3>Incapacitation Rules:</h3>
+<ul>
+<li>If all robots become incapacitated simultaneously = match terminated, winner = team with most goals</li>
+<li>If all robots from one team inside arena incapacitated = match terminated, team declared loser regardless of goals. If winning team declared loser in score = fixed score 3×0 awarded</li>
+<li>If all robots incapacitated and score tied = team whose robot last showed controlled movements declared winner. One goal awarded to break tie. If unclear which remained active last = coin toss decides winner</li>
+</ul>
+</div>
+<div class="info-section penalties-section">
+<h2>🎯 PENALTIES</h2>
+<p>Few penalties in Robot Hockey, purpose is to facilitate flow and prevent deliberate destruction of opposing robots.</p>
+<ul>
+<li><strong>Unsportsmanlike Conduct:</strong> If referee determines competitor acting in unsportsmanlike/aggressive manner = removal of one robot from team for remainder of match</li>
+<li><strong>Intentional Puck Throwing Out:</strong> If robot throws, flips, or projects puck out of rink = goal awarded to opposing team. Puck immediately placed back at center line. Pucks ejected by collision or deflected by other robots/rink don't incur penalty. Puck put into play immediately over central line</li>
+<li><strong>Non-Compliant Robots:</strong> If at scheduled match time robot doesn't comply with rules = not allowed to participate</li>
+</ul>
+</div>
+<div class="info-section referee-actions">
+<h2>🎲 REFEREE ACTIONS</h2>
+<h3>Referee Places Puck Back in Center:</h3>
+<ul>
+<li>When match starts</li>
+<li>When goal scored</li>
+<li>When referee blows whistle for "irregular marking" of opponent</li>
+<li>When referee whistles "red card" on Robot Hockey Player</li>
+<li>When one or more Robot Hockey Players trap puck preventing match from progressing</li>
+<li>When Robot Hockey Athlete throws, flips, or projects puck out of rink</li>
+</ul>
+
+<h3>Referee Releases Puck:</h3>
+<p>When unblocks 2 or more Robot Hockey Players who trapped puck preventing match from progressing.</p>
+
+<h3>Robot Hockey Player Placed in Corner:</h3>
+<p>When injured Robot Hockey Player returns to game.</p>
+</div>
+<div class="info-section match-procedure-groups">
+<h2>🧩 MATCH PROCEDURE – GROUPS</h2>
+<p>Competition conducted with Group system as shown in examples below.</p>
+<ul>
+<li>Ranking in Groups done 10 days before competition in Live draw (all teams notified to follow)</li>
+<li>Number of alliances placed in Group, as well as number of matches between alliances in Group adjusted according to participating teams</li>
+</ul>
+
+<div class="bracket-images">
+<div class="bracket-img-container">
+<img src="{{url_for('static',filename='images/weightlifting/hockey2.png')}}" alt="Tournament Bracket" class="bracket-img">
+<p><strong>Tournament Bracket:</strong> Group Stage → Knockouts → Finals</p>
+</div>
+<div class="group-matches-container">
+<img src="{{url_for('static',filename='images/weightlifting/hockey3.png')}}" alt="Group Matches" class="bracket-img">
+<p><strong>Example Group Match Schedule:</strong> Round-robin within groups</p>
+</div>
+</div>
+</div>
+<div class="info-section disqualification-section">
+<h2>🟥 TEAM DISQUALIFICATION</h2>
+<p>Team excluded from Sport and must withdraw (results not counted in official results) if:</p>
+<ol>
+<li>Team's Robot Hockey Player doesn't comply with requirements and team refuses to accommodate</li>
+<li>Any Robot Hockey Player's Technician behaves inappropriately/disrespectfully, swears, provokes, or attacks teammates/referees</li>
+<li>Even one coach behaves inappropriately/indecently, swears, provokes, or attacks other teams/teammates/referees</li>
+<li>Cases indicated in rules above</li>
+</ol>
+</div>
+<div class="info-section allowed-section">
+<h2>✅ ALLOWED / ❌ PROHIBITED</h2>
+<h3>✅ ALLOWED:</h3>
+<ul>
+<li>Clean Robot Hockey Player wheels only with wet cleaning cloths or cleaning fluid and paper</li>
+<li>All cases described in rules above</li>
+</ul>
+
+<h3>❌ PROHIBITED:</h3>
+<ul>
+<li>Robot Hockey Players using parts that can harm teammates</li>
+<li>Use of glue to increase adhesion (cleaning wheels with adhesive tapes leaving glue or suction cups). Tires and other parts contacting rink must not lift and hold A4 paper (80g/m²) >2 seconds</li>
+<li>Use of pneumatic in all robot categories</li>
+<li>Use of pullback motors in all robot classes</li>
+<li>Cases listed in rules above</li>
+</ul>
+</div>
+<div class="info-section winners-section">
+<h2>🏆 WINNERS</h2>
+<p>Alliances that achieve podium positions announced per <strong>Age Category</strong>, based on score:</p>
+<div class="podium">
+<div class="podium-item"><div class="medal gold">🥇</div><p class="place">1st Place</p></div>
+<div class="podium-item"><div class="medal silver">🥈</div><p class="place">2nd Place</p></div>
+<div class="podium-item"><div class="medal bronze">🥉</div><p class="place">3rd Place</p></div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.competition-detail{min-height:100vh;background:#f8fafc;padding-bottom:60px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.back-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#14b8a6;padding:10px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-bottom:25px;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .3s}
+.back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(20,184,166,.3)}
+.competition-header{text-align:center;margin-bottom:35px}
+.header-icon{font-size:4rem;margin-bottom:15px}
+.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#14b8a6 0%,#0d9488 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
+.section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}
+.age-categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:15px}
+.category-card{padding:20px;border-radius:12px;text-align:center;color:#fff;transition:all .3s}
+.category-card:hover{transform:translateY(-3px)}
+.kids{background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%)}
+.teens{background:linear-gradient(135deg,#14b8a6 0%,#0d9488 100%)}
+.adults{background:linear-gradient(135deg,#6366f1 0%,#4f46e5 100%)}
+.category-card h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.category-card .age{font-size:1rem;margin-bottom:4px;opacity:.95}
+.category-card .level{font-size:.8125rem;opacity:.85}
+.compete-note{text-align:center;font-weight:700;color:#14b8a6;font-size:1rem;margin-top:15px}
+.division-note{text-align:center;background:#dbeafe;padding:12px;border-radius:8px;border-left:4px solid #3b82f6;font-weight:700;margin-top:10px}
+.notes-section{background:#ccfbf1;padding:20px;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px}
+.notes-section h2{font-size:1.25rem;font-weight:800;color:#0f766e;margin-bottom:12px}
+.notes-section ul{list-style:none;padding:0}
+.notes-section li{padding:6px 0;color:#134e4a;font-weight:500;font-size:.9375rem}
+.register-section{text-align:center;margin:25px 0;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.register-btn,.guide-btn{display:inline-block;padding:15px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.125rem;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:all .3s}
+.register-btn{background:linear-gradient(135deg,#14b8a6 0%,#0d9488 100%);color:#fff}
+.guide-btn{background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);color:#fff}
+.register-btn:hover,.guide-btn:hover{transform:translateY(-3px)}
+.rule-section{background:#fee2e2;padding:25px;border-radius:15px;margin-bottom:20px;border:3px solid #dc2626}
+.rule-section h2{font-size:1.5rem;font-weight:800;color:#991b1b;margin-bottom:15px}
+.rule-section p{color:#7f1d1d;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.rule-section blockquote{background:#fff;padding:15px;border-left:4px solid #dc2626;margin:15px 0;font-style:italic;font-weight:600;color:#991b1b}
+.info-section{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.info-section h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:18px;border-bottom:3px solid #14b8a6;padding-bottom:8px}
+.info-section h3{font-size:1.25rem;font-weight:700;color:#475569;margin-top:20px;margin-bottom:12px}
+.info-section p{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.info-section ul,.info-section ol{padding-left:22px;margin-bottom:15px}
+.info-section li{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:8px}
+.goal-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.alliances-section{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.robot-specs{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid #3b82f6}
+.mandatory-robot{background:#fef3c7;padding:20px;border-radius:12px;border:3px solid #f59e0b;margin-bottom:20px}
+.hockeybot-link{display:inline-block;background:#f59e0b;color:#fff;padding:12px 30px;border-radius:8px;text-decoration:none;font-weight:800;margin:10px 0;transition:all .3s}
+.hockeybot-link:hover{background:#d97706;transform:translateY(-2px)}
+.discount-note{background:#d1fae5;padding:12px;border-radius:8px;border-left:4px solid #10b981;font-weight:700;margin-top:15px}
+.field-section{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:3px solid #8b5cf6}
+.field-image-container{margin:20px 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.field-img{width:100%;max-width:700px;height:auto;display:block;margin:0 auto}
+.field-image-container p{padding:15px;background:#f8fafc;font-size:.875rem;color:#475569;margin:0}
+.competition-section{background:linear-gradient(135deg,#ccfbf1 0%,#99f6e4 100%);border:3px solid #14b8a6}
+.goal-rules{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border:3px solid #10b981}
+.barricade-section{background:#fee2e2;border:3px solid #dc2626}
+.barricade-section h2{color:#991b1b;border-bottom-color:#dc2626}
+.scoring-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.penalty-shootout{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:3px solid #ec4899}
+.match-duration{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.match-procedure{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border:3px solid #10b981}
+.injury-section{background:linear-gradient(135deg,#fee2e2 0%,#fecaca 100%);border:3px solid #ef4444}
+.penalties-section{background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 100%);border:3px solid #f97316}
+.referee-actions{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.match-procedure-groups{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:3px solid #8b5cf6}
+.bracket-images{display:grid;grid-template-columns:1fr;gap:20px;margin:20px 0}
+.bracket-img-container,.group-matches-container{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.bracket-img{width:100%;height:auto;display:block}
+.bracket-img-container p,.group-matches-container p{padding:15px;background:#f8fafc;font-size:.875rem;color:#475569;margin:0}
+.disqualification-section{background:#fee2e2;border:3px solid #dc2626}
+.disqualification-section h2{color:#991b1b;border-bottom-color:#dc2626}
+.allowed-section{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border:3px solid #16a34a}
+.winners-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.podium{display:flex;justify-content:center;gap:25px;margin:20px 0}
+.podium-item{text-align:center}
+.medal{font-size:3rem;margin-bottom:8px}
+.place{font-size:1.125rem;font-weight:700;color:#92400e}
+@media (max-width:768px){
+.competition-title{font-size:1.75rem}
+.competition-subtitle{font-size:1rem}
+.section-box,.info-section{padding:18px}
+.age-categories-grid{grid-template-columns:1fr}
+.register-section{flex-direction:column;align-items:center}
+.podium{flex-direction:column;gap:15px}
+}
+</style>
+{% endblock %}
+
+
+

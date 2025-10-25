@@ -1,0 +1,223 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <h3 class="footer-title">Robofest India</h3>
+                <p class="footer-text">
+                    The world has become so fast paced that people don't want to stand by reading a page of information, 
+                    they would much rather look at a presentation and understand the message. It has come to a point 
+                    where innovation and creativity drive the future of robotics education.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('competitions.competitions_list') }}">Competitions</a></li>
+                    <li><a href="{{ url_for('main.profile') }}">About Robofest</a></li>
+                    <li><a href="{{ url_for('main.partnerships') }}">Partnerships</a></li>
+                    <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact">
+                    <li class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>1350, Second Floor,<br>32E Cross 4th T Block Jayanagar,<br>Bangalore 560041, India</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <a href="tel:+919019247247" class="contact-link">+91 9019247247</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" style="width:24px;height:24px; margin-right:8px;">
+                        <a href="https://wa.me/919341253057" target="_blank" class="contact-link">+91 9341253057 (WhatsApp)</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" style="width:24px;height:24px; margin-right:8px;">
+                        <a href="mailto:info@robofestindia.org" class="contact-link">info@robofestindia.org</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" style="width:24px;height:24px; margin-right:8px;">
+                        <a href="mailto:robotic999@gmail.com" class="contact-link">robotic999@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!--<div class="footer-section">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link" target="_blank">
+                        <span class="social-icon">📘</span>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <span class="social-icon">📸</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <span class="social-icon">▶️</span>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://wa.me/919341253057" class="social-link" target="_blank">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" style="width:24px;height:24px; margin-right:8px;">
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>-->
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Robofest India - NovatechRobo Pvt Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<style>
+    .footer {
+        background-color: #1f2937;
+        color: white;
+        padding: 60px 0 20px;
+        margin-top: 80px;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+    }
+    
+    .footer-text {
+        color: #9ca3af;
+        line-height: 1.8;
+        font-size: 0.9375rem;
+    }
+    
+    .footer-heading {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: white;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #9ca3af;
+        transition: color 0.3s ease;
+        font-size: 0.9375rem;
+    }
+    
+    .footer-links a:hover {
+        color: var(--accent-color);
+    }
+    
+    .footer-contact {
+        list-style: none;
+        color: #9ca3af;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 16px;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+    
+    .contact-icon {
+        flex-shrink: 0;
+        font-size: 1.125rem;
+    }
+    
+    .contact-link {
+        color: #9ca3af;
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .contact-link:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #9ca3af;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 0.9375rem;
+    }
+    
+    .social-link:hover {
+        color: var(--accent-color);
+        background-color: rgba(245, 158, 11, 0.1);
+    }
+    
+    .social-icon {
+        font-size: 1.25rem;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #374151;
+        padding-top: 20px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.875rem;
+    }
+    
+    @media (max-width: 1024px) {
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer {
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+        
+        .footer-about {
+            order: -1;
+        }
+    }
+</style>

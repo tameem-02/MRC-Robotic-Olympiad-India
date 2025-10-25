@@ -1,0 +1,401 @@
+{% extends "base.html" %}
+{% block title %}Wrestling Mini - MRC Global Olympiad{% endblock %}
+{% block content %}
+<section class="competition-detail" style="padding-top:100px">
+<div class="container">
+<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+Back to All Sports</a>
+<div class="competition-header">
+<div class="header-icon">🥊🤖</div>
+<h1 class="competition-title">WRESTLING MINI</h1>
+<!--<p class="competition-subtitle">Autonomous Micro Sumo Robot Championship</p>-->
+</div>
+<div class="section-box">
+<h2>🎯 AGE CATEGORIES</h2>
+<div class="age-categories-grid">
+<div class="category-card"><h3>TEENS</h3><p class="age">12+ to 18 years old</p><p class="level">Middle-High School</p></div>
+<div class="category-card"><h3>ADULTS</h3><p class="age">18+ years old</p></div>
+</div>
+</div>
+<div class="notes-section warning">
+<h2>⚠️ IMPORTANT NOTES</h2>
+<ul>
+<li>🚨 Each age category competes separately</li>
+<li>⚖️ Max: 10×10cm, 500g weight</li>
+<li>🏟️ Dohyo: 77cm diameter black circular ring</li>
+<li>⏱️ Match: 3 rounds (best of 3)</li>
+<li>💶 <strong>Additional Robot:</strong> Team can participate with more than one robot (+€20)</li>
+<li>🛑 <strong>IR Kill Switch MANDATORY:</strong> MicroStart Module Jsumo required</li>
+</ul>
+</div>
+<div class="register-section"><a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a></div>
+<div class="rule-section">
+<h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+<blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+<p>All rules based on common sense, sport spirit, and safety. Deliberate misinterpretation or exploitation will not be tolerated and may lead to disqualification.</p>
+</div>
+<div class="info-section goal-section">
+<h2>🎯 GOAL</h2>
+<p>Robot Athletes must <strong>take opponent out of battle</strong> on specially designed wrestling arena (Dohyo) and be considered winner.</p>
+</div>
+<div class="info-section">
+<h2>👥 TEAM – COACH</h2>
+<ul>
+<li><strong>Team Size:</strong> 1-3 members</li>
+<li><strong>Chief Coach:</strong> One member designated as Chief Coach responsible for communication, technical inspection, robot handling</li>
+<li><strong>Ring Access:</strong> Only 2 team members may approach ring; only operator enters game area</li>
+<li><strong>⚠️ No Line Waiting:</strong> Rest of team cannot occupy additional spot. Violation = disqualification</li>
+</ul>
+</div>
+<div class="info-section">
+<h2>🤼‍♂️ 1. DEFINITION OF WRESTLING MINI MATCH</h2>
+<h3>1.1. Definition</h3>
+<p>Match fought between two teams, each with 1+ members. Only 2 team members from each team may approach ring; only operator enters game area.</p>
+<p>Each team competes on Dohyo (wrestling ring) with robot to specifications in Section 2. Match begins at judge's command, continues until 3 rounds completed. Judge determines winner (3-0, 2-1). After match, operator/assistant move to designated waiting area for next challenge.</p>
+</div>
+<div class="info-section robot-specs">
+<h2>🤖 2. REQUIREMENTS FOR ROBOTS</h2>
+<h3>2.1. General Robot Specifications</h3>
+<ol>
+<li>Any robot design allowed (if not restricted by 2.2)</li>
+<li><strong>Max Dimensions:</strong> 10cm × 10cm (100mm) square</li>
+<li><strong>Weight:</strong> Under 500g</li>
+<li><strong>Expansion:</strong> May expand after match begins but must not physically separate. Must remain single centralized robot. Feet must not expand. Violation = lose match</li>
+<li><strong>Small Parts:</strong> Parts <5g falling off won't cause match loss</li>
+<li><strong>⚡ Autonomous:</strong> All components contained in robot. No external control</li>
+<li><strong>ID Number:</strong> Must display organizer-supplied number in visible place</li>
+</ol>
+
+<h3>2.2. Robot Restrictions</h3>
+<ol>
+<li><strong>🛑 IR Kill Switch (MANDATORY):</strong> Must have <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">MicroStart Module Jsumo</a> for judge operation. Not working/missing = <strong>disqualification</strong></li>
+<li><strong>No Jamming:</strong> IR LEDs to saturate sensors not allowed</li>
+<li><strong>No Damage:</strong> Parts that break/damage ring not allowed. Normal pushes/bangs OK</li>
+<li><strong>No Projectiles:</strong> Devices storing/throwing liquid, powder, gas not allowed</li>
+<li><strong>No Flaming Devices</strong></li>
+<li><strong>No Throwing Devices</strong></li>
+<li><strong>Sticky Test:</strong> Tires/parts contacting ring must not pick up and hold A4 paper (80g/m²) >2 seconds</li>
+<li><strong>❌ No Downforce:</strong> Vacuum pumps and magnets not allowed</li>
+<li><strong>Blade Color:</strong> Blade and expansion cannot be white</li>
+</ol>
+</div>
+<div class="info-section dohyo-section">
+<h2>🏟️ 3. REQUIREMENTS FOR DOHYO (WRESTLING RING)</h2>
+<h3>3.1. Dohyo Interior</h3>
+<p>Arena's interior = playing surface surrounded by and including border line. Anywhere outside = exterior.</p>
+
+<h3>3.2. Dohyo Specifications</h3>
+<ol>
+<li><strong>Material:</strong> Circular wood, 2-3cm thick, painted black</li>
+<li><strong>Diameter:</strong> 77cm (770mm)</li>
+<li><strong>Border Line:</strong> White circular ring, 2.5cm (25mm) width</li>
+<li><strong>Height:</strong> Placed on wooden surface, 70-100cm (700-1000mm)</li>
+<li><strong>Tolerance:</strong> ±5% for all dimensions</li>
+<li><strong>Center Mark:</strong> "X" placed in center to mark robot placement area. Referee assigns quadrants</li>
+</ol>
+
+<div class="dohyo-images">
+<div class="dohyo-main">
+<img src="{{url_for('static',filename='images/weightlifting/correct.png')}}" alt="Arena" class="arena-img">
+<p><strong>77cm Diameter Dohyo</strong> with white border and center X</p>
+</div>
+</div>
+
+<h3>3.3. Dohyo Exterior</h3>
+<p>Space outside outer edge of ring. Can be any color/material/shape as long as basic rule concepts not violated. This area with ring in middle called "ring area".</p>
+</div>
+
+<div class="info-section placement-section">
+<h2>📍 ROBOT PLACEMENT EXAMPLES</h2>
+<p><strong>Robots must be positioned behind center X, at least one part within placement area (quadrants) defined by referee.</strong></p>
+
+<div class="placement-grid">
+<div class="placement-example correct">
+<h4>✅ CORRECT PLACEMENT 1</h4>
+<img src="{{url_for('static',filename='images/weightlifting/correct1.png')}}" alt="Correct1">
+<p>Robots on horizontal line through X</p>
+</div>
+<div class="placement-example correct">
+<h4>✅ CORRECT PLACEMENT 2</h4>
+<img src="{{url_for('static',filename='images/weightlifting/correct2.png')}}" alt="Correct2">
+<p>Robots on diagonal line through X</p>
+</div>
+<div class="placement-example failed">
+<h4>❌ FAILED PLACEMENT 1</h4>
+<img src="{{url_for('static',filename='images/weightlifting/failed1.png')}}" alt="Failed1">
+<p>Robots not both on line through X</p>
+</div>
+<div class="placement-example failed">
+<h4>❌ FAILED PLACEMENT 2</h4>
+<img src="{{url_for('static',filename='images/weightlifting/failed2.png')}}" alt="Failed2">
+<p>Robots not properly aligned through X</p>
+</div>
+</div>
+</div>
+
+<div class="info-section">
+<h2>🕹️ 3.4. HOW TO CARRY WRESTLING MATCHES</h2>
+<ol>
+<li>One match consists of <strong>3 rounds</strong></li>
+<li>If robots stuck, rules from 6.1 apply</li>
+<li>If one robot won't start: restart. Still won't start after restart = moving robot wins</li>
+</ol>
+
+<h3>3.5. Course of Competition</h3>
+<ul>
+<li>Robots divided into groups. Groups/quarters/semifinals/finals system</li>
+<li>Each match: best of 3 rounds, supervised by 1 ref. Decisions final; questioning = disqualification</li>
+<li>If 2 robots of same team advance to quarters/semis/finals = must play match (no forfeit/arrangement)</li>
+<li>Group order random, available on website. If insufficient participants = format decided by organizing committee</li>
+<li>During match: no breaks. Between matches (not rounds): modifications/repairs/reprogramming allowed if robots not removed from game area</li>
+<li>⚠️ <strong>If called to play and don't come in 5 minutes = robot disqualified!</strong></li>
+<li>Only operator allowed in waiting/game area</li>
+<li>Max 1 min break between rounds for cleaning/configuration</li>
+<li>Configuration before placing robot. Once in ring: no touching/remote changes. Attempt = point to opponent</li>
+<li>Can't touch/remove robots until judge signals. Touch before signal = no objections allowed</li>
+</ul>
+</div>
+
+<div class="info-section">
+<h2>🛠️ 3.6. TECHNICAL CONTROL</h2>
+<h3>At Beginning of Competition:</h3>
+<ol>
+<li>Check if number exists on outer casing</li>
+<li>Photo taken of every robot (number visible)</li>
+<li>Check dimensions: 10.2×10.2cm (102mm) box/frame without bottom over robot</li>
+<li>Weigh on digital scale. Max 502g</li>
+<li>Check IR sensor operation for start/stop</li>
+</ol>
+
+<h3>Before Every Match:</h3>
+<ol>
+<li>Check dimensions: 10.2×10.2cm box/frame</li>
+<li>Weigh on scale. Max 502g</li>
+<li>Check if number exists on casing</li>
+</ol>
+</div>
+
+<div class="info-section match-flow">
+<h2>🚦 4. START, STOP, RESUME, END MATCH</h2>
+<h3>4.1. Robot Placing</h3>
+<p>Upon judge's instructions, teams approach ring to place robots. Operators place simultaneously. Referees give signal. After placing, robots cannot be moved.</p>
+<p>Robot positioned behind center X, at least one part within placement area (quadrants) defined by referee. If placement incorrect, repositioning required.</p>
+
+<h3>4.2. Start</h3>
+<p>Referees start every round by sending start signal with IR transmitter. As soon as robots receive signal, round starts immediately without delay.</p>
+<p>Start made after operator in safe area. If operator leaves safe area without referee approval = team can lose point or be disqualified.</p>
+
+<h3>4.3. Stop, Resume</h3>
+<p>Match stops/resumes when judge announces. Referee announces when robots can be placed, when operator retreats to safe area, when robots can be taken from arena.</p>
+
+<h3>4.4. End</h3>
+<p>Match ends when referee announces. Teams retrieve robots from arena. After retrieval, decision final (no objections).</p>
+</div>
+
+<div class="info-section">
+<h2>⏱ 5. TIME OF MATCH</h2>
+<h3>5.1. Duration</h3>
+<p>One match fought for total of <strong>3 minutes</strong>, starting/ending upon referee's command.</p>
+
+<h3>5.2. Extension</h3>
+<p>Extended match (if called by judge) lasts max <strong>3 minutes</strong></p>
+</div>
+
+<div class="info-section scoring-section">
+<h2>⏳ 6. SCORING</h2>
+<h3>✅ One Point Given When:</h3>
+<ol>
+<li>Team legally forces body of opposing robot to touch space outside arena</li>
+<li>Opposing robot touched space outside arena on its own</li>
+<li>Opposing robot left ring surface completely, even if other touched outside first (after contact between robots)</li>
+<li>Opposing robot damaged without being able to continue and team representative announces it</li>
+<li>Both robots leave arena simultaneously/almost same time = robot pushed outside loses (even if pusher touches outside first)</li>
+<li>If opposing robot unable to attack (flipped over, missing wheel, cannot compete) = point awarded to other team (even if that team's robot exited arena). If team proves it's part of strategy = can normally receive point. If outcome unclear = referee calls rematch of round</li>
+</ol>
+
+<h3>⚖️ Judge Decision Criteria:</h3>
+<ol>
+<li>Technical merits in movement/operation</li>
+<li>Penalty points during match</li>
+<li>Attitude of players</li>
+</ol>
+</div>
+
+<div class="info-section rematch-section">
+<h2>🔄 6.1. MATCH STOP & REMATCH CONDITIONS</h2>
+<ol>
+<li><strong>Robot doesn't start:</strong> One restart. Still doesn't = moving robot wins</li>
+<li><strong>Entangled/orbiting (10s):</strong> One restart. Repeats = robot moving more with will to fight wins</li>
+<li><strong>Fast stuck in slow (5s):</strong> One restart. No progress/very slow after 5s = judge stops (no objections). Repeats = faster attacker wins</li>
+<li><strong>Two fast stuck (5s):</strong> One restart. No progress/very slow after 5s = judge stops (no objections). Repeats = faster attacker wins</li>
+<li><strong>Robot has 1pt, next no winner:</strong> Only 2 rematches. No winner in 2 rematches = 1-pt robot wins match</li>
+<li><strong>Both move without progress/stop (5s):</strong> If one stops first = declared unwilling to fight after 5s. Opponent gets point (even if opponent stops). If unclear if progress = referee can extend time up to 30s</li>
+<li><strong>Both touch outside simultaneously:</strong> Can't determine first = rematch</li>
+</ol>
+</div>
+
+<div class="info-section repairs-section">
+<h2>🛠️ 6.2. REPAIRS, MODIFICATIONS, INTERRUPTIONS</h2>
+<p><strong>From technical inspection until match ends (all rounds):</strong></p>
+<ul>
+<li>❌ No repairs during match</li>
+<li>❌ No battery change/charge during match</li>
+<li>❌ No blade change during match</li>
+<li>❌ No reprogramming during match (tactics selection before fight not considered programming)</li>
+<li>❌ Detached blade: must continue without it until match over</li>
+<li>✅ Robot must start/finish match without modification (except tactics selection) and cannot leave competition area</li>
+<li>✅ Max 1 min break between rounds for cleaning/configuration</li>
+<li>✅ Battery change/repairs/replacements after match ends until next match</li>
+<li>If robot broken during match and can't continue = opponent wins. No repair allowed</li>
+</ul>
+</div>
+
+<div class="info-section violations-section">
+<h2>🚫 7. VIOLATIONS</h2>
+<h3>7.1. Violations</h3>
+<p>Players performing deeds in Sections 2.2, 7.2, or 7.3 declared in violation.</p>
+
+<h3>7.2. Insults</h3>
+<ul>
+<li>Insulting words to opponent/judges, voice devices uttering insults, insulting words on robot body, insulting actions = violation</li>
+<li><strong>Serious Misconduct:</strong> Operator/assistant doesn't retreat to safe area or doesn't comply with referee indications</li>
+<li><strong>Serious Misconduct:</strong> Start/stop module doesn't work or missing = disqualification</li>
+</ul>
+
+<h3>7.3. Protective Gear & Safe Area</h3>
+<p><strong>Minor violation (warning) when:</strong></p>
+<ul>
+<li>Enter ring during match (unless referee stops after point and contestant gets robot)</li>
+<li>Demand to stop match without appropriate reasons</li>
+<li>Take >60s before resuming (unless judge announces extension)</li>
+<li>Does/says that disgraces fairness</li>
+<li>Operator/assistant leaves waiting area without announcing to official/referee</li>
+</ul>
+<p><strong>➤ If team has 2 warnings = one point to opposite team OR disqualification (depends on gravity)</strong></p>
+</div>
+
+<div class="info-section">
+<h2>⛔ 8. PENALTIES</h2>
+<h3>8.1. Penalties</h3>
+<ul>
+<li>Players violating rules (Sections 2.5, 7.2) lose match. Referee gives 3 points to opponent, orders violator to clear out. Violator not honored with any rights</li>
+<li>Each violation (Section 7.3) accumulated. Two violations = one point to opponent</li>
+<li>Violations (7.3) accumulated throughout one match</li>
+</ul>
+</div>
+
+<div class="info-section">
+<h2>📢 9. DECLARING OBJECTIONS</h2>
+<p>Operator can present objections ONLY to Head Judge before match over if doubts in exercising rules. If no Head Judge present, objection can be presented to referee before match over.</p>
+</div>
+
+<div class="info-section">
+<h2>🔧 10. FLEXIBILITY OF RULES</h2>
+<p>As long as concept/fundamentals observed, rules flexible enough to encompass changes in number of players/match contents. Modifications/abolition can be made by local organizers if published prior to event and consistently maintained throughout.</p>
+</div>
+
+<div class="info-section">
+<h2>⚖️ 11. LIABILITY</h2>
+<ul>
+<li>Participating teams always responsible for safety of robots and liable for accidents caused by team members/robots</li>
+<li>Organization and organizing team never held responsible/liable for incidents/accidents caused by participating teams/equipment</li>
+</ul>
+</div>
+
+<div class="info-section resources-section">
+<h2>📑 APPENDIX – REMOTE START & KILL SWITCH</h2>
+<p>Detailed information about startmodules usage:</p>
+<p><a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">MicroStart Module Jsumo</a></p>
+</div>
+
+<div class="info-section winners-section">
+<h2>🏆 WINNERS</h2>
+<p>Winners announced separately for each <strong>age category</strong>:</p>
+<div class="podium">
+<div class="podium-item"><div class="medal gold">🥇</div><p class="place">1st Place</p></div>
+<div class="podium-item"><div class="medal silver">🥈</div><p class="place">2nd Place</p></div>
+<div class="podium-item"><div class="medal bronze">🥉</div><p class="place">3rd Place</p></div>
+</div>
+<p>🏁 Ranking determined based on points achieved.</p>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.competition-detail{min-height:100vh;background:#f8fafc;padding-bottom:60px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.back-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#f59e0b;padding:10px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-bottom:25px;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .3s}
+.back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(245,158,11,.3)}
+.competition-header{text-align:center;margin-bottom:35px}
+.header-icon{font-size:4rem;margin-bottom:15px}
+.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
+.section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}
+.age-categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.category-card{background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);padding:20px;border-radius:12px;text-align:center;color:#fff;transition:all .3s}
+.category-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(245,158,11,.3)}
+.category-card h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.category-card .age{font-size:1rem;margin-bottom:4px;opacity:.95}
+.category-card .level{font-size:.8125rem;opacity:.85}
+.notes-section{background:#fef3c7;padding:20px;border-radius:12px;border-left:4px solid #f59e0b;margin-bottom:20px}
+.notes-section h2{font-size:1.25rem;font-weight:800;color:#92400e;margin-bottom:12px}
+.notes-section ul{list-style:none;padding:0}
+.notes-section li{padding:6px 0;color:#78350f;font-weight:500;font-size:.9375rem}
+.register-section{text-align:center;margin:25px 0}
+.register-btn{display:inline-block;background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);color:#fff;padding:15px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.125rem;box-shadow:0 6px 20px rgba(245,158,11,.3);transition:all .3s}
+.register-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,158,11,.4)}
+.rule-section{background:#fee2e2;padding:25px;border-radius:15px;margin-bottom:20px;border:3px solid #dc2626}
+.rule-section h2{font-size:1.5rem;font-weight:800;color:#991b1b;margin-bottom:15px}
+.rule-section p{color:#7f1d1d;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.rule-section blockquote{background:#fff;padding:15px;border-left:4px solid #dc2626;margin:15px 0;font-style:italic;font-weight:600;color:#991b1b}
+.info-section{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.info-section h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:18px;border-bottom:3px solid #f59e0b;padding-bottom:8px}
+.info-section h3{font-size:1.25rem;font-weight:700;color:#475569;margin-top:20px;margin-bottom:12px}
+.info-section p{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.info-section ul,.info-section ol{padding-left:22px;margin-bottom:15px}
+.info-section li{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:8px}
+.info-section a{color:#f59e0b;font-weight:700;text-decoration:none}
+.info-section a:hover{text-decoration:underline}
+.goal-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.robot-specs{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid #3b82f6}
+.dohyo-section{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:3px solid #8b5cf6}
+.dohyo-images{margin:20px 0}
+.dohyo-main{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.arena-img{width:100%;max-width:500px;height:auto;display:block;margin:0 auto}
+.dohyo-main p{padding:15px;background:#f8fafc;font-size:.875rem;color:#475569;margin:0}
+.placement-section{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border:3px solid #16a34a}
+.placement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:20px}
+.placement-example{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.placement-example h4{font-size:1rem;font-weight:800;padding:12px;margin:0;color:#fff}
+.placement-example img{width:100%;height:auto;display:block}
+.placement-example p{padding:12px;font-size:.875rem;color:#475569;margin:0;background:#f8fafc}
+.correct h4{background:#16a34a}
+.failed h4{background:#dc2626}
+.match-flow{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:3px solid #ec4899}
+.scoring-section{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.rematch-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.repairs-section{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid #3b82f6}
+.violations-section{background:#fee2e2;border:3px solid #dc2626}
+.violations-section h2{color:#991b1b;border-bottom-color:#dc2626}
+.resources-section{background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 100%);border:3px solid #f97316}
+.winners-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.podium{display:flex;justify-content:center;gap:25px;margin:20px 0}
+.podium-item{text-align:center}
+.medal{font-size:3rem;margin-bottom:8px}
+.place{font-size:1.125rem;font-weight:700;color:#92400e}
+@media (max-width:768px){
+.competition-title{font-size:1.75rem}
+.competition-subtitle{font-size:1rem}
+.section-box,.info-section{padding:18px}
+.age-categories-grid,.placement-grid{grid-template-columns:1fr}
+.podium{flex-direction:column;gap:15px}
+}
+</style>
+{% endblock %}
+
+
+

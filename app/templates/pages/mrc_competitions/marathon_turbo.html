@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% block title %}Marathon Turbo - MRC Global Olympiad{% endblock %}
+{% block content %}
+<section class="competition-detail" style="padding-top:100px">
+<div class="container">
+<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+Back to All Sports</a>
+<div class="competition-header">
+<div class="header-icon">🏎️💨</div>
+<h1 class="competition-title">MARATHON TURBO</h1>
+<!--<p class="competition-subtitle">EDF-Powered Autonomous Line Following Racing Championship</p>-->
+</div>
+<div class="section-box">
+<h2>🎯 AGE CATEGORIES</h2>
+<div class="age-categories-grid">
+<div class="category-card"><h3>TEENS</h3><p class="age">12+ to 18 years old</p><p class="level">Middle & High School</p></div>
+<div class="category-card"><h3>ADULTS</h3><p class="age">18+ years old</p><p class="level">University & Individuals</p></div>
+</div>
+</div>
+<div class="notes-section warning">
+<h2>⚠️ IMPORTANT NOTES</h2>
+<ul>
+<li>⚡ <strong>EDF REQUIRED:</strong> Robot must be equipped with Electric Ducted Fan</li>
+<li>🚨 Each age category competes separately</li>
+<li>🏁 All robot types compete together in one division</li>
+<li>⚖️ Max: 25×25cm, 1kg weight, 5-15cm height</li>
+<li>⏱️ Time Limit: 3 minutes per attempt</li>
+<li>🏟️ Arena: 5m² to 35m² closed white track with 1.8cm black line</li>
+<li>🔁 90-minute competition with repeated attempts</li>
+</ul>
+</div>
+<div class="register-section">
+<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
+<a href="#" class="guide-btn">📖 MARATHON QUICK GUIDE</a>
+</div>
+<div class="rule-section">
+<h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+<blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+<p>All rules based on common sense, sport spirit, and safety. Deliberate misinterpretation or exploitation will not be tolerated and may lead to disqualification.</p>
+</div>
+<div class="info-section goal-section">
+<h2>🎯 GOAL</h2>
+<p>Complete the circuit in the <strong>shortest possible time</strong> while accurately tracking the circuit line from start to finish.</p>
+<p><strong>⚡ Robot must be equipped with an EDF (Electric Ducted Fan).</strong></p>
+</div>
+<div class="info-section">
+<h2>👥 TEAM – COACH</h2>
+<ul>
+<li><strong>Participation:</strong> Team-based, not individual</li>
+<li><strong>Team Size:</strong> 2-3 members</li>
+<li><strong>Robot Athlete Technician:</strong> 1 designated technician. Only technician in waiting/competition area</li>
+<li><strong>⚠️ No Line Waiting:</strong> Rest cannot occupy additional spot. Violation = disqualification</li>
+<li><strong>Technician Change:</strong> Allowed before each attempt (optional)</li>
+<li><strong>Age Requirement:</strong> All members ≥12 years old</li>
+<li><strong>Coach:</strong> Must be ≥20 years old</li>
+<li><strong>Assistant Requirement:</strong> 1 assistant for every 3 teams</li>
+<li><strong>Robot Limit:</strong> Only one robot per team. No changing during competition</li>
+<li><strong>No Sharing:</strong> Teams cannot share same robot</li>
+<li><strong>Emergency:</strong> Only microcontroller/electronics replacement with Head Judge permission</li>
+</ul>
+</div>
+<div class="info-section robot-category">
+<h2>🤖 ROBOT ATHLETE – ROBOT CATEGORY</h2>
+<p>Competition conducted separately based on: <strong>Age category</strong></p>
+<p class="division-note">⚠️ <strong>One Division:</strong> All robot types compete together</p>
+</div>
+<div class="info-section robot-specs">
+<h2>⚙️ ROBOT ATHLETE REQUIREMENTS – SPECIFICATIONS</h2>
+<ol>
+<li><strong>⚡ Autonomous:</strong> Robot Athlete must be autonomous</li>
+<li><strong>🌀 EDF MANDATORY:</strong> Robot must be equipped with EDF (Electric Ducted Fan)</li>
+<li><strong>Max Dimensions:</strong> 25cm Width × 25cm Length</li>
+<li><strong>Weight:</strong> Up to 1kg</li>
+<li><strong>Height:</strong> Min 5cm (for sensor detection), Max 15cm</li>
+<li><strong>Control Box:</strong> 25×25cm with ±2mm tolerance. Robot must fit without pressure</li>
+<li><strong>No Damage:</strong> Must not wear/damage track or pose threat to spectators</li>
+<li><strong>Start/Stop Button:</strong> Must have start and stop button</li>
+<li><strong>Line Detection:</strong> Must distinguish black/white using optical sensors</li>
+<li><strong>Controller:</strong> May use controller ONLY for start</li>
+<li><strong>Sensors:</strong> Recommended modulated/filtered sensors to avoid interference</li>
+<li><strong>❌ No External Devices:</strong> External devices for line following not permitted (sensors + mounts allowed)</li>
+<li><strong>❌ No Gases:</strong> Use of gases to increase speed prohibited (dangerous)</li>
+</ol>
+</div>
+<div class="info-section">
+<h2>🧪 TECHNICAL INSPECTION</h2>
+<ol>
+<li>Initial inspection on competition day during Robot Athlete's first attempt</li>
+<li><strong>Program Questions:</strong> Team asked questions about critical program parts
+<ul style="margin-top:8px">
+<li>Must have laptop with robot's program open</li>
+<li>If clear team doesn't understand program = <strong>+20% time penalty</strong></li>
+</ul>
+</li>
+<li>Includes robot examination based on specifications. Non-compliance = automatic disqualification</li>
+<li>After initial inspection, Robot Athlete assigned unique ID code</li>
+<li>Not present at initial inspection = automatic disqualification</li>
+<li>Secondary inspection before each attempt by assistant referee</li>
+<li>If referee determines violation during competition = immediate disqualification right</li>
+</ol>
+</div>
+<div class="info-section arena-section">
+<h2>🏟️ ARENA</h2>
+<p class="secret-note">⚠️ <strong>Arena remains SECRET until competition day!</strong></p>
+<p>Participants expected to develop code/algorithm that can be executed on any arena.</p>
+
+<h3>Arena Specifications:</h3>
+<ol>
+<li><strong>Material:</strong> White wood</li>
+<li><strong>Size:</strong> 5m² to 35m²</li>
+<li><strong>Type:</strong> "Closed" - starting point and finishing point on same side</li>
+<li><strong>Line:</strong> Black adhesive tape, 1.8cm width</li>
+<li><strong>Line Path:</strong> May form curves, right angles, etc.</li>
+<li><strong>Intersections:</strong> Robot must follow straight path. Not allowed to lose line or follow intersection path</li>
+<li><strong>Min Distance:</strong> Line (axially) ≥25cm from edge of boundary</li>
+<li><strong>Min Curve Diameter:</strong> 10cm</li>
+<li><strong>Start/Finish Point:</strong> Where time measurement sensor located</li>
+<li><strong>Empty Space:</strong> 18-20cm on each side of black line (except intersections)</li>
+<li><strong>Intersection Lines:</strong> Perpendicular, at least up to 20cm</li>
+<li><strong>Loops:</strong> Will exist, with line continuing straight (no intersections)</li>
+</ol>
+
+<div class="arena-image-container">
+<img src="{{url_for('static',filename='images/weightlifting/turbo.png')}}" alt="Track" class="arena-img">
+<p><strong>Example Track Layout:</strong> White arena with black line path</p>
+</div>
+
+<h3>Trial Rounds:</h3>
+<p>For testing before competition start, trial rounds available. Technicians have access for specific time period according to schedule announced on competition day.</p>
+</div>
+
+<div class="info-section preparation-section">
+<h2>⏱️ PREPARATION</h2>
+<p>Technician places Robot Athlete at starting point, before time control sensor. Robot Athlete must be in standby mode, ready to start as soon as start button pressed or button on remote control activated.</p>
+</div>
+
+<div class="info-section race-section">
+<h2>🏁 START – RACE PROCEDURE</h2>
+<ol>
+<li>Technician starts Robot Athlete after referee's whistle by pressing Start button on Robot Athlete or through controller</li>
+<li>Timer begins when Robot Athlete passes in front of time control sensor</li>
+<li>Robot Athlete must start within next <strong>5 seconds</strong></li>
+<li>If doesn't start within that time, referee allows only <strong>one restart</strong> (only for first attempt)</li>
+<li>Robot Athlete must begin moving quickly, following black line</li>
+<li>Goal: finish course in shortest possible time</li>
+<li>If exceeds <strong>3 minutes</strong>, referee ends round with whistle. Time recorded as 180 seconds (0 points)</li>
+<li>Robot Athlete (or any part) not allowed to exit boundaries. If happens = attempt failed</li>
+<li>Robot allowed to leave track for max <strong>3 seconds</strong> during run (e.g., turns/zigzagging while following line)</li>
+<li>Robot must continue following line in correct direction. If completely exits track or loses direction = attempt invalid</li>
+<li>If track larger than described dimensions, expected time increased</li>
+<li>If Robot Athlete fails to start, time recorded as 180 seconds (0)</li>
+</ol>
+</div>
+
+<div class="info-section rounds-section">
+<h2>🔁 ROUNDS – ATTEMPTS - COMPETITION PROCEDURE</h2>
+<ul>
+<li><strong>Duration:</strong> 90 minutes (may be extended depending on participants)</li>
+<li>Each Robot Athlete makes repeated attempts according to order announced by organizing committee</li>
+<li>If Technician not present when their turn = loses attempt, next Technician proceeds</li>
+<li>Missed Technician must wait until all other attempts completed for turn to come again</li>
+<li>Before each attempt: secondary technical inspection by assistant referee</li>
+<li>Referee records time of Robot Athletes for each attempt</li>
+<li>Team responsibility to ensure each attempt within allocated time window</li>
+<li>Between attempts: corrections to Robot Athletes and code/algorithm allowed, <strong>but no testing</strong></li>
+</ul>
+</div>
+
+<div class="info-section end-section">
+<h2>❌ END OF A ROUND</h2>
+<p>Round ends in following cases:</p>
+<ol>
+<li>When Robot Athlete passes in front of time control sensor</li>
+<li>If Robot Athlete exits boundaries of arena</li>
+<li>If Robot Athlete loses the line</li>
+<li>If Robot Athlete becomes immobilized for any reason</li>
+<li>If Robot Athlete exceeds 3-minute time limit</li>
+</ol>
+</div>
+
+<div class="info-section disqualification-section">
+<h2>🟥 TEAM DISQUALIFICATION</h2>
+<p>Team disqualified and must withdraw (results not counted in official rankings) if:</p>
+<ul>
+<li>Robot Athlete doesn't comply with specifications and team refuses required adjustments</li>
+<li>Technicians behave inappropriately, use offensive language, provoke, or attack participants/referees</li>
+<li>Discovered Robot Athlete not operating autonomously but remotely controlled (Bluetooth, Wi-Fi, etc.)</li>
+</ul>
+</div>
+
+<div class="info-section allowed-section">
+<h2>✅ ALLOWED / ❌ PROHIBITED</h2>
+
+<h3>✅ ALLOWED:</h3>
+<ul>
+<li>Cleaning wheels with wet cleaning cloths or cleaning liquid and paper</li>
+<li>Use of remote control ONLY to start robot</li>
+<li>Repairs, cleaning, reprogramming between attempts</li>
+</ul>
+
+<h3>❌ PROHIBITED:</h3>
+<ul>
+<li>Parts/components that could harm other competitors</li>
+<li>Glue to increase traction:
+<ul style="margin-left:20px">
+<li>Cleaning wheels with adhesive tapes leaving glue residue</li>
+<li>Use of suction cups</li>
+<li>Any adhesion method violating regulations</li>
+</ul>
+</li>
+<li>Tires/parts contacting field must not lift and hold A4 paper (80g/m²) >2 seconds</li>
+<li>Use of gases (canisters, etc.) to increase speed</li>
+<li>Robot breaking/falling apart into pieces during match. Even if finishes = time recorded as 180 seconds (0)</li>
+<li>Connecting robot to external electronic devices via:
+<ul style="margin-left:20px">
+<li>Bluetooth (except start/stop via controller)</li>
+<li>Wi-Fi</li>
+<li>Any other wireless technology</li>
+</ul>
+</li>
+<li>Mapping the track</li>
+<li>Touching Robot Athlete during attempt</li>
+<li>Expanding robot dimensions during attempt (mechanically or actively)</li>
+</ul>
+</div>
+
+<div class="info-section winners-section">
+<h2>🏆 WINNERS</h2>
+<p>Winners announced separately for each <strong>age category</strong>:</p>
+<div class="podium">
+<div class="podium-item"><div class="medal gold">🥇</div><p class="place">1st Place</p></div>
+<div class="podium-item"><div class="medal silver">🥈</div><p class="place">2nd Place</p></div>
+<div class="podium-item"><div class="medal bronze">🥉</div><p class="place">3rd Place</p></div>
+</div>
+<p>🏁 Ranking determined based on <strong>shortest time achieved</strong> by Robot Athletes.</p>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.competition-detail{min-height:100vh;background:#f8fafc;padding-bottom:60px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.back-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#ef4444;padding:10px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-bottom:25px;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .3s}
+.back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(239,68,68,.3)}
+.competition-header{text-align:center;margin-bottom:35px}
+.header-icon{font-size:4rem;margin-bottom:15px}
+.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
+.section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}
+.age-categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.category-card{background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);padding:20px;border-radius:12px;text-align:center;color:#fff;transition:all .3s}
+.category-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(239,68,68,.3)}
+.category-card h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.category-card .age{font-size:1rem;margin-bottom:4px;opacity:.95}
+.category-card .level{font-size:.8125rem;opacity:.85}
+.notes-section{background:#fee2e2;padding:20px;border-radius:12px;border-left:4px solid #ef4444;margin-bottom:20px}
+.notes-section h2{font-size:1.25rem;font-weight:800;color:#991b1b;margin-bottom:12px}
+.notes-section ul{list-style:none;padding:0}
+.notes-section li{padding:6px 0;color:#7f1d1d;font-weight:500;font-size:.9375rem}
+.register-section{text-align:center;margin:25px 0;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.register-btn,.guide-btn{display:inline-block;padding:15px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.125rem;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:all .3s}
+.register-btn{background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);color:#fff}
+.guide-btn{background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);color:#fff}
+.register-btn:hover,.guide-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.rule-section{background:#fee2e2;padding:25px;border-radius:15px;margin-bottom:20px;border:3px solid #dc2626}
+.rule-section h2{font-size:1.5rem;font-weight:800;color:#991b1b;margin-bottom:15px}
+.rule-section p{color:#7f1d1d;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.rule-section blockquote{background:#fff;padding:15px;border-left:4px solid #dc2626;margin:15px 0;font-style:italic;font-weight:600;color:#991b1b}
+.info-section{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.info-section h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:18px;border-bottom:3px solid #ef4444;padding-bottom:8px}
+.info-section h3{font-size:1.25rem;font-weight:700;color:#475569;margin-top:20px;margin-bottom:12px}
+.info-section p{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.info-section ul,.info-section ol{padding-left:22px;margin-bottom:15px}
+.info-section li{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:8px}
+.goal-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.robot-category{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.division-note{background:#dbeafe;padding:12px;border-radius:8px;border-left:4px solid #3b82f6;font-weight:700;margin-top:15px}
+.robot-specs{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid #3b82f6}
+.arena-section{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:3px solid #8b5cf6}
+.secret-note{background:#fef3c7;padding:12px;border-radius:8px;border-left:4px solid #f59e0b;font-weight:700;color:#92400e;margin-bottom:15px}
+.arena-image-container{margin:20px 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.arena-img{width:100%;max-width:600px;height:auto;display:block;margin:0 auto}
+.arena-image-container p{padding:15px;background:#f8fafc;font-size:.875rem;color:#475569;margin:0}
+.preparation-section{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:3px solid #ec4899}
+.race-section{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border:3px solid #10b981}
+.rounds-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.end-section{background:linear-gradient(135deg,#fee2e2 0%,#fecaca 100%);border:3px solid #ef4444}
+.disqualification-section{background:#fee2e2;border:3px solid #dc2626}
+.disqualification-section h2{color:#991b1b;border-bottom-color:#dc2626}
+.allowed-section{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border:3px solid #16a34a}
+.winners-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.podium{display:flex;justify-content:center;gap:25px;margin:20px 0}
+.podium-item{text-align:center}
+.medal{font-size:3rem;margin-bottom:8px}
+.place{font-size:1.125rem;font-weight:700;color:#92400e}
+@media (max-width:768px){
+.competition-title{font-size:1.75rem}
+.competition-subtitle{font-size:1rem}
+.section-box,.info-section{padding:18px}
+.age-categories-grid{grid-template-columns:1fr}
+.register-section{flex-direction:column;align-items:center}
+.podium{flex-direction:column;gap:15px}
+}
+</style>
+{% endblock %}
+
+
+

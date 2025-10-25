@@ -1,0 +1,417 @@
+{% extends "base.html" %}
+
+{% block title %}Sumo Wrestling - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <div class="competition-header">
+            <div class="header-icon">⚔️🤖</div>
+            <h1 class="competition-title">Mega WRESTLING</h1>
+            <!--<p class="competition-subtitle">Autonomous Robot Mega Combat Championship</p>-->
+        </div>
+
+        <div class="video-section">
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/Lj8unsnYuAg"
+      title="MRC Wrestling Mega Competition Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORY</h2>
+            <div class="age-category-single">
+                <div class="category-card-single">
+                    <h3>SENIOR & ADULTS</h3>
+                    <p class="age">15+ years old</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-section">
+            <a href="https://www.he-ro.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
+        </div>
+
+        <div class="info-section goal-section">
+            <h2>🎯 GOAL</h2>
+            <p>The aim of Robot Athletes is to <strong>knock out the opponent</strong> on the specially designed wrestling ring and be declared the winner.</p>
+            <p>Wrestling does not require <strong>damage or destruction</strong> of opponent, but only <strong>displacement outside the ring</strong>.</p>
+            <p class="warning-note">⚠️ Robot Athletes violating core values will be disqualified.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>👥 TEAMS</h2>
+            <h3>1. Team Formation</h3>
+            <ul>
+                <li><strong>1.1 Teams Only:</strong> Teams participate (not individuals)</li>
+                <li><strong>1.2 Team Size:</strong> 2-3 members per team</li>
+                <li><strong>1.3 Chief Coach:</strong> One member as Chief Coach responsible for communication, technical inspection, and robot handling</li>
+            </ul>
+        </div>
+
+        <div class="info-section robot-specs">
+            <h2>⚙️ ROBOT ATHLETE REQUIREMENTS</h2>
+            <p class="intro-note">Competition for Robot Athletes regardless of robotic kit or hardware. All compete together in each age division.</p>
+            
+            <h3>2.1. GENERAL SPECIFICATIONS</h3>
+            <ol>
+                <li>Any design allowed (if not restricted by 2.2)</li>
+                <li><strong>Dimensions:</strong> 20cm × 20cm (200mm). <strong>No height limit</strong></li>
+                <li><strong>Weight:</strong> Under 3kg (3000g)</li>
+                <li><strong>Expansion:</strong> May expand after start but must not split. Legs must not extend. Violation = lose match</li>
+                <li><strong>Small Parts:</strong> Parts <5g that fall won't stop match</li>
+                <li><strong>⚡ Autonomous:</strong> All control components in robot. No external control</li>
+                <li><strong>ID Number:</strong> Must display organizer-supplied number</li>
+            </ol>
+
+            <h3>2.2. RESTRICTIONS</h3>
+            <ol>
+                <li><strong>🛑 IR Kill Switch (MANDATORY):</strong> Must have IR kill switch for judge. Not working/missing = <strong>disqualification</strong></li>
+                <li><strong>No Jamming:</strong> IR LEDs to saturate sensors not allowed</li>
+                <li><strong>No Damage:</strong> Components damaging field not permitted</li>
+                <li><strong>No Projectiles:</strong> No liquid/powder/gas throwing devices</li>
+                <li><strong>No Combustibles:</strong> Prohibited</li>
+                <li><strong>Sticky Test:</strong> Must not hold A4 paper (80g/m²) >2 seconds</li>
+                <li><strong>✅ Downforce Allowed:</strong> Vacuum pumps, magnets permitted</li>
+                <li><strong>Blade Color:</strong> Cannot be white</li>
+                <li><strong>Remote Start:</strong> Started by referee remote</li>
+            </ol>
+        </div>
+
+        <div class="info-section">
+            <h2>🧪 2.3 TECHNICAL CONTROL</h2>
+            <ol>
+                <li>Initial inspection on game day at announced time</li>
+                <li>Control before each phase (preliminary, qualifying, final)</li>
+                <li>Late arrival = automatic disqualification</li>
+                <li>Only coaches responsible for submission</li>
+                <li>Non-compliance = automatic disqualification</li>
+                <li>Must demonstrate program to committee</li>
+            </ol>
+        </div>
+
+        <div class="info-section track-design">
+            <h2>🏟️ TRACK</h2>
+            <h3>3. Competition Track Design</h3>
+            <h4>3.1. Track Overview</h4>
+            <ul>
+                <li><strong>Shape:</strong> Circular</li>
+                <li><strong>Diameter:</strong> 1540mm</li>
+                <li><strong>Color:</strong> Black with white boundary</li>
+            </ul>
+
+            <h4>3.3. Specifications</h4>
+            <ol>
+                <li><strong>Material:</strong> 5mm steel, painted black</li>
+                <li><strong>Contour:</strong> White line, 5cm (50mm) width</li>
+                <li><strong>Height:</strong> Placed on wood at 5cm (50mm)</li>
+                <li><strong>Tolerance:</strong> ±5%</li>
+            </ol>
+
+            <div class="track-image-section">
+                <h3>📷 SUMO RING & ROBOT REFERENCE</h3>
+                <div class="dual-image-grid">
+                    <div class="image-container">
+                        <img src="{{ url_for('static', filename='images/weightlifting/wrestling humanoid.png') }}" alt="Ring" class="track-image">
+                        <div class="image-caption">
+                            <h4>🏟️ Ring Specifications</h4>
+                            <p><strong>Inner:</strong> 200mm | <strong>Ring:</strong> 1540mm</p>
+                            <p><strong>Material:</strong> Black steel (5mm)</p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="{{ url_for('static', filename='images/weightlifting/robot_example.png') }}" alt="Robot" class="track-image">
+                        <div class="image-caption">
+                            <h4>⚔️ Robot Example</h4>
+                            <p><strong>Size:</strong> 20×20cm | <strong>Weight:</strong> 3kg max</p>
+                            <p><strong>Autonomous operation</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>🏆 COMPETITION PROCEDURE</h2>
+            <h3>4. Format</h3>
+            <ol>
+                <li>Bout consists of <strong>3 rounds</strong>, total time <strong>3 minutes</strong> (max 1 min extension)</li>
+                <li>Overtime: First point wins, or judges decide</li>
+                <li>If one robot doesn't start: restart. Still doesn't start = other wins</li>
+            </ol>
+
+            <h3>4.1. Course of Competition</h3>
+            <ol>
+                <li>Robots divided into groups. Group/quarter/final system</li>
+                <li>Random matching by lottery after official start</li>
+                <li><strong>2 rescheduling breaks (5 min each) per team</strong></li>
+                <li>⚠️ <strong>DON'T BE LATE! If not at field in 5 min = DISQUALIFIED!</strong></li>
+                <li><strong>2 coaches per team</strong> in waiting/playing area</li>
+                <li><strong>🥽 Mandatory:</strong> Gloves and safety glasses. Missing = disqualification</li>
+                <li>Max 1 min break between rounds for cleaning</li>
+                <li>No touching robot after placement until referee signals</li>
+            </ol>
+        </div>
+
+        <div class="info-section">
+            <h2>🔍 4.2. ROBOT REQUIREMENTS CHECK</h2>
+            <ol>
+                <li>Check dimensions: 20.3×20.3cm box/frame without bottom. <strong>No height limit</strong></li>
+                <li>Weigh on digital scale. Max 3005g</li>
+                <li>Check protective equipment</li>
+                <li>Place unique number on outer casing</li>
+                <li>Demonstrate program to committee</li>
+                <li>Robot not restricted after approval. Can test/program without changing dimensions</li>
+                <li>Photo taken of each robot with visible number</li>
+            </ol>
+        </div>
+
+        <div class="info-section match-flow">
+            <h2>🎮 4.3. MATCH FLOW</h2>
+            <h3>1. Robot Placement</h3>
+            <ul>
+                <li>Teams place robots simultaneously after referee signal</li>
+                <li>Robots placed <strong>facing each other, 50cm distance</strong></li>
+                <li>After placement, coaches retreat to safe area</li>
+            </ul>
+
+            <h3>2. Beginning</h3>
+            <ul>
+                <li>Referee checks start-stop modules</li>
+                <li>Counts 3-2-1 and presses start</li>
+                <li>Launch after trainers in safe area</li>
+            </ul>
+
+            <h3>5. Race Time</h3>
+            <ul>
+                <li><strong>Duration:</strong> 4 minutes total</li>
+                <li><strong>Extension:</strong> Max 1 minute if requested</li>
+            </ul>
+        </div>
+
+        <div class="info-section scoring-section">
+            <h2>📊 4.4 SCORING</h2>
+            <p><strong>A point is given when:</strong></p>
+            <ol>
+                <li>Team legally forces opponent's body to touch area outside ring</li>
+                <li>Opposing robot touches space outside ring by itself</li>
+                <li>Opposing robot completely left field, even if other touched outside first (after contact)</li>
+                <li>Opposing robot damaged/unable to continue (coach announces)</li>
+                <li>Both leave field simultaneously: robot being pushed out loses (even if pusher touches outside first)</li>
+            </ol>
+
+            <h3>Judge Decision Criteria:</h3>
+            <ol>
+                <li>Technical advantages in movement/operation</li>
+                <li>Penalty points during match</li>
+                <li>Attitude of players</li>
+            </ol>
+        </div>
+
+        <div class="info-section">
+            <h2>🏆 4.5. WINNER DETERMINATION</h2>
+            <ol>
+                <li>Robot with most points wins</li>
+                <li>In case of knockout</li>
+                <li>Tie: referee awards victory based on tactics, aggression, activity</li>
+                <li>No points: judge may decide no winner</li>
+            </ol>
+        </div>
+
+        <div class="info-section replay-section">
+            <h2>🔄 4.6. REPLAY CONDITIONS</h2>
+            <ol>
+                <li><strong>Robot doesn't start:</strong> Restart. Still doesn't = other wins</li>
+                <li><strong>Confused/wandering (10s):</strong> Restart. Repeats = most active wins</li>
+                <li><strong>Fast stuck on slow (5s):</strong> Restart. Repeats = faster attacker wins</li>
+                <li><strong>Two fast stuck (5s):</strong> Restart. Repeats = fastest attacker wins</li>
+                <li><strong>Robot has 1 pt, next no winner:</strong> Only 2 rematches. No winner = 1-pt robot wins match</li>
+                <li><strong>Both stop (5s):</strong> First stopper declared unmotivated. Opponent gets point</li>
+                <li><strong>Both touch outside simultaneously:</strong> Can't determine first = rematch</li>
+            </ol>
+        </div>
+
+        <div class="info-section repairs-section">
+            <h2>🛠️ 4.7. REPAIRS & MODIFICATIONS</h2>
+            <p><strong>From approval until match over (all rounds):</strong></p>
+            <ul>
+                <li>❌ No repairs during match</li>
+                <li>❌ No battery change/charge during match</li>
+                <li>❌ No blade change during match</li>
+                <li>❌ No reprogramming during match</li>
+                <li>❌ Detached blade: must continue without it</li>
+                <li>✅ Max 1 min break between rounds for cleaning/configuration</li>
+                <li>✅ Battery/repairs/replacements after match ends</li>
+                <li>If robot breaks and can't continue = opponent wins</li>
+            </ul>
+        </div>
+
+        <div class="info-section violations-section">
+            <h2>⚠️ 4.8-4.9. VIOLATIONS & OFFENSES</h2>
+            <h3>Major Violations:</h3>
+            <ul>
+                <li>Insults to opponent/judges</li>
+                <li>Missing protective equipment</li>
+                <li>Not retreating to safe area</li>
+            </ul>
+
+            <h3>Minor Offenses (Warning):</h3>
+            <ol>
+                <li>Enter ring during match (unless referee stopped)</li>
+                <li>Demand stop without reason</li>
+                <li>Against referee judgment</li>
+                <li>Actions contrary to fair-play</li>
+                <li>Leave waiting area without notifying</li>
+                <li><strong>2 warnings = point to opponent OR disqualification</strong></li>
+            </ol>
+        </div>
+
+        <div class="info-section">
+            <h2>⚖️ 5. OBJECTIONS & FLEXIBILITY</h2>
+            <ul>
+                <li>No objections against judges' decisions</li>
+                <li>Coaches may submit objections to Committee before competition end if doubts about rules</li>
+                <li>Rules flexible enough to accommodate changes if published prior and maintained consistently</li>
+            </ul>
+        </div>
+
+        <div class="info-section resources-section">
+            <h2>📥 REMOTE START MODULE</h2>
+            <p><strong>IR Kill Switch Information:</strong></p>
+            <p>Detailed information about using initial modules at: <a href="http://www.startmodule.com" target="_blank">www.startmodule.com</a></p>
+        </div>
+
+        <div class="info-section winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>Winners determined by <strong>highest points</strong> in group/quarter/final system:</p>
+            <div class="podium">
+                <div class="podium-item">
+                    <div class="medal gold">🥇</div>
+                    <p class="place">1st Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal silver">🥈</div>
+                    <p class="place">2nd Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal bronze">🥉</div>
+                    <p class="place">3rd Place</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .competition-detail { min-height: 100vh; background: #f8fafc; padding-bottom: 60px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .back-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: #dc2626; padding: 10px 20px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+    .back-btn:hover { transform: translateX(-5px); box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); }
+    .competition-header { text-align: center; margin-bottom: 35px; }
+    .header-icon { font-size: 4rem; margin-bottom: 15px; }
+    .competition-title { font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+    .competition-subtitle { font-size: 1.25rem; color: #64748b; font-weight: 600; }
+        /* Video Section */
+    .video-section {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .video-section {
+            padding: 18px;
+        }
+    }
+
+    .section-box { background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .section-box h2 { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 20px; text-align: center; }
+    .age-category-single { display: flex; justify-content: center; }
+    .category-card-single { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); padding: 25px 50px; border-radius: 15px; text-align: center; color: white; transition: all 0.3s ease; min-width: 300px; }
+    .category-card-single:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3); }
+    .category-card-single h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .category-card-single .age { font-size: 1.125rem; opacity: 0.95; }
+    .register-section { text-align: center; margin: 25px 0; }
+    .register-btn { display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.125rem; box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3); transition: all 0.3s ease; }
+    .register-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4); }
+    .info-section { background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .info-section h2 { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 18px; border-bottom: 3px solid #dc2626; padding-bottom: 8px; }
+    .info-section h3 { font-size: 1.25rem; font-weight: 700; color: #475569; margin-top: 20px; margin-bottom: 12px; }
+    .info-section p { color: #475569; font-size: 0.9375rem; line-height: 1.7; margin-bottom: 12px; }
+    .info-section ul, .info-section ol { padding-left: 22px; margin-bottom: 15px; }
+    .info-section li { color: #475569; font-size: 0.9375rem; line-height: 1.7; margin-bottom: 8px; }
+    .goal-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; }
+    .warning-note { background: #fee2e2; padding: 12px; border-radius: 8px; border-left: 4px solid #dc2626; color: #991b1b; font-weight: 600; margin-top: 15px; }
+    .intro-note { background: #dbeafe; padding: 12px; border-radius: 8px; border-left: 4px solid #3b82f6; color: #1e40af; font-weight: 600; }
+    .robot-specs { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); border: 3px solid #8b5cf6; }
+    .track-design { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; }
+    .track-image-section { margin-top: 20px; background: white; padding: 20px; border-radius: 12px; }
+    .track-image-section h3 { font-size: 1.25rem; font-weight: 800; color: #1e293b; text-align: center; margin-bottom: 18px; }
+    .dual-image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .image-container { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+    .track-image { width: 100%; height: auto; display: block; }
+    .image-caption { padding: 18px; background: #f8fafc; border-top: 3px solid #3b82f6; }
+    .image-caption h4 { font-size: 1.125rem; font-weight: 800; color: #1e40af; margin: 0 0 12px 0; }
+    .image-caption p { font-size: 0.9375rem; color: #475569; margin-bottom: 6px; }
+    .match-flow { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 3px solid #16a34a; }
+    .scoring-section { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border: 3px solid #ec4899; }
+    .replay-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; }
+    .repairs-section { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border: 3px solid #6366f1; }
+    .violations-section { background: #fee2e2; border: 3px solid #dc2626; }
+    .violations-section h2 { color: #991b1b; border-bottom-color: #dc2626; }
+    .resources-section { background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); border: 3px solid #f97316; }
+    .resources-section a { color: #ea580c; font-weight: 700; text-decoration: none; }
+    .resources-section a:hover { text-decoration: underline; }
+    .winners-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; }
+    .podium { display: flex; justify-content: center; gap: 25px; margin: 20px 0; }
+    .podium-item { text-align: center; }
+    .medal { font-size: 3rem; margin-bottom: 8px; }
+    .place { font-size: 1.125rem; font-weight: 700; color: #92400e; }
+    @media (max-width: 768px) {
+        .competition-title { font-size: 1.75rem; }
+        .competition-subtitle { font-size: 1rem; }
+        .section-box, .info-section { padding: 18px; }
+        .dual-image-grid { grid-template-columns: 1fr; }
+        .podium { flex-direction: column; gap: 15px; }
+    }
+</style>
+{% endblock %}
+
+
+
+

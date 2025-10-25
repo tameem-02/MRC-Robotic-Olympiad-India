@@ -1,0 +1,262 @@
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('main.home') }}" class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Robofest India Logo" class="logo-img" onerror="this.style.display='none'">
+                    <span class="logo-text">H.E.R.O INDIA</span>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('main.home') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ url_for('competitions.competitions_list') }}" class="nav-link">Competitions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('main.profile') }}" class="nav-link">About</a></li>
+                   {# <li class="nav-item"><a href="{{ url_for('main.partnerships') }}" class="nav-link">Partnerships</a></li> #}
+
+                    <!--<li class="nav-item"><a href="{{ url_for('main.contact') }}" class="nav-link">Contact</a></li>-->
+                    <li class="nav-item nav-item-cta">
+                        <!-- If your link is the Google Form -->
+                    <a href="https://script.google.com/macros/s/AKfycbzZsT-XY9Dx4uTxAt0rFWIzkIrWnsm-PAEH5oGrE2Xge38ddSgQaf9WaG3S5di6gEZPgw/exec" target="_blank" class="btn btn-register">Register Now</a>
+
+<!-- OR if you have a different registration page -->
+                    
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .header {
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        transition: transform 0.3s ease;
+    }
+    
+    .logo:hover {
+        transform: scale(1.05);
+    }
+    
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+    
+    .logo-text {
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1001;
+    }
+    
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .nav-item {
+        position: relative;
+    }
+    
+    .nav-link {
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--accent-color);
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: var(--bg-light);
+        color: var(--primary-color);
+    }
+    
+    .nav-link:hover::after {
+        width: 80%;
+    }
+    
+    /* Register Button Styling */
+    .btn-register {
+        background: linear-gradient(135deg, var(--accent-color) 0%, #d97706 100%);
+        color: white;
+        padding: 10px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+        border: none;
+        display: inline-block;
+    }
+    
+    .btn-register:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(245, 158, 11, 0.4);
+        background: linear-gradient(135deg, #d97706 0%, var(--accent-color) 100%);
+    }
+    
+    .nav-item-cta {
+        margin-left: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .mobile-menu-btn {
+            display: flex;
+        }
+        
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            padding: 80px 20px 20px;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            gap: 10px;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .nav-menu.active {
+            left: 0;
+        }
+        
+        .nav-item {
+            width: 100%;
+        }
+        
+        .nav-item-cta {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        
+        .nav-link {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 12px 20px;
+        }
+        
+        .btn-register {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+        
+        /* Overlay when mobile menu is open */
+        .nav-menu.active::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 280px;
+            width: calc(100vw - 280px);
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        
+        .logo-text {
+            font-size: 1.25rem;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .nav-menu {
+            width: 100%;
+        }
+        
+        .nav-menu.active::before {
+            left: 100%;
+            width: 0;
+        }
+    }
+</style>
+
+
+
+
+<!--i want this file puch in github in githhub give full process when i share link this any one it has to show my website not any code give full  process-->

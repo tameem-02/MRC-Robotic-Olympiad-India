@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+{% block title %}About Robofest{% endblock %}
+
+{% block content %}
+{% include 'components/hero.html' with context %}
+
+<section class="section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="content-heading">About Robofest</h2>
+                <p class="content-paragraph">
+                    Robofest India is NovatechRobo's autonomous robotics program for students in 2nd grade through college. 
+                    Student teams design, construct, and program their robots to act independently and compete for trophies 
+                    in a variety of competitions.
+                </p>
+                <p class="content-paragraph">
+                    Robofest's mission is to generate excitement among young people for Science, Technology, Engineering, 
+                    and Mathematics (STEM), develop creativity and problem solving skills, and prepare them to excel in 
+                    higher education and technological careers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background-color: var(--bg-light);">
+    <div class="container">
+        <h2 class="section-title">What Makes Robofest Programs Unique?</h2>
+        <p class="section-subtitle">Comprehensive programs designed to support robotics education at every level</p>
+        
+        <div class="grid grid-2 offerings-grid">
+            <div class="card offering-card">
+                <div class="offering-icon">👨‍🎓</div>
+                <h3 class="offering-title">Students Role</h3>
+                <p class="offering-text">
+                    While adult mentorship is encouraged, students design, construct and program the robots 
+                    and students make all decisions during competitions.
+                </p>
+            </div>
+            
+            <div class="card offering-card">
+                <div class="offering-icon">🔧</div>
+                <h3 class="offering-title">It's Flexible</h3>
+                <p class="offering-text">
+                    Any type of robot kit, materials, actuators, and sensors are allowed. Robots can be 
+                    programmed with any programming language.
+                </p>
+            </div>
+            
+            <div class="card offering-card">
+                <div class="offering-icon">💰</div>
+                <h3 class="offering-title">Affordable</h3>
+                <p class="offering-text">
+                    Team registration is ₹90 per team. Reusing parts and old kits are encouraged. Teams can 
+                    be formed by any organization, school, home schools, clubs, or civic group.
+                </p>
+            </div>
+            
+            <div class="card offering-card">
+                <div class="offering-icon">🏅</div>
+                <h3 class="offering-title">Everyone is Recognized</h3>
+                <p class="offering-text">
+                    All registered participants receive personalized medals and certificates. Winners of the 
+                    qualifying and championship rounds receive trophies.
+                </p>
+            </div>
+            
+            <div class="card offering-card">
+                <div class="offering-icon">🎯</div>
+                <h3 class="offering-title">Something for Everyone</h3>
+                <p class="offering-text">
+                    Robofest offers a wide variety of programs that fit many robotics experience levels and 
+                    interests. Advanced or novice, we have something for you!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Scholarship Opportunities</h2>
+        
+        <div class="scholarship-container">
+            <div class="scholarship-card">
+                <h3 class="scholarship-title">🎓 Robofest Participant LTU Scholarship</h3>
+                <div class="scholarship-content">
+                    <p class="scholarship-description">
+                        High School Seniors who have participated in Robofest at any time in any division, and 
+                        who are planning to attend LTU for any degree program can apply for a <strong>$3,000 annual 
+                        renewable scholarship</strong> (for a total of $12,000 over 4 years).
+                    </p>
+                    
+                    <div class="requirements-box">
+                        <h4 class="requirements-title">Requirements:</h4>
+                        <ul class="requirements-list">
+                            <li>Submit an application and a letter of recommendation from one of your Robofest adult coaches or mentors</li>
+                            <li>400-word essay describing your Robofest experience and your career goals</li>
+                            <li>Student must meet LTU admission and scholarship criteria</li>
+                            <li><strong>Deadline: April 1st</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <p class="scholarship-note">
+                        Robofest can assist with the letter if requested. For more information and to submit an application, 
+                        see "Other LTU Scholarships" at 
+                        <a href="https://www.ltu.edu/financial-aid/scholarships-freshmen" target="_blank" class="scholarship-link">
+                            ltu.edu/financial-aid/scholarships-freshmen
+                        </a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="scholarship-card championship-card">
+                <h3 class="scholarship-title">🏆 Robofest Champion LTU Scholarship</h3>
+                <div class="scholarship-content">
+                    <p class="scholarship-description">
+                        Each team member of the top 3 Senior Division Game, Exhibition, RoboArts, RoboMed, UMC and VCC 
+                        teams at the World Championship events will receive a scholarship certificate to attend LTU:
+                    </p>
+                    
+                    <div class="prize-grid">
+                        <div class="prize-card first-place">
+                            <div class="prize-position">1st Place</div>
+                            <div class="prize-amount">$20,000</div>
+                            <div class="prize-period">annual scholarship</div>
+                            <div class="prize-total">($80,000 for 4 years)</div>
+                        </div>
+                        
+                        <div class="prize-card second-place">
+                            <div class="prize-position">2nd Place</div>
+                            <div class="prize-amount">$16,000</div>
+                            <div class="prize-period">annual scholarship</div>
+                            <div class="prize-total">($64,000 for 4 years)</div>
+                        </div>
+                        
+                        <div class="prize-card third-place">
+                            <div class="prize-position">3rd Place</div>
+                            <div class="prize-amount">$14,000</div>
+                            <div class="prize-period">annual scholarship</div>
+                            <div class="prize-total">($56,000 for 4 years)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scholarship-conditions">
+                        <h4 class="conditions-title">Conditions:</h4>
+                        <ul class="conditions-list">
+                            <li>Students must enroll at LTU the same year as their High School graduation</li>
+                            <li>Must meet LTU admission and scholarship criteria of High School GPA of 3.0 or better</li>
+                            <li>Scholarship is renewable each year provided the student is enrolled for at least 12 credit hours each semester</li>
+                            <li>Must maintain at least a 3.0 GPA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-content {
+        margin-bottom: 60px;
+    }
+    
+    .about-text {
+        max-width: 800px;
+        margin: 0 auto 60px;
+    }
+    
+    .content-heading {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: var(--text-color);
+        text-align: center;
+    }
+    
+    .content-paragraph {
+        color: var(--text-light);
+        line-height: 1.8;
+        font-size: 1.0625rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .offerings-grid {
+        margin-top: 50px;
+    }
+    
+    .offering-card {
+        text-align: center;
+    }
+    
+    .offering-icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .offering-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--text-color);
+    }
+    
+    .offering-text {
+        color: var(--text-light);
+        line-height: 1.7;
+    }
+    
+    .scholarship-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 50px;
+    }
+    
+    .scholarship-card {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        border-left: 6px solid var(--primary-color);
+    }
+    
+    .championship-card {
+        border-left-color: var(--accent-color);
+    }
+    
+    .scholarship-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: var(--text-color);
+    }
+    
+    .scholarship-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .scholarship-description {
+        color: var(--text-light);
+        line-height: 1.8;
+        font-size: 1.0625rem;
+    }
+    
+    .scholarship-description strong {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+    
+    .requirements-box,
+    .scholarship-conditions {
+        background: var(--bg-light);
+        padding: 25px;
+        border-radius: 12px;
+    }
+    
+    .requirements-title,
+    .conditions-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--text-color);
+    }
+    
+    .requirements-list,
+    .conditions-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .requirements-list li,
+    .conditions-list li {
+        color: var(--text-light);
+        line-height: 1.7;
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .requirements-list li:before,
+    .conditions-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--success-color);
+        font-weight: 700;
+    }
+    
+    .scholarship-note {
+        color: var(--text-light);
+        line-height: 1.7;
+        font-size: 0.9375rem;
+    }
+    
+    .scholarship-link {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    
+    .scholarship-link:hover {
+        color: var(--secondary-color);
+    }
+    
+    .prize-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin: 25px 0;
+    }
+    
+    .prize-card {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 30px 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+    }
+    
+    .prize-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .first-place {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    }
+    
+    .second-place {
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    }
+    
+    .third-place {
+        background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+    }
+    
+    .prize-position {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        opacity: 0.95;
+    }
+    
+    .prize-amount {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+    
+    .prize-period {
+        font-size: 0.9375rem;
+        margin-bottom: 8px;
+        opacity: 0.9;
+    }
+    
+    .prize-total {
+        font-size: 0.875rem;
+        opacity: 0.85;
+    }
+    
+    @media (max-width: 768px) {
+        .scholarship-card {
+            padding: 25px 20px;
+        }
+        
+        .scholarship-title {
+            font-size: 1.5rem;
+        }
+        
+        .prize-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% set title = "About Robofest" %}
+{% set subtitle = "Generating excitement for STEM through autonomous robotics competitions" %}

@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Robofest India{% endblock %}
+
+{% block content %}
+
+<!-- Featured Video Section -->
+<section class="section fullscreen-video-section" style="background-color: var(--bg-light); padding-top: 100px;">
+    <div class="container-full">
+        <h2 class="section-title">Watch H.E.R.O in Action</h2>
+        <p class="section-subtitle">Experience the excitement of our robotics competitions</p>
+        
+        <div class="featured-video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/oKCFd9VJs_Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Welcome to Robofest India</h2>
+        <p class="section-subtitle">
+            India's premier autonomous robotics program for students from 2nd grade through college. 
+            Design, construct, and program robots to compete in exciting challenges that develop STEM skills, 
+            creativity, and problem-solving abilities.
+        </p>
+        
+        <div class="grid grid-3 features-grid">
+            <div class="card feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3 class="feature-title">Competitions</h3>
+                <p class="feature-text">
+                    Participate in exciting autonomous robotics competitions including Bottle Sumo, Building Bridges, 
+                    RoboMed, Exhibition, and RoboArts.
+                </p>
+            </div>
+            
+            <div class="card feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3 class="feature-title">Scholarships</h3>
+                <p class="feature-text">
+                    Winners can receive scholarships up to $80,000 for enrollment at Lawrence Technological University 
+                    in Michigan, USA.
+                </p>
+            </div>
+            
+            <div class="card feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3 class="feature-title">Community</h3>
+                <p class="feature-text">
+                    Join a vibrant community of robotics enthusiasts, educators, and industry professionals 
+                    from around the world.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background-color: var(--bg-light);">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <p class="section-subtitle">Don't miss our exciting robotics competitions and educational programs</p>
+        
+        <div class="grid grid-3">
+            {% for event in events %}
+                {% include 'components/event_card.html' %}
+            {% endfor %}
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="{{ url_for('competitions.competitions_list') }}" class="btn btn-primary">View All Competitions</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="stats-showcase">
+            <div class="stat-box">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Students Participated</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">₹90</div>
+                <div class="stat-label">Registration Fee</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Flexibility</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
+    <div class="container">
+        <div class="cta-box">
+            <h2 class="cta-title">Ready to Start Your Robotics Journey?</h2>
+            <p class="cta-text">
+                Join thousands of students who are shaping the future through autonomous robotics competitions. 
+                Register your team today for just ₹90!
+            </p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('competitions.competitions_list') }}" class="btn btn-cta-primary">Browse Competitions</a>
+                <a href="https://script.google.com/macros/s/AKfycbzZsT-XY9Dx4uTxAt0rFWIzkIrWnsm-PAEH5oGrE2Xge38ddSgQaf9WaG3S5di6gEZPgw/exec" target="_blank" class="btn btn-cta-secondary">Register Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Full Screen Container */
+    .container-full {
+        width: 100%;
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    /* Full Screen Video Section */
+    .fullscreen-video-section .section-title,
+    .fullscreen-video-section .section-subtitle {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+    }
+    
+    /* Featured Video Section - Full Width */
+    .featured-video-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .features-grid {
+        margin-top: 50px;
+    }
+    
+    .feature-card {
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-8px);
+    }
+    
+    .feature-icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .feature-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--text-color);
+    }
+    
+    .feature-text {
+        color: var(--text-light);
+        line-height: 1.7;
+    }
+    
+    .stats-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .stat-box {
+        text-align: center;
+        padding: 40px 30px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+    
+    .stat-box:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+        color: var(--text-light);
+        font-weight: 600;
+    }
+    
+    .cta-box {
+        color: white;
+        padding: 60px 40px;
+        border-radius: 16px;
+        text-align: center;
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    
+    .cta-text {
+        font-size: 1.125rem;
+        margin-bottom: 35px;
+        opacity: 0.95;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn-cta-primary {
+        background: white;
+        color: var(--primary-color);
+        padding: 14px 32px;
+        font-size: 1.0625rem;
+    }
+    
+    .btn-cta-primary:hover {
+        background: var(--bg-light);
+        color: var(--secondary-color);
+    }
+    
+    .btn-cta-secondary {
+        background: var(--accent-color);
+        color: white;
+        padding: 14px 32px;
+        font-size: 1.0625rem;
+    }
+    
+    .btn-cta-secondary:hover {
+        background: #d97706;
+    }
+    
+    @media (max-width: 768px) {
+        .cta-box {
+            padding: 40px 20px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+        }
+        
+        .cta-text {
+            font-size: 1rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-buttons .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+{% endblock %}

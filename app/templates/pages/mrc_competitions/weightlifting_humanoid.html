@@ -1,0 +1,981 @@
+{% extends "base.html" %}
+
+{% block title %}Weightlifting Humanoid - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <!-- Header -->
+        <div class="competition-header">
+            <div class="header-icon">🏋️🤖</div>
+            <h1 class="competition-title">WEIGHTLIFTING HUMANOID</h1>
+            <!--<p class="competition-subtitle">Autonomous Humanoid Robot Weightlifting Challenge</p>-->
+        </div>
+
+        <!-- YouTube Video Section -->
+        <div class="video-section">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/8zkGN_sWXzo" 
+                    title="MRC Humanoid Weightlifting Competition Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Age Categories -->
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORIES</h2>
+            <div class="age-categories-grid">
+                <div class="category-card">
+                    <h3>TEENS</h3>
+                    <p class="age">14 to 18 years old</p>
+                    <p class="level">Middle & High School</p>
+                </div>
+                <div class="category-card">
+                    <h3>ADULTS</h3>
+                    <p class="age">18+ years old</p>
+                    <p class="level">University & Individuals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section warning">
+            <h2>⚠️ IMPORTANT NOTES</h2>
+            <ul>
+                <li>The sport is held in one division: All robot types compete together</li>
+                <li>🚨 Both age categories compete together</li>
+                <li>🤖 Must be two-legged walking humanoid biped</li>
+                <li>📏 Robot height: 30cm - 80cm</li>
+                <li>🚶 Robot must shift center of gravity when walking</li>
+                <li>🏋️ Weights: Standard 1/4 inch CDs/DVDs</li>
+                <li>⚡ Fully autonomous - no remote control during competition</li>
+            </ul>
+        </div>
+
+        <!-- Registration Button -->
+        <div class="register-section">
+            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
+                ✍️ TEAM REGISTRATION
+            </a>
+        </div>
+
+        <!-- Rule Zero -->
+        <div class="rule-section">
+            <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+            <p class="rule-intro">In all sports, Rule ZERO applies, which states:</p>
+            <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+            <p>All rules are based on common sense, the spirit of the sport, and the safety of all participants.</p>
+            <p>Any deliberate misinterpretation, violation of the meaning of the rules, or attempt to exploit gray areas for unfair advantage will not be tolerated and may lead to team disqualification from the competition.</p>
+        </div>
+
+        <!-- Goal -->
+        <div class="info-section">
+            <h2>🎯 GOAL</h2>
+            <p>The goal of the weightlifting competition is to encourage research into <strong>active balancing robots</strong> and robots that are able to walk under a heavy load and compensate for different centers of gravity.</p>
+            <p>The goal of the sport is to replicate weightlifting using robots that are capable of lifting a load and moving it over a specified distance.</p>
+        </div>
+
+        <!-- Team & Coach -->
+        <div class="info-section">
+            <h2>👥 TEAM – COACH</h2>
+            <ul>
+                <li><strong>Participation:</strong> Team-based, not individual</li>
+                <li><strong>Team Size:</strong> 2-3 members per team</li>
+                <li><strong>Robot Athlete Technician:</strong> Each team designates up to 1 technician</li>
+                <li><strong>Access:</strong> Only technician allowed in waiting/competition area</li>
+                <li><strong>Queue Rules:</strong> Rest of team cannot wait in line or occupy additional spots (disqualification if violated)</li>
+                <li><strong>Age Requirement:</strong> All members must be at least 10 years old</li>
+                <li><strong>Coach:</strong> Must be at least 20 years old</li>
+                <li><strong>Assistant Requirement:</strong> 1 assistant for every 3 teams registered</li>
+                <li><strong>Robot Limit:</strong> Only one robot per team; no changing during competition</li>
+                <li><strong>No Sharing:</strong> Teams cannot share the same robot</li>
+                <li><strong>Emergency Replacement:</strong> Only microcontroller/electronics with Head Judge permission</li>
+            </ul>
+        </div>
+
+        <!-- Robot Specifications -->
+        <div class="info-section robot-specs">
+            <h2>⚙️ ROBOT ATHLETE REQUIREMENTS – SPECIFICATIONS</h2>
+            <p class="intro-text">The Competition is for <strong>humanoid robots</strong> (Robot Athletes) regardless of the hardware used.</p>
+
+            <h3>📋 GENERAL ROBOT SPECIFICATIONS</h3>
+            <ol>
+                <li><strong>Two-Legged Humanoid:</strong> Must be a two-legged walking humanoid biped that shifts its center of gravity to maintain balance when walking.</li>
+                
+                <li><strong>Walking Mechanics:</strong> When walking, one foot must lift off the floor while the other foot balances the robot.</li>
+                
+                <li><strong>Knee Angle:</strong> When walking, the foot that balances must have a knee-joint angle greater than 90 degrees. If not, robot not considered walking.</li>
+                
+                <li><strong>Feet Requirements:</strong>
+                    <ul>
+                        <li>a. Robot's foot = part contacting the arena surface (ground)</li>
+                        <li>b. Maximum foot length < 50% of extended leg length</li>
+                        <li>c. Maximum foot length < 20 cm</li>
+                        <li>d. Leg length = distance from foot-ground contact to leg-upper body axis</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Foot Overlap:</strong> When standing or walking, rectangular outline around left and right feet shall not overlap.</li>
+                
+                <li><strong>Arms:</strong> Robot must have 2 arms. Each arm extended length ≤ extended leg length.</li>
+                
+                <li><strong>Head:</strong> Robot must have a head.</li>
+                
+                <li><strong>Height:</strong> Robot height: >30 cm but <80 cm.</li>
+                
+                <li><strong>Start Button:</strong> Robot must be equipped with a start button.</li>
+                
+                <li><strong>No Jamming:</strong> Jamming devices (IR LEDs to saturate opposing sensors) not allowed.</li>
+                
+                <li><strong>Stationary Period:</strong> Robot must remain stationary for 5 seconds before match start. After 5 seconds, robot can move.</li>
+                
+                <li><strong>Activation:</strong> Robot can be started by remote control or button on robot.</li>
+                
+                <li><strong>⚡ AUTONOMOUS OPERATION:</strong> No remote control allowed during sport. Robot must carry out mission with complete autonomy.</li>
+            </ol>
+        </div>
+
+        <!-- Technical Inspection -->
+        <div class="info-section">
+            <h2>🧪 TECHNICAL INSPECTION</h2>
+            <ul>
+                <li><strong>Initial Inspection:</strong> Takes place on competition day during first attempt</li>
+                <li><strong>Program Questions:</strong> Team will be asked questions about critical parts of robot's program</li>
+                <li><strong>Laptop Required:</strong> Team must have laptop with robot's program open</li>
+                <li><strong>⚠️ Penalty:</strong> If team doesn't understand program = -20% score penalty</li>
+                <li><strong>Specification Check:</strong> Robot examined based on specifications above</li>
+                <li><strong>Non-Compliance:</strong> Robot not meeting requirements = automatic disqualification</li>
+                <li><strong>ID Assignment:</strong> After initial inspection, robot assigned unique ID code</li>
+                <li><strong>Absence:</strong> Not present at initial inspection = automatic disqualification</li>
+                <li><strong>Secondary Check:</strong> Before each attempt by assistant referee</li>
+                <li><strong>🥽 Safety Glasses:</strong> Mandatory for technician. Protective equipment checked during inspection</li>
+                <li><strong>⚠️ Missing Equipment:</strong> Lack of protective equipment (whole or part) = disqualification</li>
+            </ul>
+        </div>
+
+        <!-- Field -->
+        <div class="info-section">
+            <h2>🏟️ FIELD</h2>
+            
+            <h3>📐 ARENA SPECIFICATIONS</h3>
+            <ul>
+                <li><strong>Shape:</strong> Rectangular arena</li>
+                <li><strong>Surface Size:</strong> 2.36m × 1.14m</li>
+                <li><strong>Color:</strong> Green surface (playing surface)</li>
+                <li><strong>Material:</strong> Printable canvas</li>
+                <li><strong>Boundary:</strong> Surrounded by black boundary line</li>
+                <li><strong>Track Base:</strong> 5mm thick wood, placed on floor</li>
+                <li><strong>White Lines:</strong> 5 cm (50 mm) wide</li>
+                <li><strong>Lines:</strong> FINISH LINE | BAR LIFTING LINE | BAR PICKUP LINE | STARTING LINE</li>
+                <li><strong>Tolerance:</strong> ±5% applies to all dimensions</li>
+                <li><strong>Testing Time:</strong> Available before Games start according to announced schedule</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🏋️ PULL-UP BAR & WEIGHTS</h3>
+            <ul>
+                <li><strong>Bar Material:</strong> Wooden, metal, or plastic rod</li>
+                <li><strong>Bar Width:</strong> 8mm to 15mm</li>
+                <li><strong>Stops:</strong> Two stops used to place weights</li>
+                <li><strong>Internal Distance:</strong> ≥40 cm between stops</li>
+                <li><strong>Total Bar Length:</strong> 50cm to 80cm</li>
+                <li><strong>Weights Used:</strong> Standard 1/4 inch CDs or DVDs</li>
+                <li><strong>Weight Support:</strong> Supported on stops (10cm height) so they don't roll</li>
+            </ul>
+        </div>
+
+        <!-- Equipment Specifications with Photos -->
+        <div class="info-section equipment-visual">
+            <h2>📐 EQUIPMENT SPECIFICATIONS</h2>
+            
+            <!-- Visual Equipment Gallery with Real Images -->
+            <div class="visual-gallery">
+                <h3>📷 EQUIPMENT VISUAL REFERENCE</h3>
+
+                <div class="gallery-grid-images">
+                    <!-- Arena Layout -->
+                    <div class="gallery-item-image">
+                        <img src="{{ url_for('static', filename='images/weightlifting/image4.png') }}" 
+                             alt="Arena Layout" 
+                             class="equipment-image">
+                        <div class="image-caption">
+                            <h4>🏟️ Arena Layout</h4>
+                            <p>Green field (2.36m × 1.14m) with 4 white lines</p>
+                            <p class="specs-note">FINISH LINE | BAR LIFTING LINE | BAR PICKUP LINE | STARTING LINE</p>
+                        </div>
+                    </div>
+                
+                    <!-- Robot Foot Specifications -->
+                    <div class="gallery-item-image">
+                        <img src="{{ url_for('static', filename='images/weightlifting/image2.png') }}" 
+                             alt="Robot Foot Specifications" 
+                             class="equipment-image">
+                        <div class="image-caption">
+                            <h4>🦶 Robot Foot Profile</h4>
+                            <p>I-beam shaped foot: 100mm (H) × 80mm (W) × 90mm (D)</p>
+                            <p class="specs-note">Maximum foot length must be < 50% of extended leg length AND < 20cm</p>
+                        </div>
+                    </div>
+
+                    <!-- Barbell with CD Weights Photo -->
+                    <div class="gallery-item-image">
+                        <img src="{{ url_for('static', filename='images/weightlifting/image1.png') }}" 
+                             alt="Barbell with CD Weights" 
+                             class="equipment-image">
+                        <div class="image-caption">
+                            <h4>🏋️ Barbell with CD Weights</h4>
+                            <p>Actual competition setup with standard 1/4 inch CDs/DVDs as weights</p>
+                            <p class="specs-note">Weights supported on stops so they don't roll around the track</p>
+                        </div>
+                    </div>
+
+                    <!-- Barbell Technical Diagram -->
+                    <div class="gallery-item-image">
+                        <img src="{{ url_for('static', filename='images/weightlifting/image3.png') }}" 
+                             alt="Barbell Technical Diagram" 
+                             class="equipment-image">
+                        <div class="image-caption">
+                            <h4>📏 Barbell Technical Diagram</h4>
+                            <p>Internal distance ≥40cm, Bar width: 8-15mm, Stop height: 10cm</p>
+                            <p class="specs-note">Total bar length: 50cm to 80cm with stops on both sides</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-specs-box">
+                    <h4>⚙️ KEY SPECIFICATIONS SUMMARY</h4>
+                    <div class="specs-columns">
+                        <div class="specs-column">
+                            <h5>🦶 ROBOT FOOT</h5>
+                            <ul>
+                                <li>Height: 100mm</li>
+                                <li>Width: 80mm (top), 67mm (inner)</li>
+                                <li>Depth: 90mm</li>
+                                <li>Max length: < 50% leg length</li>
+                                <li>No foot overlap when standing</li>
+                            </ul>
+                        </div>
+                        <div class="specs-column">
+                            <h5>🏋️ BARBELL & WEIGHTS</h5>
+                            <ul>
+                                <li>Bar diameter: 8-15mm</li>
+                                <li>Internal distance: ≥40cm</li>
+                                <li>Total length: 50-80cm</li>
+                                <li>Stop height: 10cm</li>
+                                <li>Weights: 1/4 inch CDs/DVDs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="gallery-note">
+                    ⚠️ <strong>Important:</strong> All equipment must comply with specifications shown in images above. 
+                    Teams should reference these dimensions when designing their humanoid robots and testing equipment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Competition -->
+        <div class="info-section">
+            <h2>🏆 COMPETITION</h2>
+            
+            <h3>⏱️ PREPARATION</h3>
+            <ol>
+                <li>A single robot Athlete competes in a match</li>
+                <li>All other Robot Athletes must wait in a line</li>
+                <li>Robot Athlete placed behind starting line</li>
+                <li>At beginning of each attempt, technician informs referee how many CDs they want to lift</li>
+                <li>Referee attaches desired weight to lift bar</li>
+                <li>Number of CDs must be increased after each successful attempt</li>
+                <li>Technician may specify how many additional CDs to add before each attempt</li>
+                <li>CDs added simultaneously on both sides (e.g., 3 extra = 3 per side = 6 total extra weight)</li>
+            </ol>
+
+            <h3 style="margin-top: 30px;">🏁 START - PROCESS OF THE RACE</h3>
+            <ol>
+                <li><strong>Positioning:</strong> Technician places Robot Athlete on starting line with front of foot directly behind white line, arms vertical and parallel to body</li>
+                
+                <li><strong>Start Signal:</strong> Referee signals start of match</li>
+                
+                <li><strong>Activation:</strong> Technician presses start button for Athlete Robot to operate</li>
+                
+                <li><strong>Delay Start:</strong> Robot Athlete should start moving after 5 seconds</li>
+                
+                <li><strong>Bar Pickup:</strong> Robot moves to receiving line and picks up bar from stop. Lift should not exceed robot's waist height</li>
+                
+                <li><strong>Walk to Lift Line:</strong> Robot walks towards lift line while continuously carrying weight until one foot touches lift line. Lifting height should not change during course</li>
+                
+                <li><strong>Overhead Lift:</strong> With at least one leg touching lift bar, Robot must raise lift bar above its head</li>
+                
+                <li><strong>Walk to Finish:</strong> While keeping bar above head, Robot walks towards finish line</li>
+                
+                <li><strong>Successful Lift:</strong> Lift considered successful if Robot crosses finish line with both feet and weight above head. Bar supported only by Robot's hands</li>
+                
+                <li><strong>Bar Release:</strong> After finish, Robot must lower bar to arena surface by itself</li>
+            </ol>
+        </div>
+
+        <!-- Rounds & Attempts -->
+        <div class="info-section">
+            <h2>🔁 ROUNDS – ATTEMPTS - COMPETITION PROCEDURE</h2>
+            <ul>
+                <li><strong>Match Duration:</strong> 2 hours total</li>
+                <li><strong>Repeated Attempts:</strong> Each technician makes repeated attempts based on announced order</li>
+                <li><strong>Missing Turn:</strong> If technician not in line, loses attempt; next technician takes turn</li>
+                <li><strong>Lost Attempt Recovery:</strong> Technician who lost attempt waits until all other attempts completed</li>
+                <li><strong>Score Recording:</strong> Referee records points for each attempt</li>
+                <li><strong>Technical Check:</strong> Robot Athletes pass check by assistant referee before each attempt</li>
+                <li><strong>Restart:</strong> Only one restart allowed</li>
+                <li><strong>Technician Change:</strong> Team may change designated technician before each attempt (optional)</li>
+                <li><strong>🏆 Best-Attempt Scoring:</strong> Highest score achieved across all attempts counts as team's official score</li>
+            </ul>
+        </div>
+
+        <!-- End of Round -->
+        <div class="info-section">
+            <h2>❌ END OF A ROUND - ATTEMPT</h2>
+            <p><strong>The referee ends the match if:</strong></p>
+            <ul>
+                <li>✅ Robot successfully crossed finish line and released bar</li>
+                <li>⏱️ Robot could not complete attempt within 2 minutes</li>
+                <li>🤖 Robot falls and cannot get up on its own or is immobilized by technical fault</li>
+                <li>🚫 Robot leaves playing area by completely crossing start line or implicit side lines of rectangle</li>
+            </ul>
+        </div>
+
+        <!-- Scoring -->
+        <div class="info-section scoring-section">
+            <h2>📊 SCORING</h2>
+            
+            <h3>🏅 POINT CALCULATION</h3>
+            <ul>
+                <li><strong>No Success:</strong> All robots that haven't successfully picked up at least 1 CD = no rank and 0 points</li>
+                <li><strong>Points Per CD:</strong> For each CD picked up = 1 point</li>
+                <li><strong>Ranking:</strong> Robot Athletes ranked 1st, 2nd, 3rd place based on maximum points in best attempt</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">🔄 TIEBREAKER RULES (in order of application)</h3>
+            <ol>
+                <li><strong>Tiebreaker #1:</strong> Sum of previous maximum weight used</li>
+                <li><strong>Tiebreaker #2:</strong> Maximum weight in 1st round only</li>
+                <li><strong>Tiebreaker #3:</strong> Maximum weight in 2nd round only</li>
+                <li><strong>Tiebreaker #4:</strong> Continue with subsequent rounds, etc.</li>
+            </ol>
+        </div>
+
+        <!-- Replay Conditions -->
+        <div class="info-section">
+            <h2>🔄 MATCH REPLAY CONDITIONS</h2>
+            <p><strong>The match will be abandoned and a replay started if:</strong></p>
+            <ul>
+                <li>If robot does not start, it will restart only once and only on 1st attempt</li>
+                <li>If on restart robot does not start, another Robot Athlete continues</li>
+            </ul>
+        </div>
+
+        <!-- Repairs -->
+        <div class="info-section">
+            <h2>🛠️ REPAIRS, MODIFICATIONS, UNFORESEEN INTERRUPTIONS</h2>
+            <ul>
+                <li><strong>Initial Repair Time:</strong> If robot breaks during match, referee assigns 1 minute for repair</li>
+                <li><strong>Extended Time:</strong> Range can be extended up to 15 minutes by organizers</li>
+                <li><strong>Supervision:</strong> Repairs supervised by assistant referee to avoid changing Robot Athletes</li>
+                <li><strong>Failure to Repair:</strong> If Robot Athlete cannot be repaired within specified range = disqualification from race</li>
+                <li><strong>❌ Prohibited:</strong> Any modification to robot during repairs is prohibited</li>
+            </ul>
+        </div>
+
+        <!-- Safety -->
+        <div class="info-section safety-section">
+            <h2>⚠️ SAFETY VIOLATIONS</h2>
+            <p><strong>Participating teams are always responsible for:</strong></p>
+            <ul>
+                <li>Their own safety and the safety of their robots</li>
+                <li>Any accidents caused by their team members or their robots</li>
+            </ul>
+            <p class="warning-text"><strong>⚠️ The organization and the members of the organizing team will never be held responsible for any incidents and/or accidents caused by the participating teams or their equipment.</strong></p>
+        </div>
+
+        <!-- Disqualification -->
+        <div class="info-section disqualification-section">
+            <h2>🟥 TEAM DISQUALIFICATION</h2>
+            <p><strong>A team is disqualified from the event and must withdraw in the following cases:</strong></p>
+            <p class="note">➤ The team's results will not be taken into account and will not appear in the official competition rankings.</p>
+            <ul>
+                <li>1. Robot Athlete doesn't comply with specifications and team refuses adjustments</li>
+                <li>2. Any technician behaves inappropriately, uses offensive language, or attacks others</li>
+                <li>3. Discovery that Robot Athlete is not operating autonomously but is remotely controlled via Bluetooth, Wi-Fi, or similar technology</li>
+            </ul>
+        </div>
+
+        <!-- Allowed/Prohibited -->
+        <div class="info-section">
+            <h2>✅ ALLOWED / ❌ PROHIBITED</h2>
+            
+            <h3>✅ ALLOWED:</h3>
+            <ul>
+                <li>Reprogramming and mechanical adjustments between attempts (outside field of play)</li>
+                <li>Protective covers/guards and rounded edges for safety</li>
+                <li>Gears, pulleys, belts, chains, worm drives, gearboxes and similar mechanisms for lifting (safely secured, no field damage)</li>
+                <li>Status indicators (LEDs, buzzers) and audible beep signal</li>
+                <li>Battery swaps between attempts using manufacturer-recommended cells</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">❌ PROHIBITED:</h3>
+            <ul>
+                <li>Robot Athlete connected to computer, tablet, or electronic device during attempts (except for robot start)</li>
+                <li>For safety: Any modification to motors, microprocessor, or batteries</li>
+                <li>Components that could break or damage playing field</li>
+                <li>Components intended to harm other robots, spectators, or referees</li>
+                <li>Sticky substances to improve adhesion</li>
+                <li>Devices that store liquid, dust, gas, or other substances</li>
+                <li>Combustible devices of any kind</li>
+                <li>Throwing devices</li>
+            </ul>
+        </div>
+
+        <!-- Winners -->
+        <div class="info-section winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>The 3 winners are those with the highest score. The best score is used to determine placement in:</p>
+            <div class="podium">
+                <div class="podium-item">
+                    <div class="medal gold">🥇</div>
+                    <p class="place">1st Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal silver">🥈</div>
+                    <p class="place">2nd Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal bronze">🥉</div>
+                    <p class="place">3rd Place</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .competition-detail {
+        min-height: 100vh;
+        background: #f8fafc;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #eab308;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+    }
+
+    .competition-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    .competition-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #eab308 0%, #854d0e 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .competition-subtitle {
+        font-size: 1.5rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+
+    /* Video Section */
+    .video-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .section-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .section-box h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .age-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #eab308 0%, #854d0e 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .category-card .age {
+        font-size: 1.125rem;
+        margin-bottom: 5px;
+        opacity: 0.95;
+    }
+
+    .category-card .level {
+        font-size: 0.875rem;
+        opacity: 0.85;
+    }
+
+    .notes-section {
+        background: #fef3c7;
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 5px solid #f59e0b;
+        margin-bottom: 30px;
+    }
+
+    .notes-section h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #92400e;
+        margin-bottom: 15px;
+    }
+
+    .notes-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notes-section li {
+        padding: 8px 0;
+        color: #78350f;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .register-section {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .register-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #eab308 0%, #854d0e 100%);
+        color: white;
+        padding: 20px 50px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.25rem;
+        box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(234, 179, 8, 0.4);
+    }
+
+    .rule-section {
+        background: #fee2e2;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        border: 3px solid #dc2626;
+    }
+
+    .rule-section h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #991b1b;
+        margin-bottom: 20px;
+    }
+
+    .rule-section p {
+        color: #7f1d1d;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .rule-section blockquote {
+        background: white;
+        padding: 20px;
+        border-left: 5px solid #dc2626;
+        margin: 20px 0;
+        font-style: italic;
+        font-weight: 600;
+        color: #991b1b;
+    }
+
+    .info-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .info-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #eab308;
+        padding-bottom: 10px;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #475569;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .info-section p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .info-section ul, .info-section ol {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+
+    .info-section li {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .info-section li ul {
+        margin-top: 10px;
+    }
+
+    .robot-specs {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 3px solid #eab308;
+    }
+
+    .robot-specs .intro-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #78350f;
+        margin-bottom: 20px;
+    }
+
+    /* Equipment Visual Section with Real Images */
+    .equipment-visual {
+        background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+        border: 3px solid #f97316;
+    }
+
+    .visual-gallery h3 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .gallery-grid-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .gallery-item-image {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .gallery-item-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .equipment-image {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        background: #f8fafc;
+        padding: 20px;
+    }
+
+    .image-caption {
+        padding: 20px;
+        background: white;
+    }
+
+    .image-caption h4 {
+        font-size: 1.125rem;
+        font-weight: 800;
+        color: #ea580c;
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+
+    .image-caption p {
+        font-size: 0.9375rem;
+        color: #475569;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .specs-note {
+        font-size: 0.875rem;
+        color: #64748b;
+        font-style: italic;
+    }
+
+    .equipment-specs-box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+
+    .equipment-specs-box h4 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .specs-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .specs-column {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 4px solid #f97316;
+    }
+
+    .specs-column h5 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #ea580c;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .specs-column ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .specs-column li {
+        margin-bottom: 8px;
+        font-size: 0.9375rem;
+        color: #475569;
+    }
+
+    .gallery-note {
+        background: #fef3c7;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 30px;
+        font-size: 1rem;
+        color: #78350f;
+        border-left: 5px solid #f59e0b;
+    }
+
+    .scoring-section {
+        background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        border: 3px solid #3b82f6;
+    }
+
+    .safety-section {
+        background: #fef2f2;
+        border: 3px solid #ef4444;
+    }
+
+    .safety-section h2 {
+        color: #991b1b;
+        border-bottom-color: #ef4444;
+    }
+
+    .safety-section .warning-text {
+        font-weight: 700;
+        color: #7f1d1d;
+        background: #fecaca;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+
+    .disqualification-section {
+        background: #fee2e2;
+        border: 3px solid #dc2626;
+    }
+
+    .disqualification-section h2 {
+        color: #991b1b;
+        border-bottom-color: #dc2626;
+    }
+
+    .disqualification-section .note {
+        font-weight: 700;
+        color: #7f1d1d;
+        margin-bottom: 15px;
+    }
+
+    .winners-section {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 3px solid #f59e0b;
+    }
+
+    .podium {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+    }
+
+    .podium-item {
+        text-align: center;
+    }
+
+    .medal {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .place {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #92400e;
+    }
+
+    @media (max-width: 768px) {
+        .competition-title {
+            font-size: 2rem;
+        }
+
+        .competition-subtitle {
+            font-size: 1.125rem;
+        }
+
+        .video-section {
+            padding: 20px;
+        }
+
+        .section-box, .info-section {
+            padding: 20px;
+        }
+
+        .age-categories-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-grid-images {
+            grid-template-columns: 1fr;
+        }
+
+        .specs-columns {
+            grid-template-columns: 1fr;
+        }
+
+        .podium {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+</style>
+{% endblock %}

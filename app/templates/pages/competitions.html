@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Robofest Competitions{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-top: 100px;">
+    <div class="container">
+        <!-- MRC Global Olympiad Banner -->
+        <div class="mrc-banner" id="mrcBanner">
+            <div class="mrc-banner-logo">
+                <img src="{{ url_for('static', filename='images/mrc_logo.png') }}" alt="MRC Global Olympiad 2026">
+            </div>
+        </div>
+
+        <h2 class="section-title">H.E.R.O Competition Details</h2>
+        <p class="section-subtitle">Choose from our exciting autonomous robotics competitions designed for different skill levels and interests</p>
+        
+        <div class="competitions-container">
+            <!-- Competition cards will be added here -->
+        </div>
+
+        <!-- Additional Information -->
+        <div class="info-section">
+            <h3 class="info-title">Competition Guidelines</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📅</div>
+                    <h4 class="info-heading">Event Dates</h4>
+                    <p class="info-text">3-6 April 2026</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h4 class="info-heading">Location</h4>
+                    <p class="info-text">Heraklion, Crete, Greece</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">💰</div>
+                    <h4 class="info-heading">Registration Fee</h4>
+                    <p class="info-text">€95 (Early) / €125 (Late)</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🤖</div>
+                    <h4 class="info-heading">Categories</h4>
+                    <p class="info-text">Elementary to Adults</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* MRC Banner */
+    .mrc-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 60px 40px;
+        margin-bottom: 60px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 2px solid #f3f4f6;
+    }
+    
+    .mrc-banner:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        border-color: #e5e7eb;
+    }
+    
+    .mrc-banner-logo {
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    .mrc-banner-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .competitions-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+        min-height: 200px;
+    }
+    
+    .info-section {
+        margin-top: 60px;
+        padding: 40px 30px;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(30, 64, 175, 0.05) 100%);
+        border-radius: 12px;
+    }
+    
+    .info-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 35px;
+        color: var(--text-color);
+    }
+    
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .info-card {
+        background: white;
+        padding: 25px 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+    }
+    
+    .info-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .info-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .info-heading {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--text-color);
+    }
+    
+    .info-text {
+        color: var(--text-light);
+        font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+        .mrc-banner {
+            padding: 40px 20px;
+        }
+        
+        .mrc-banner-logo {
+            max-width: 350px;
+        }
+        
+        .info-section {
+            padding: 30px 20px;
+        }
+        
+        .info-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .mrc-banner-logo {
+            max-width: 250px;
+        }
+        
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var mrcBanner = document.getElementById('mrcBanner');
+    if (mrcBanner) {
+        mrcBanner.addEventListener('click', function() {
+            window.location.href = '{{ url_for("main.mrc_olympiad") }}';
+        });
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,754 @@
+{% extends "base.html" %}
+
+{% block title %}Drones - MRC Global Olympiad{% endblock %}
+
+{% block content %}
+<section class="competition-detail" style="padding-top: 100px;">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
+
+        <!-- Header -->
+        <div class="competition-header">
+            <div class="header-icon">🛸</div>
+            <h1 class="competition-title">DRONES</h1>
+          <!--  <p class="competition-subtitle">Aerial Racing & Precision Flight Challenge</p>-->
+        </div>
+
+        <!-- YouTube Video Section -->
+        <div class="video-section">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/MX3EVqIi-Y0" 
+                    title="Drones Competition Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Age Categories -->
+        <div class="section-box">
+            <h2>🎯 AGE CATEGORIES</h2>
+            <div class="age-categories-grid">
+                <div class="category-card">
+                    <h3>KIDS</h3>
+                    <p class="age">10 to 12 years old</p>
+                    <p class="level">Elementary School</p>
+                </div>
+                <div class="category-card">
+                    <h3>TEENS</h3>
+                    <p class="age">13 to 18 years old</p>
+                    <p class="level">Middle & High School</p>
+                </div>
+                <div class="category-card">
+                    <h3>ADULTS</h3>
+                    <p class="age">18+ years old</p>
+                    <p class="level">University & Individuals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="notes-section warning">
+            <h2>⚠️ IMPORTANT NOTES</h2>
+            <ul>
+                <li>The sport is held in one division: specific types of drones required.</li>
+                <li>🚨 Each age category competes separately.</li>
+                <li>🛸 Indoor micro-class drones with prop guards required.</li>
+                <li>📏 Maximum dimensions: 20×20 cm, flight height ≤ 2m.</li>
+                <li>🔋 Battery: 1S LiPo/LiHV only.</li>
+            </ul>
+        </div>
+
+        <!-- Registration Button -->
+        <div class="register-section">
+            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
+                ✍️ TEAM REGISTRATION
+            </a>
+        </div>
+
+        <!-- Rule Zero -->
+        <div class="rule-section">
+            <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+            <p class="rule-intro">In all sports, Rule ZERO applies, which states:</p>
+            <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+            <p>All rules are based on common sense, the spirit of the sport, and the safety of all participants.</p>
+            <p>Any deliberate misinterpretation, violation of the meaning of the rules, or attempt to exploit gray areas for unfair advantage will not be tolerated and may lead to team disqualification from the competition.</p>
+        </div>
+
+        <!-- Goal -->
+        <div class="info-section">
+            <h2>🎯 GOAL</h2>
+            <p>The goal of Athletes is to perform a demonstration drone operation lasting 3 minutes, as well as perform a precision mission to be announced on the day of the Race.</p>
+            <p>The sport requires precision in movements, basic programming knowledge and correct calculations.</p>
+        </div>
+
+        <!-- Team Structure -->
+        <div class="info-section">
+            <h2>👥 TEAM – COACH</h2>
+            <ul>
+                <li><strong>Participation:</strong> Team-based, not individual.</li>
+                <li><strong>Team Size:</strong> 2-3 members per team.</li>
+                <li><strong>Drone Technician:</strong> Each team designates up to 1 Drone Technician.</li>
+                <li><strong>Age Requirement:</strong> All team members must be at least 10 years old.</li>
+                <li><strong>Coach:</strong> Must be at least 20 years old.</li>
+                <li><strong>Assistant Requirement:</strong> 1 assistant for every 3 teams registered.</li>
+                <li><strong>Drone Limit:</strong> Only one drone per team; no changing during competition.</li>
+                <li><strong>Emergency Replacement:</strong> Only microcontroller/electronics with Head Judge permission.</li>
+            </ul>
+        </div>
+
+        <!-- Drone Categories -->
+        <div class="info-section">
+            <h2>🛸🎮 DRONE CATEGORIES</h2>
+            
+            <h3>📌 BASIC SPECIFICATIONS (All Drones)</h3>
+            <ul>
+                <li><strong>Control:</strong> Remote control (RC) — no autonomous flight.</li>
+                <li><strong>Maximum Dimensions:</strong> 20 × 20 cm (length × width).</li>
+                <li><strong>Flight Height:</strong> ≤ 2 m at all times.</li>
+                <li><strong>Propellers:</strong> Plastic, with prop guards covering the perimeter.</li>
+                <li><strong>Battery:</strong> LiPo/LiHV 1S (single cell); bring up to 2 packs.</li>
+                <li><strong>Edges/Materials:</strong> No sharp parts; must not wear the field.</li>
+                <li><strong>Safety:</strong> Operator wears protective goggles; immediate control/shutdown ability.</li>
+                <li><strong>Connections:</strong> Only for flight control (RC/BLE/Wi-Fi).</li>
+                <li><strong>Prohibited:</strong> Any form of gas for takeoff/thrust.</li>
+                <li><strong>Recommended Weight:</strong> All-Up Weight (AUW) ≤ 100 g.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">✅ PERMITTED MODELS (Indoor Micro Class)</h3>
+            <ul>
+                <li>Ryze/DJI Tello / Tello EDU — ✅ with prop guards</li>
+                <li>Parrot Mambo — ✅ with prop guards</li>
+                <li>Robolink CoDrone (Mini / Pro) — ✅</li>
+                <li>Bitcraze Crazyflie 2.1 — ✅ with prop guards</li>
+                <li>Makeblock Airblock (drone configuration) — ✅</li>
+                <li>BetaFPV Cetus / Cetus Lite (1S) — ✅ with prop guards</li>
+                <li>EMAX Tinyhawk (1S indoor) — ✅ with prop guards</li>
+                <li>FPV Drone NewBeeDrone VRDrone RTF Bundle Kit V2.5 — ✅</li>
+                <li>FPV Drone Emax EZ Pilot FPV Drone RTF — ✅</li>
+                <li>FPV Drone Emax EZ Pilot PRO RTF FPV Drone — ✅</li>
+                <li>BSR drone, model 160 — ✅</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">❌ NOT PERMITTED</h3>
+            <ul>
+                <li>DJI Mini/Mavic/Air/FPV</li>
+                <li>Parrot Anafi, Autel EVO</li>
+                <li>2S–6S FPV racers</li>
+                <li>Cinewhoops >3"</li>
+                <li>Carbon frames without full prop protection</li>
+                <li>Systems using fuel/gases</li>
+                <li>DIY / 3D-printed micro for safety reasons</li>
+            </ul>
+
+            <div class="special-note">
+                <h3>🛡️ ADULTS CATEGORY</h3>
+                <p>In the adult category, <strong>DIY Drones are allowed</strong>, provided that they meet all the above specifications.</p>
+            </div>
+        </div>
+
+        <!-- Technical Control -->
+        <div class="info-section">
+            <h2>🧪 TECHNICAL CONTROL</h2>
+            
+            <h3>🧾 SCRUTINEERING (Compliance Check)</h3>
+            <ul>
+                <li>📏 Dimensions (pass through a 20×20 cm frame)</li>
+                <li>🛡️ Prop guards present / securely mounted</li>
+                <li>🔋 1S LiPo/LiHV battery type verified</li>
+                <li>🆘 Failsafe/kill switch test (instant cut)</li>
+                <li>🏷️ Control number marked on the shell</li>
+                <li>⬆️ Height limit test (operator does not exceed > 2 m)</li>
+                <li>🦺 Safety rules (goggles, no sharp edges)</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📮 NEW MODEL ADDITION PROCESS</h3>
+            <p>If a team wishes to use a model outside the indicative list:</p>
+            <ol>
+                <li>Submit a technical sheet (model, dimensions, battery, weight, prop guards)</li>
+                <li>Attach photos or a short video showing measurements/guards</li>
+                <li>Obtain pre-approval from the Organizing Committee at least 7 days before the event</li>
+                <li>Final on-site check; if it fails, the drone does not compete</li>
+            </ol>
+
+            <h3 style="margin-top: 30px;">⚙️ INSPECTION REQUIREMENTS</h3>
+            <ul>
+                <li>1. Initial technical inspection on game day at announced time and location.</li>
+                <li>2. Technical control before the start of each phase.</li>
+                <li>3. Failure to arrive on time = automatic exclusion from sport.</li>
+                <li>4. Only the operator is responsible for presenting the drone.</li>
+                <li>5. Drone must demonstrate ability to remain at 1-2m flight height.</li>
+                <li>6. Safe control demonstration by competition operator required.</li>
+                <li>7. Must comply with all safety and security requirements.</li>
+                <li>8. After inspection, referees provide unique ID Number.</li>
+            </ul>
+        </div>
+
+        <!-- Floor Design -->
+        <div class="info-section">
+            <h2>🧩 FLOOR DESIGN</h2>
+            <ul>
+                <li><strong>Track Dimensions:</strong> Rectangular, measuring 4 meters by 6 meters.</li>
+                <li><strong>Track Enclosure:</strong> Enclosed with safety net around perimeter.</li>
+                <li><strong>Objects:</strong> Drones must pass through, over, or take off/land on objects.</li>
+                <li><strong>Bases:</strong> Up to 4 bases (0.30m × 0.30m) at heights: 0.30cm, 0.50cm, 0.80cm, 1m.</li>
+                <li><strong>Hoops:</strong> Up to 4 hoops (diameter 0.50-0.65cm) at heights: 0.20cm, 0.40cm, 0.70cm, 0.90cm.</li>
+                <li><strong>Take-off/Landing Points:</strong> 2 points (0.40cm × 0.40cm) in opposite corners.</li>
+                <li><strong>Course Layout:</strong> Positions and number of objects revealed on game day.</li>
+            </ul>
+
+            <div class="field-legend">
+                <p><strong>Field Elements:</strong></p>
+                <p>🟢 TAKE OFF → 🔴 HOOP → 🟡 BASE → 🔴 HOOP → 🟡 BASE → 🔴 HOOP → 🟡 BASE → 🔴 HOOP → 🟡 BASE → 🟢 LANDING</p>
+            </div>
+        </div>
+
+        <!-- Competition Procedure -->
+        <div class="info-section">
+            <h2>🏆 COMPETITION</h2>
+            
+            <h3>🧪 DEMONSTRATION</h3>
+            <p>Each team has <strong>3 minutes</strong> to complete the missions in the specially designed area.</p>
+
+            <h3 style="margin-top: 30px;">📋 COMPETITION PROCEDURE</h3>
+            <ul>
+                <li><strong>Route Definition:</strong> Defined exclusively by field markings.</li>
+                <li><strong>Numbering:</strong> Take-off/landing pads and hoops carry ascending numbers (1, 2, 3, …).</li>
+                <li><strong>Path Arrows:</strong> Arrows indicate exact path the drone must follow.</li>
+                <li><strong>Mandatory Order:</strong> Drone executes elements in numerical order according to arrows.</li>
+                <li><strong>Out of Order:</strong> Out of order / against arrows = 0 points for that element.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🧪 TESTING</h3>
+            <ul>
+                <li>Permitted testing announced by Organizing Committee in official schedule.</li>
+                <li>Outside announced program, testing is not permitted.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📶 QUEUE & ACCESS</h3>
+            <ul>
+                <li>Start order is first-come, first-served in the Technicians' queue.</li>
+                <li>Only the Drone Technician allowed to wait in queue.</li>
+                <li>No other team member may hold a place in queue.</li>
+                <li>Non-compliance may result in loss of place.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🚦 ATTEMPT START</h3>
+            <ul>
+                <li>Drone placed at take-off position.</li>
+                <li>Referee blows start whistle; operator must launch within 5 seconds.</li>
+                <li>If 5 seconds elapse, flight is invalid. One restart allowed on first attempt only.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🎯 EXECUTION & SCORING</h3>
+            <ul>
+                <li>Drone executes precisely following numbering & arrows.</li>
+                <li>Points printed on each pad/hoop awarded only if action is correct and in order.</li>
+                <li>Drone must land accurately on landing spot.</li>
+                <li>Maximum mission duration: 3 minutes. If exceeded, team earns no points.</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">🔁 ATTEMPTS & CHECKS</h3>
+            <ul>
+                <li>Each team has 2 attempts.</li>
+                <li>Round 1 completed for all teams before Round 2 begins.</li>
+                <li>Technical inspection of drones by judges between the 2 rounds.</li>
+            </ul>
+        </div>
+
+        <!-- Grading -->
+        <div class="info-section grading-section">
+            <h2>🧮 GRADING</h2>
+            <div class="grading-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Correct vertical take-off without swaying</td>
+                            <td><strong>20 points</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Correct vertical landing without swaying</td>
+                            <td><strong>30 points</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Landing on the 2 lowest bases</td>
+                            <td><strong>15 points each</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Landing on the 2 highest bases</td>
+                            <td><strong>25 points each</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Pass through the 2 lowest hoops</td>
+                            <td><strong>20 points each</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Passing through the 2 highest hoops</td>
+                            <td><strong>30 points each</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Disqualification -->
+        <div class="info-section disqualification-section">
+            <h2>🟥 TEAM DISQUALIFICATION</h2>
+            <p><strong>In the following cases the team is excluded from the Sport and will have to withdraw:</strong></p>
+            <ul>
+                <li>1. Team's drone does not comply with requirements and team refuses accommodation.</li>
+                <li>2. Any Drone Technician behaves inappropriately, disrespectfully, or attacks others.</li>
+                <li>3. Any coach behaves inappropriately or attacks other teams or referees.</li>
+                <li>4. Other cases indicated in the Sport rules.</li>
+            </ul>
+            <p><strong>Team results are not taken into account and are not included in competition results.</strong></p>
+        </div>
+
+        <!-- Allowed/Prohibited -->
+        <div class="info-section">
+            <h2>✅ ALLOWED / ❌ PROHIBITED</h2>
+            
+            <h3>✅ ALLOWED:</h3>
+            <ul>
+                <li>Frequent battery changes between attempts to ensure drone is always ready.</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">❌ PROHIBITED:</h3>
+            <ul>
+                <li>Any modification of the drone.</li>
+                <li>Use of different motors from those provided with recommended drone.</li>
+                <li>Modification of the controller.</li>
+                <li>Cases listed in the rules above.</li>
+                <li>Drones with parts that can harm spectators.</li>
+                <li>Breaking the drone into pieces or expanding it during match.</li>
+                <li>Performing missions out of order from written instructions.</li>
+            </ul>
+        </div>
+
+        <!-- Winners -->
+        <div class="info-section winners-section">
+            <h2>🏆 WINNERS</h2>
+            <p>The teams that completed the most missions in the best time will receive:</p>
+            <div class="podium">
+                <div class="podium-item">
+                    <div class="medal gold">🥇</div>
+                    <p class="place">1st Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal silver">🥈</div>
+                    <p class="place">2nd Place</p>
+                </div>
+                <div class="podium-item">
+                    <div class="medal bronze">🥉</div>
+                    <p class="place">3rd Place</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px;"><strong>Tiebreaker Rules:</strong></p>
+            <ul>
+                <li>In case of a tie, the points of both 2 attempts of each team are added.</li>
+                <li>If a tie still occurs, teams compete in an additional mission which they will finish immediately.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .competition-detail {
+        min-height: 100vh;
+        background: #f8fafc;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #dc2626;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    }
+
+    .competition-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    .competition-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .competition-subtitle {
+        font-size: 1.5rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+
+    /* Video Section */
+    .video-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .section-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .section-box h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .age-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .category-card .age {
+        font-size: 1.125rem;
+        margin-bottom: 5px;
+        opacity: 0.95;
+    }
+
+    .category-card .level {
+        font-size: 0.875rem;
+        opacity: 0.85;
+    }
+
+    .notes-section {
+        background: #fef3c7;
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 5px solid #f59e0b;
+        margin-bottom: 30px;
+    }
+
+    .notes-section h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #92400e;
+        margin-bottom: 15px;
+    }
+
+    .notes-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notes-section li {
+        padding: 8px 0;
+        color: #78350f;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .register-section {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .register-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        color: white;
+        padding: 20px 50px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.25rem;
+        box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+    }
+
+    .rule-section {
+        background: #fee2e2;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        border: 3px solid #dc2626;
+    }
+
+    .rule-section h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #991b1b;
+        margin-bottom: 20px;
+    }
+
+    .rule-section p {
+        color: #7f1d1d;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .rule-section blockquote {
+        background: white;
+        padding: 20px;
+        border-left: 5px solid #dc2626;
+        margin: 20px 0;
+        font-style: italic;
+        font-weight: 600;
+        color: #991b1b;
+    }
+
+    .info-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .info-section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #dc2626;
+        padding-bottom: 10px;
+    }
+
+    .info-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #475569;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .info-section p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .info-section ul, .info-section ol {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+
+    .info-section li {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .special-note {
+        background: #fef3c7;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 5px solid #f59e0b;
+        margin-top: 25px;
+    }
+
+    .special-note h3 {
+        color: #92400e;
+        margin-top: 0;
+    }
+
+    .special-note p {
+        color: #78350f;
+    }
+
+    .field-legend {
+        background: #f1f5f9;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    .field-legend p {
+        margin-bottom: 5px;
+        font-family: monospace;
+        font-size: 0.875rem;
+    }
+
+    .grading-section table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .grading-section th {
+        background: #dc2626;
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .grading-section td {
+        padding: 15px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .grading-section tr:hover {
+        background: #fef2f2;
+    }
+
+    .disqualification-section {
+        background: #fee2e2;
+        border: 3px solid #dc2626;
+    }
+
+    .disqualification-section h2 {
+        color: #991b1b;
+        border-bottom-color: #dc2626;
+    }
+
+    .winners-section {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 3px solid #f59e0b;
+    }
+
+    .podium {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+    }
+
+    .podium-item {
+        text-align: center;
+    }
+
+    .medal {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .place {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #92400e;
+    }
+
+    @media (max-width: 768px) {
+        .competition-title {
+            font-size: 2rem;
+        }
+
+        .competition-subtitle {
+            font-size: 1.125rem;
+        }
+
+        .video-section {
+            padding: 20px;
+        }
+
+        .section-box, .info-section {
+            padding: 20px;
+        }
+
+        .age-categories-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .podium {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+</style>
+{% endblock %}

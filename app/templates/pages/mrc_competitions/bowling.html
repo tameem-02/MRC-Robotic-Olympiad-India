@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+{% block title %}Bowling - MRC Global Olympiad{% endblock %}
+{% block content %}
+<section class="competition-detail" style="padding-top:100px">
+<div class="container">
+<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+Back to All Sports</a>
+<div class="competition-header">
+<div class="header-icon">🎳🤖</div>
+<h1 class="competition-title">BOWLING</h1>
+<!--<p class="competition-subtitle">Autonomous Robot Bowling Championship</p>-->
+</div>
+<div class="section-box">
+<h2>🎯 AGE CATEGORIES</h2>
+<div class="age-categories-grid">
+<div class="category-card kids"><h3>KIDS</h3><p class="age">10 to 12 years old</p><p class="level">Elementary School</p></div>
+<div class="category-card teens"><h3>TEENS</h3><p class="age">13 to 18 years old</p><p class="level">Middle & High School</p></div>
+</div>
+<p class="compete-note">🚨 <strong>Each age category competes separately</strong></p>
+<p class="division-note">⚠️ <strong>One Division:</strong> All robot types compete together</p>
+</div>
+<div class="notes-section warning">
+<h2>⚠️ IMPORTANT NOTES</h2>
+<ul>
+<li>🎳 <strong>5 Frames:</strong> Up to 2 rolls per frame to knock down 10 pins</li>
+<li>⚡ <strong>Autonomous:</strong> Robot must collect tennis ball and bowl independently</li>
+<li>⚖️ Max: 20×20cm, 2kg weight</li>
+<li>🏆 <strong>Scoring:</strong> Strike (30pts), Spare (20pts), Open (1pt/pin)</li>
+<li>🏟️ Lane: 4m total, 3.65m bowling lane, 80cm width</li>
+<li>🎯 Ball Retrieval Area: 20×8cm zone with tennis balls</li>
+<li>📦 Start Zone: 20×20cm square</li>
+<li>⏱️ Must start moving within 5 seconds</li>
+</ul>
+</div>
+<div class="register-section">
+<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
+</div>
+<div class="rule-section">
+<h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
+<blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
+<p>All rules based on common sense, sport spirit, and safety. Deliberate misinterpretation or exploitation will not be tolerated and may lead to disqualification.</p>
+</div>
+<div class="info-section goal-section">
+<h2>🎯 GOAL</h2>
+<p>Goal of Robot Bowling is for robot to <strong>knock down pins using ball, operating autonomously</strong>.</p>
+<p><strong>Winning team</strong> = one that knocks down most pins with fewest attempts.</p>
+</div>
+<div class="info-section">
+<h2>👥 TEAM – COACH</h2>
+<ul>
+<li><strong>Participation:</strong> Team-based, not individual</li>
+<li><strong>Team Size:</strong> 2-3 members</li>
+<li><strong>Robot Athlete Technician:</strong> 1 designated technician. Only technician in waiting/competition area. Rest cannot occupy additional spot (violation = disqualification)</li>
+<li><strong>Technician Change:</strong> Allowed before each attempt (optional)</li>
+<li><strong>Age Requirement:</strong> All members ≥10 years old</li>
+<li><strong>Coach:</strong> Must be ≥20 years old</li>
+<li><strong>Assistant Requirement:</strong> 1 assistant for every 3 teams</li>
+<li><strong>Robot Limit:</strong> Only one robot per team. No changing during competition</li>
+<li><strong>No Sharing:</strong> Teams cannot share same robot</li>
+<li><strong>Emergency:</strong> Only microcontroller/electronics replacement with Head Judge permission</li>
+</ul>
+</div>
+<div class="info-section robot-category">
+<h2>🤖 ROBOT ATHLETE – ROBOT CATEGORY</h2>
+<ul>
+<li>Competition for Robot Athletes regardless of robotic package/hardware used</li>
+<li><strong>DIY Robot Athletes allowed</strong></li>
+<li>All Robot Athletes compete together in each age division</li>
+</ul>
+</div>
+<div class="info-section robot-specs">
+<h2>⚙️ ROBOT ATHLETE REQUIREMENTS – SPECIFICATIONS</h2>
+<ol>
+<li><strong>⚡ Autonomous:</strong> Must adjust arc height when start button pressed, not manually</li>
+<li><strong>Max Dimensions:</strong> 20cm Width × 20cm Length</li>
+<li><strong>Mass:</strong> Up to 2000g (2kg)</li>
+<li><strong>Control Box:</strong> 20×20cm with ±2mm tolerance. Robot must fit without pressure</li>
+<li><strong>Start/Stop Button:</strong> Must have start and stop button</li>
+<li><strong>Sensors:</strong> Must have any kind of sensors to detect lines and colors (ball)</li>
+<li><strong>❌ No Pneumatic:</strong> Strictly prohibited</li>
+<li><strong>Component Limits:</strong> Only 1 processor, 6 motors, 4 sensors allowed regardless of category</li>
+<li><strong>Port Expansion:</strong> If microcontroller's ports don't support >4 motors, port expansion components allowed (e.g., multiplexer)</li>
+</ol>
+</div>
+<div class="info-section">
+<h2>🧪 TECHNICAL INSPECTION</h2>
+<ol>
+<li>Initial inspection on competition day during Robot Athlete's first attempt</li>
+<li><strong>Program Questions:</strong> Team asked questions about critical program parts
+<ul style="margin-top:8px">
+<li>Must have laptop with robot's program open</li>
+<li>If clear team doesn't understand program = <strong>-20% score penalty</strong></li>
+</ul>
+</li>
+<li>Includes robot examination based on specifications. Non-compliance = automatic disqualification</li>
+<li>After initial inspection, Robot Athlete assigned unique ID code</li>
+<li>Not present at initial inspection = automatic disqualification</li>
+<li>Secondary inspection before each attempt by assistant referee</li>
+</ol>
+</div>
+<div class="info-section arena-section">
+<h2>🏟️ ARENA – LANE & PINS</h2>
+<ul>
+<li><strong>Lane Length:</strong> 4 meters total</li>
+<li><strong>Width:</strong> 80cm, providing space for ball and robot navigation</li>
+<li><strong>Bowling Lane:</strong> 3.65m wooden-textured lane inside arena. Lane surface smooth, simulates real bowling alley</li>
+<li><strong>Side Gutters:</strong> Located on both sides of lane. Ball falls into gutter = invalid (no pins counted)</li>
+<li><strong>Ball Retrieval Area:</strong> 20cm × 8cm rectangular zone, placed on side of starting area. Balls positioned here before each attempt. Stacked on floor (height 1-2cm). Robot must autonomously collect ball from area</li>
+<li><strong>Start Zone:</strong> 20cm × 20cm square where robot begins attempt. Must move from here to Ball Retrieval Area, collect ball, then proceed to lane. Technician can collect robot (by hand) after each attempt and put in Start Zone for next attempt</li>
+<li><strong>Pins:</strong> 10 bowling pins arranged in standard triangular formation (1–2–3–4). Objective = knock down as many as possible</li>
+<li><strong>Foul Line:</strong> Double black line marked across width of lane, located at beginning of bowling lane</li>
+</ul>
+
+<div class="arena-images">
+<div class="arena-img-container">
+<img src="{{url_for('static',filename='images/weightlifting/bowling1.png')}}" alt="Bowling Lane" class="arena-img">
+<p><strong>Bowling Lane Layout:</strong> 4m total, 3.65m lane with pins, ball retrieval area, start zone</p>
+</div>
+<div class="pins-img-container">
+<img src="{{url_for('static',filename='images/weightlifting/bowling2.png')}}" alt="Pin Formation" class="arena-img">
+<p><strong>Pin Formation:</strong> Standard 1-2-3-4 triangular arrangement (10 pins)</p>
+</div>
+</div>
+</div>
+<div class="info-section ball-pins-section">
+<h2>🎳 BALL & PINS</h2>
+<h3>Ball</h3>
+<ul>
+<li>Standard tennis ball used</li>
+<li><strong>Diameter:</strong> 6.5-6.7cm</li>
+<li><strong>Weight:</strong> 56-59g</li>
+<li><strong>Material:</strong> Rubber core with felt covering</li>
+</ul>
+
+<h3>Pins</h3>
+<ul>
+<li>Each lane equipped with 10 bowling pins, arranged in official triangular formation (1–2–3–4)</li>
+<li><strong>Height:</strong> 17cm</li>
+<li><strong>Base Diameter:</strong> 37-39mm</li>
+<li><strong>Maximum Diameter (shoulder):</strong> ~63-65mm</li>
+<li><strong>Neck Diameter:</strong> ~3cm</li>
+<li><strong>Weight:</strong> 100g ± 15g</li>
+<li><strong>Material:</strong> 3D printed PLA</li>
+<li><strong>Standardization:</strong> Official 3D model (STL file) provided on competition website for download. Teams must use this design for uniformity</li>
+</ul>
+
+<h3>Pin Setup</h3>
+<ul>
+<li>Pins placed in triangular arrangement: 1 pin at apex, subsequent rows of 2, 3, 4 pins (1–2–3–4 formation)</li>
+<li><strong>Triangle Dimensions:</strong>
+<ul style="margin-left:20px">
+<li>Distance between adjacent pins: 12cm (center to center)</li>
+<li>Total depth of pin triangle: 36cm</li>
+<li>Total width of last row (4 pins): 36cm</li>
+</ul>
+</li>
+<li>Pin triangle placed at end of bowling lane, centered in width, aligned flush with back boundary of lane</li>
+</ul>
+<a href="https://drive.google.com/file/d/1TPlDl-CZI3fSJtGU9KiLKaxUw5xAV-dn/view?usp=sharing" target="_blank" class="download-btn">📥 DOWNLOAD 3D FILE OF BOWLING PIN</a>
+</div>
+<div class="info-section competition-section">
+<h2>🏆 COMPETITION</h2>
+</div>
+<div class="info-section preparation-section">
+<h2>⏱️ PREPARATION</h2>
+<ul>
+<li>Robot Athlete placed in Start Zone (20×20cm square) facing towards lane (towards pins, not ball)</li>
+<li>Ball located in Ball Retrieval Area (20×8cm) at side of Start Zone</li>
+<li>Robot Athlete must autonomously move to collect ball before attempting throw</li>
+<li>Technician takes position behind robot, may only press Start button when instructed by referee</li>
+</ul>
+</div>
+<div class="info-section race-section">
+<h2>🏁 START - PROCESS OF THE RACE</h2>
+<ol>
+<li>Technician places Robot Athlete in Start Zone, waits for referee's signal</li>
+<li>Upon referee's instruction, Technician presses Start button</li>
+<li>After pressing Start button, Technician must immediately step back for safety</li>
+<li>From that moment, Robot Athlete must operate fully autonomously</li>
+<li>Robot Athlete moves from Start Zone, retrieves ball from Ball Retrieval Area, proceeds to release it towards pins</li>
+<li>Ball must roll only along bowling lane (3.65m). If ball enters side gutters = no pins counted</li>
+<li>Robot Athlete has up to <strong>5 seconds</strong> to begin moving after activation</li>
+<li>Each frame/attempt consists of up to <strong>2 throws</strong> (as in standard bowling rules)</li>
+<li>If ball doesn't reach pins or leaves lane sideways = throw invalid (0 pins)</li>
+<li>If Robot Athlete fails to release ball = attempt invalid</li>
+<li>Only <strong>one restart</strong> permitted during first attempt (1st frame)</li>
+<li>Throw must be executed from behind foul line. If any robot part crosses foul line before releasing ball = throw invalid, scored 0 pins</li>
+</ol>
+</div>
+<div class="info-section rounds-section">
+<h2>🔁 ROUNDS – ATTEMPTS</h2>
+<ul>
+<li>Robot Bowling match played over <strong>5 Frames</strong></li>
+<li>Teams compete alternately by Frame: All teams complete 1st Frame before 2nd Frame begins</li>
+<li>Playing order determined by referee before start, remains same throughout all Frames</li>
+</ul>
+
+<h3>In Each Frame:</h3>
+<ul>
+<li>Robot Athlete has up to <strong>2 rolls</strong> to knock down 10 pins</li>
+<li>If Strike achieved = Frame ends immediately, robot waits for next Frame</li>
+<li>If no Strike achieved = second roll performed for remaining pins</li>
+</ul>
+
+<p>After end of each Frame, pins reset by referee to initial triangular formation (1–2–3–4). Match continues until all 5 Frames completed by all teams.</p>
+</div>
+<div class="info-section scoring-section">
+<h2>🎳 SCORING PER ROLL</h2>
+<h3>Strike (30 points)</h3>
+<p>If Robot Athlete knocks down all 10 pins on first roll:</p>
+<ul>
+<li>Strike recorded</li>
+<li>Frame ends immediately (no second roll performed)</li>
+<li>Pins reset, game continues with next Frame</li>
+</ul>
+
+<h3>Spare (20 points)</h3>
+<p>If Robot Athlete knocks down all 10 pins in total with two rolls:</p>
+<ul>
+<li>Spare recorded</li>
+<li>Frame ends</li>
+</ul>
+
+<h3>Open Frame (points per pin)</h3>
+<p>If pins remain standing after two rolls:</p>
+<ul>
+<li>Score = 1 point per pin knocked down</li>
+<li>Example: if 7 pins fall in total → score = 7</li>
+</ul>
+</div>
+<div class="info-section end-section">
+<h2>❌ END OF AN ATTEMPT</h2>
+<p>Attempt ends in following cases:</p>
+<ol>
+<li>When Robot Athlete completed its roll(s) for current Frame (either 1 roll for Strike, or 2 rolls otherwise)</li>
+<li>If Robot Athlete becomes immobilized and cannot continue</li>
+<li>If Robot Athlete throws ball outside lane or into side gutters</li>
+<li>If Robot Athlete fails to release ball</li>
+<li>If Robot Athlete doesn't start moving within 5 seconds after activation</li>
+<li>If ball gets stuck and doesn't move further = throw considered finished, fallen pins counted</li>
+<li>If Robot Athlete touched/assisted by team during attempt (except when allowed by referee for safety) = attempt immediately terminated, scored 0 pins</li>
+</ol>
+</div>
+<div class="info-section disqualification-section">
+<h2>🟥 TEAM DISQUALIFICATION</h2>
+<p>Team disqualified and must withdraw (results not counted in official rankings) if:</p>
+<ul>
+<li>Robot Athlete doesn't comply with specifications and team refuses required adjustments</li>
+<li>Technicians behave inappropriately, use offensive language, provoke, or attack participants/referees</li>
+<li>Discovered Robot Athlete not operating autonomously but remotely controlled (Bluetooth, Wi-Fi, etc.)</li>
+</ul>
+</div>
+<div class="info-section allowed-section">
+<h2>✅ ALLOWED / ❌ PROHIBITED</h2>
+<h3>✅ ALLOWED:</h3>
+<ul>
+<li>Extension of Robot Athlete after match start by up to 10cm from only one side (any side)</li>
+<li>Use of any kind of rubber bands for launching/throwing ball</li>
+</ul>
+
+<h3>❌ PROHIBITED:</h3>
+<ul>
+<li>Robot Athletes using parts that can harm spectators</li>
+<li>Use of adhesives to improve adhesion</li>
+<li>Use of pneumatic devices</li>
+<li>Breaking Robot Athlete into pieces during race</li>
+<li>Remote control</li>
+<li>Wireless connection (Bluetooth/Wi-Fi) with computer or any electronic device during match. Teams found with wireless connection (members or coaches) during match = disqualified</li>
+<li>Restrictions listed in Athlete Robot technical control section</li>
+</ul>
+</div>
+<div class="info-section winners-section">
+<h2>🏆 WINNERS</h2>
+<p><strong>3 winners for each age category</strong> = Athletes who achieve highest total score after all 5 Frames.</p>
+<div class="podium">
+<div class="podium-item"><div class="medal gold">🥇</div><p class="place">1st Place</p></div>
+<div class="podium-item"><div class="medal silver">🥈</div><p class="place">2nd Place</p></div>
+<div class="podium-item"><div class="medal bronze">🥉</div><p class="place">3rd Place</p></div>
+</div>
+
+<h3>Tie-Breaking Rules:</h3>
+<ol>
+<li>In event of tie, team with highest number of <strong>Strikes</strong> ranked higher</li>
+<li>If still tied, team with highest number of <strong>Spares</strong> ranked higher</li>
+<li>If tie remains = additional tie-breaker Frame played</li>
+</ol>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.competition-detail{min-height:100vh;background:#f8fafc;padding-bottom:60px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.back-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#8b5cf6;padding:10px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-bottom:25px;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .3s}
+.back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(139,92,246,.3)}
+.competition-header{text-align:center;margin-bottom:35px}
+.header-icon{font-size:4rem;margin-bottom:15px}
+.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
+.section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}
+.age-categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:15px}
+.category-card{padding:20px;border-radius:12px;text-align:center;color:#fff;transition:all .3s}
+.category-card:hover{transform:translateY(-3px)}
+.kids{background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%)}
+.teens{background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%)}
+.category-card h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.category-card .age{font-size:1rem;margin-bottom:4px;opacity:.95}
+.category-card .level{font-size:.8125rem;opacity:.85}
+.compete-note{text-align:center;font-weight:700;color:#8b5cf6;font-size:1rem;margin-top:15px}
+.division-note{text-align:center;background:#dbeafe;padding:12px;border-radius:8px;border-left:4px solid #3b82f6;font-weight:700;margin-top:10px}
+.notes-section{background:#f3e8ff;padding:20px;border-radius:12px;border-left:4px solid #8b5cf6;margin-bottom:20px}
+.notes-section h2{font-size:1.25rem;font-weight:800;color:#6b21a8;margin-bottom:12px}
+.notes-section ul{list-style:none;padding:0}
+.notes-section li{padding:6px 0;color:#5b21b6;font-weight:500;font-size:.9375rem}
+.register-section{text-align:center;margin:25px 0}
+.register-btn{display:inline-block;background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);color:#fff;padding:15px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.125rem;box-shadow:0 6px 20px rgba(139,92,246,.3);transition:all .3s}
+.register-btn:hover{transform:translateY(-3px)}
+.rule-section{background:#fee2e2;padding:25px;border-radius:15px;margin-bottom:20px;border:3px solid #dc2626}
+.rule-section h2{font-size:1.5rem;font-weight:800;color:#991b1b;margin-bottom:15px}
+.rule-section p{color:#7f1d1d;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.rule-section blockquote{background:#fff;padding:15px;border-left:4px solid #dc2626;margin:15px 0;font-style:italic;font-weight:600;color:#991b1b}
+.info-section{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.info-section h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:18px;border-bottom:3px solid #8b5cf6;padding-bottom:8px}
+.info-section h3{font-size:1.25rem;font-weight:700;color:#475569;margin-top:20px;margin-bottom:12px}
+.info-section p{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:12px}
+.info-section ul,.info-section ol{padding-left:22px;margin-bottom:15px}
+.info-section li{color:#475569;font-size:.9375rem;line-height:1.7;margin-bottom:8px}
+.goal-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.robot-category{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.robot-specs{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid #3b82f6}
+.arena-section{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:3px solid #8b5cf6}
+.arena-images{display:grid;grid-template-columns:1fr;gap:20px;margin:20px 0}
+.arena-img-container,.pins-img-container{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.1);text-align:center}
+.arena-img{width:100%;height:auto;display:block}
+.arena-img-container p,.pins-img-container p{padding:15px;background:#f8fafc;font-size:.875rem;color:#475569;margin:0}
+.ball-pins-section{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:3px solid #ec4899}
+.download-btn{display:inline-block;background:#10b981;color:#fff;padding:12px 30px;border-radius:8px;text-decoration:none;font-weight:800;margin:15px 0;transition:all .3s}
+.download-btn:hover{background:#059669;transform:translateY(-2px)}
+.competition-section{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border:3px solid #10b981}
+.preparation-section{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:3px solid #ec4899}
+.race-section{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border:3px solid #10b981}
+.rounds-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.scoring-section{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%);border:3px solid #6366f1}
+.end-section{background:linear-gradient(135deg,#fee2e2 0%,#fecaca 100%);border:3px solid #ef4444}
+.disqualification-section{background:#fee2e2;border:3px solid #dc2626}
+.disqualification-section h2{color:#991b1b;border-bottom-color:#dc2626}
+.allowed-section{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border:3px solid #16a34a}
+.winners-section{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b}
+.podium{display:flex;justify-content:center;gap:25px;margin:20px 0}
+.podium-item{text-align:center}
+.medal{font-size:3rem;margin-bottom:8px}
+.place{font-size:1.125rem;font-weight:700;color:#92400e}
+@media (max-width:768px){
+.competition-title{font-size:1.75rem}
+.competition-subtitle{font-size:1rem}
+.section-box,.info-section{padding:18px}
+.age-categories-grid{grid-template-columns:1fr}
+.podium{flex-direction:column;gap:15px}
+}
+</style>
+{% endblock %}
+
+
+
