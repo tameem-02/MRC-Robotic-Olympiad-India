@@ -3,7 +3,7 @@
 {% block title %}Drones - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -69,10 +69,13 @@
 
         <!-- Registration Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -123,7 +126,7 @@
                 <li><strong>Recommended Weight:</strong> All-Up Weight (AUW) ≤ 100 g.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">✅ PERMITTED MODELS (Indoor Micro Class)</h3>
+            <h3 class="margin-top: 30px;">✅ PERMITTED MODELS (Indoor Micro Class)</h3>
             <ul>
                 <li>Ryze/DJI Tello / Tello EDU — ✅ with prop guards</li>
                 <li>Parrot Mambo — ✅ with prop guards</li>
@@ -138,7 +141,7 @@
                 <li>BSR drone, model 160 — ✅</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">❌ NOT PERMITTED</h3>
+            <h3 class="margin-top: 30px;">❌ NOT PERMITTED</h3>
             <ul>
                 <li>DJI Mini/Mavic/Air/FPV</li>
                 <li>Parrot Anafi, Autel EVO</li>
@@ -170,7 +173,7 @@
                 <li>🦺 Safety rules (goggles, no sharp edges)</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">📮 NEW MODEL ADDITION PROCESS</h3>
+            <h3 class="margin-top: 30px;">📮 NEW MODEL ADDITION PROCESS</h3>
             <p>If a team wishes to use a model outside the indicative list:</p>
             <ol>
                 <li>Submit a technical sheet (model, dimensions, battery, weight, prop guards)</li>
@@ -179,7 +182,7 @@
                 <li>Final on-site check; if it fails, the drone does not compete</li>
             </ol>
 
-            <h3 style="margin-top: 30px;">⚙️ INSPECTION REQUIREMENTS</h3>
+            <h3 class="margin-top: 30px;">⚙️ INSPECTION REQUIREMENTS</h3>
             <ul>
                 <li>1. Initial technical inspection on game day at announced time and location.</li>
                 <li>2. Technical control before the start of each phase.</li>
@@ -218,7 +221,7 @@
             <h3>🧪 DEMONSTRATION</h3>
             <p>Each team has <strong>3 minutes</strong> to complete the missions in the specially designed area.</p>
 
-            <h3 style="margin-top: 30px;">📋 COMPETITION PROCEDURE</h3>
+            <h3 class="margin-top: 30px;">📋 COMPETITION PROCEDURE</h3>
             <ul>
                 <li><strong>Route Definition:</strong> Defined exclusively by field markings.</li>
                 <li><strong>Numbering:</strong> Take-off/landing pads and hoops carry ascending numbers (1, 2, 3, …).</li>
@@ -227,13 +230,13 @@
                 <li><strong>Out of Order:</strong> Out of order / against arrows = 0 points for that element.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🧪 TESTING</h3>
+            <h3 class="margin-top: 30px;">🧪 TESTING</h3>
             <ul>
                 <li>Permitted testing announced by Organizing Committee in official schedule.</li>
                 <li>Outside announced program, testing is not permitted.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">📶 QUEUE & ACCESS</h3>
+            <h3 class="margin-top: 30px;">📶 QUEUE & ACCESS</h3>
             <ul>
                 <li>Start order is first-come, first-served in the Technicians' queue.</li>
                 <li>Only the Drone Technician allowed to wait in queue.</li>
@@ -241,14 +244,14 @@
                 <li>Non-compliance may result in loss of place.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🚦 ATTEMPT START</h3>
+            <h3 class="margin-top: 30px;">🚦 ATTEMPT START</h3>
             <ul>
                 <li>Drone placed at take-off position.</li>
                 <li>Referee blows start whistle; operator must launch within 5 seconds.</li>
                 <li>If 5 seconds elapse, flight is invalid. One restart allowed on first attempt only.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🎯 EXECUTION & SCORING</h3>
+            <h3 class="margin-top: 30px;">🎯 EXECUTION & SCORING</h3>
             <ul>
                 <li>Drone executes precisely following numbering & arrows.</li>
                 <li>Points printed on each pad/hoop awarded only if action is correct and in order.</li>
@@ -256,7 +259,7 @@
                 <li>Maximum mission duration: 3 minutes. If exceeded, team earns no points.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🔁 ATTEMPTS & CHECKS</h3>
+            <h3 class="margin-top: 30px;">🔁 ATTEMPTS & CHECKS</h3>
             <ul>
                 <li>Each team has 2 attempts.</li>
                 <li>Round 1 completed for all teams before Round 2 begins.</li>
@@ -327,7 +330,7 @@
                 <li>Frequent battery changes between attempts to ensure drone is always ready.</li>
             </ul>
 
-            <h3 style="margin-top: 20px;">❌ PROHIBITED:</h3>
+            <h3 class="margin-top: 20px;">❌ PROHIBITED:</h3>
             <ul>
                 <li>Any modification of the drone.</li>
                 <li>Use of different motors from those provided with recommended drone.</li>
@@ -357,7 +360,7 @@
                     <p class="place">3rd Place</p>
                 </div>
             </div>
-            <p style="margin-top: 20px;"><strong>Tiebreaker Rules:</strong></p>
+            <p class="margin-top: 20px;"><strong>Tiebreaker Rules:</strong></p>
             <ul>
                 <li>In case of a tie, the points of both 2 attempts of each team are added.</li>
                 <li>If a tie still occurs, teams compete in an additional mission which they will finish immediately.</li>
@@ -413,14 +416,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

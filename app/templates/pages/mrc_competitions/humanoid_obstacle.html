@@ -3,7 +3,7 @@
 {% block title %}Humanoid Obstacle Race - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -52,11 +52,14 @@
         </div>
 
         <!-- Registration Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -102,7 +105,7 @@
             
             <h3>🤖 2. Robot Athlete Requirements</h3>
             
-            <h4 style="margin-top: 20px;">⚙️ 2.1. GENERAL ROBOT SPECIFICATIONS</h4>
+            <h4 class="margin-top: 20px;">⚙️ 2.1. GENERAL ROBOT SPECIFICATIONS</h4>
             <ol>
                 <li>Any robot design allowed, if not subject to restrictions of section 2.2</li>
                 <li><strong>Dimensions:</strong> Must fit in 20cm × 20cm square (200mm). Max height: 50cm (500mm)</li>
@@ -112,7 +115,7 @@
                 <li><strong>ID Number:</strong> Must display number supplied by organizers on outer casing (given after inspection)</li>
             </ol>
 
-            <h4 style="margin-top: 30px;">🚫 2.2. ROBOT RESTRICTIONS</h4>
+            <h4 class="margin-top: 30px;">🚫 2.2. ROBOT RESTRICTIONS</h4>
             <ol>
                 <li><strong>Walking Mechanics:</strong> One leg should lift off floor while other leg balances</li>
                 <li><strong>Knee Angle:</strong> Balancing leg must have knee joint angle >90 degrees while walking</li>
@@ -192,7 +195,7 @@
             <h3>🎯 4.1.1. Objective of the Challenge</h3>
             <p>The Athlete robot must reach the top of the stair and enter the challenge area by climbing one step at a time using its legs.</p>
 
-            <h3 style="margin-top: 25px;">🧮 4.1.2. Challenge Points</h3>
+            <h3 class="margin-top: 25px;">🧮 4.1.2. Challenge Points</h3>
             <ul>
                 <li><strong>Complete Stair Climb:</strong> Robot entering challenge area after climbing = <strong>80 points</strong></li>
                 <li><strong>Partial Climb:</strong> 10 points for each rung climbed</li>
@@ -200,13 +203,13 @@
                 <li><strong>Skip Option:</strong> Robot may skip stair climb and start in challenge arena (cannot claim 80 points)</li>
             </ul>
 
-            <h3 style="margin-top: 25px;">🕒 4.1.3. Tries</h3>
+            <h3 class="margin-top: 25px;">🕒 4.1.3. Tries</h3>
             <p>Robot Athlete coaches have testing time before/after efforts. Each Robot Athlete entitled to <strong>3 official attempts</strong> where points will be counted.</p>
 
-            <h3 style="margin-top: 25px;">🤖 4.1.4. Autonomous Control</h3>
+            <h3 class="margin-top: 25px;">🤖 4.1.4. Autonomous Control</h3>
             <p>Once start signal given, robot must remain <strong>fully autonomous</strong> or will be disabled. Robot must be disconnected from any network during challenge to avoid external interference.</p>
 
-            <h3 style="margin-top: 25px;">🔁 4.1.5. Restarts</h3>
+            <h3 class="margin-top: 25px;">🔁 4.1.5. Restarts</h3>
             <ul>
                 <li>If robot falls down ladder or gets stuck = second chance to complete challenge in 1st attempt only</li>
                 <li>Up to 10 minutes given to resolve problem before retrying</li>
@@ -223,7 +226,7 @@
             <h3>🎯 1. Objective of the Challenge</h3>
             <p>The objective is for the bipedal Robot Athlete to complete an obstacle course while earning points.</p>
 
-            <h3 style="margin-top: 25px;">🛤️ 2. Challenge Course</h3>
+            <h3 class="margin-top: 25px;">🛤️ 2. Challenge Course</h3>
             <ul>
                 <li>Each Robot Athlete has total of <strong>3 attempts</strong></li>
                 <li><strong>Time Limit:</strong> 5 minutes to complete per attempt</li>
@@ -237,7 +240,7 @@
                 <li><strong>⚠️ If called to play and don't come in 5 minutes = Robot Athlete will not compete!</strong></li>
             </ul>
 
-            <h3 style="margin-top: 25px;">⛔ 4. Interruptions</h3>
+            <h3 class="margin-top: 25px;">⛔ 4. Interruptions</h3>
             <p>If Robot Athlete crashes for any reason, entitled to <strong>one restart</strong>. Robot must restart from starting position.</p>
         </div>
 
@@ -287,7 +290,7 @@
                 <li>If any problem with regulations, complaints, or deviations from rules observed = complaint addressed by team head to head judges</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🧩 3. FLEXIBILITY OF RULES</h3>
+            <h3 class="margin-top: 30px;">🧩 3. FLEXIBILITY OF RULES</h3>
             <ul>
                 <li>As long as concept and basic principles respected, rules flexible enough to accommodate changes in number of players and match content</li>
                 <li>Amendments or repeals of rules may be made by organization if published prior to event and maintained consistently throughout</li>
@@ -321,7 +324,7 @@
                     <p class="place">3rd Place</p>
                 </div>
             </div>
-            <p style="margin-top: 20px;"><strong>Final Ranking:</strong></p>
+            <p class="margin-top: 20px;"><strong>Final Ranking:</strong></p>
             <ul>
                 <li>Made by adding points from both challenges for each Robot Athlete</li>
                 <li>Robot Athlete with highest number of points wins competition</li>
@@ -378,13 +381,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

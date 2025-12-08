@@ -3,7 +3,7 @@
 {% block title %}Cage Wrestling - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -34,10 +34,13 @@
 
         <!-- Registration Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
         <!-- Goal -->
         <div class="info-section goal-section">
@@ -173,7 +176,7 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="info-section resources-section">
+        <!--<div class="info-section resources-section">
             <h2>📥 DOWNLOADS & RESOURCES</h2>
             <div class="download-grid">
                 <a href="https://www.he-ro.gr/_files/ugd/75e4cb_21d30ccddeef40f2abc4ca03308a12d9.docx?dn=CAGE%20WRESTLING%20RULES%20ENGLISH.docx" 
@@ -192,7 +195,7 @@
                     <span class="download-btn">Download PDF</span>
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Key Highlights -->
         <div class="info-section highlights-section">
@@ -281,13 +284,14 @@
     }
 
     .competition-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 8px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.25rem;

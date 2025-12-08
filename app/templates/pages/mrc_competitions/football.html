@@ -3,7 +3,7 @@
 {% block title %}Football - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -77,7 +77,7 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="downloads-section">
+        <!--<div class="downloads-section">
             <h2>📥 PRESS THE BUTTON BELOW TO VIEW THE QUICK GUIDE</h2>
             <div class="download-buttons">
                 <a href="https://www.he-ro.gr/minoan-robotsports-competition" target="_blank" class="download-btn primary">
@@ -87,7 +87,7 @@
                     📄 DOWNLOAD MAT FOR PRINT
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -235,7 +235,7 @@
                 <li>If the ball, as it moves towards the goal, touches a defending robot whose part is inside the goal, then the referee will charge the defending alliance with a goal.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🧮 SCORE – GROUP STAGE SCORING</h3>
+            <h3 class="margin-top: 30px;">🧮 SCORE – GROUP STAGE SCORING</h3>
             <p><strong>For the matches of a Group:</strong></p>
             <ul>
                 <li>3 points will be awarded for each win.</li>
@@ -246,24 +246,24 @@
                 <li>If there is still a tie then the alliance that conceded the fewest goals in all Group matches advances to the quarter-finals.</li>
             </ul>
 
-            <p style="margin-top: 20px;"><strong>For the quarter-final, semi-final, short-final and final matches:</strong></p>
+            <p class="margin-top: 20px;"><strong>For the quarter-final, semi-final, short-final and final matches:</strong></p>
             <ul>
                 <li>The alliance with the most goals advances to the next phase.</li>
                 <li>If there is a tie then 2 minutes extra time is given for "Golden Goal". Whichever alliance scores the first goal advances to the next phase.</li>
                 <li>If no alliance scores then there will be a penalty shootout. Each alliance will be given the opportunity to take 3 penalties. Each penalty can be taken by a different Technician of each team in the alliance. The alliance with the most goals goes to the next stage.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🎯 PENALTY SHOOTOUT PROCEDURE</h3>
+            <h3 class="margin-top: 30px;">🎯 PENALTY SHOOTOUT PROCEDURE</h3>
             <p>For the penalty shootout each alliance will shoot 3 penalties in turn as follows:</p>
             <ul>
                 <li>➤ The ball is placed by the referee on the center white bullet and each Robot Football Player takes a turn and heads towards the ball to shoot into an empty net.</li>
                 <li>➤ The robot's wheels are not allowed to touch or cross the center line. Therefore, players should hit the brakes in time. Otherwise their penalty will be canceled and count 0 (zero).</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">⏱️ TECHNICIAN SWITCH TIME</h3>
+            <h3 class="margin-top: 30px;">⏱️ TECHNICIAN SWITCH TIME</h3>
             <p>Between the matches of a group, a time of 1 minute will be given to each alliance. In this minute if a team wishes, it can change Technician. If the new Technician does not arrive within 1 minute, the previous Technician will continue in the next match.</p>
 
-            <h3 style="margin-top: 30px;">⚽️ MATCH DURATION</h3>
+            <h3 class="margin-top: 30px;">⚽️ MATCH DURATION</h3>
             <ul>
                 <li>The match lasts a total of 7 minutes.</li>
                 <li>There is no halftime; teams retain their accumulated score throughout the entire match.</li>
@@ -298,7 +298,7 @@
                 <li>some part of it has been disassembled,</li>
                 <li>remains stationary (lost connection to laptop, controller or tablet),</li>
             </ul>
-            <p style="margin-top: 20px;"><strong>Injury Procedures:</strong></p>
+            <p class="margin-top: 20px;"><strong>Injury Procedures:</strong></p>
             <ul>
                 <li>An injured Robot Football Player remains out of the field of play until repairs are completed by the team. After permission is given by the referee, he returns to the match. The Robot Football Player returning to the match is placed in the corner of the defense area, right or left at the players' choice. It is forbidden, however, to place the Robot Football Player in a position that gives him an advantage in possession of the ball, e.g. right in front of the ball. The referee can indicate which side the robot will return from if he judges that such an advantage is being created.</li>
                 <li>If a Robot Football Player falls over for any reason, with the help of the referee it gets back up and continues the game.</li>
@@ -318,7 +318,7 @@
                 <li>If the referee detects that the ball is trapped in any way, he places the ball back in the center of the field and the Robot Football Player away from it. If the blocking is repeated then it is considered intentional and the Robot Football Player is disqualified from that match. The match will continue as normal with 2 Robot Football Players for this alliance.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🎲 The Referee places the ball back in the center of the court:</h3>
+            <h3 class="margin-top: 30px;">🎲 The Referee places the ball back in the center of the court:</h3>
             <ul>
                 <li>When the match starts.</li>
                 <li>When a goal is scored.</li>
@@ -328,12 +328,12 @@
                 <li>When the ball crosses the entire end line parallel to the goals.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">📤 The Referee releases the ball:</h3>
+            <h3 class="margin-top: 30px;">📤 The Referee releases the ball:</h3>
             <ul>
                 <li>When he unblocks 2 or more Robot Football Players who have trapped the ball.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">↩️ A Robot Soccer Player is placed in the corner:</h3>
+            <h3 class="margin-top: 30px;">↩️ A Robot Soccer Player is placed in the corner:</h3>
             <ul>
                 <li>When an injured Robot Football Player returns to the game.</li>
             </ul>
@@ -359,10 +359,10 @@
                     <div class="arrow">→</div>
                     <div class="flow-box">FINAL</div>
                 </div>
-                <div class="flow-boxes" style="margin-top: 20px;">
-                    <div class="flow-box">SMALL FINAL</div>
-                    <div class="arrow-text">(3rd Place Match)</div>
-                </div>
+                <div class="flow-boxes">
+    <div class="flow-box">SMALL FINAL</div>
+    <div class="arrow-text">(3rd Place Match)</div>
+</div>
             </div>
         </div>
 
@@ -414,10 +414,13 @@
 
         <!-- Register Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -583,13 +586,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

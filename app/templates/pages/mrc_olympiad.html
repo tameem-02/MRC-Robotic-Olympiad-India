@@ -2,12 +2,10 @@
 
 {% block title %}MRC Global Olympiad - H.E.R.O.{% endblock %}
 
-{% block content %} 
-
-
+{% block content %}
 
 <!-- YouTube Video Hero Section -->
-<section class="video-hero-section" style="padding-top: 100px; padding-bottom: 60px;">
+<section class="video-hero-section">
     <div class="container">
         <div class="video-hero-container">
             <div class="video-wrapper">
@@ -19,21 +17,12 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            <!--<div class="video-description">
-                <h2>🏆 Welcome to MRC Global Olympiad 2026</h2>
-                <p>Experience the ultimate robotics competition in Heraklion, Crete, Greece</p>
-            </div>-->
         </div>
     </div>
 </section>
 
 <!-- Stage 2: Sports Cards Grid -->
-<section class="section mrc-stage-2" id="stage2" style="padding-top: 100px;">
-
-
-
-<!-- Stage 2: Sports Cards Grid -->
-<section class="section mrc-stage-2" id="stage2" style="padding-top: 100px;">
+<section class="section mrc-stage-2" id="stage2">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title-modern">MRC Sports Categories</h2>
@@ -43,964 +32,622 @@
         <!-- Sports Cards Grid -->
         <div class="sports-cards-grid">
             <!-- Marathon -->
-           <!-- Marathon -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/marathon.png') }}" 
-             alt="Marathon" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-blue">Elementary</span>
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            Endurance race testing autonomous navigation over multiple laps. Robots must manage power and maintain consistent performance.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">30 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_marathon') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
+            <div class="sport-card-box">
+                <div class="card-header marathon-header">
+                    <img src="{{ url_for('static', filename='images/marathon.png') }}" 
+                         alt="Marathon" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_marathon') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
+            <!-- Archery -->
+            <div class="sport-card-box">
+                <div class="card-header archery-header">
+                    <img src="{{ url_for('static', filename='images/archery.png') }}" 
+                         alt="Archery" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_archery') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
-           <!-- Archery -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/archery.png') }}" 
-             alt="Archery" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Precision targeting competition where robots aim and launch projectiles at designated targets with accuracy.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">15 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_archery') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-          <!-- Relay Race -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/relay.png') }}" 
-             alt="Relay Race" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Team coordination challenge where multiple robots pass objects between stages requiring precise timing.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">20 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_relay_race') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <!-- Relay Race -->
+            <div class="sport-card-box">
+                <div class="card-header relay-header">
+                    <img src="{{ url_for('static', filename='images/relay.png') }}" 
+                         alt="Relay Race" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_relay_race') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Obstacle Race -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/obstacle.png') }}" 
-             alt="Obstacle Race" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            Navigate complex terrain with climbing, traversing, and maneuvering through challenging obstacle courses.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">10 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_obstacle_race') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header obstacle-header">
+                    <img src="{{ url_for('static', filename='images/obstacle.png') }}" 
+                         alt="Obstacle Race" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_obstacle_race') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Mountain Bike -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/mountain.png') }}" 
-             alt="Mountain Bike" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Off-road biking simulation requiring robust design and advanced control for variable terrain handling.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">15 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_mountain_bike') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header mountain-header">
+                    <img src="{{ url_for('static', filename='images/mountain.png') }}" 
+                         alt="Mountain Bike" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_mountain_bike') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Football -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/football.png') }}" 
-             alt="Football" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Autonomous robot soccer competition requiring strategy, ball control, teamwork, and real-time decisions.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">2x10 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_football') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
+            <div class="sport-card-box">
+                <div class="card-header football-header">
+                    <img src="{{ url_for('static', filename='images/football.png') }}" 
+                         alt="Football" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_football') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Rally -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/rally.png') }}" 
-             alt="Rally" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            High-speed racing through varied terrain and checkpoints testing speed, control, and navigation.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">5 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_rally') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
+            <div class="sport-card-box">
+                <div class="card-header rally-header">
+                    <img src="{{ url_for('static', filename='images/rally.png') }}" 
+                         alt="Rally" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_rally') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Shot Put -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/shut put.png') }}" 
-             alt="Shot Put" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Projectile launching competition measuring distance and accuracy with mechanical power systems.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">3 attempts</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_shot_put') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
+            <div class="sport-card-box">
+                <div class="card-header shotput-header">
+                    <img src="{{ url_for('static', filename='images/shut put.png') }}" 
+                         alt="Shot Put" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_shot_put') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Exhibition -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/exhibition.png') }}" 
-             alt="Exhibition" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Open category for creative robotics projects showcasing innovative designs and demonstrations.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">10 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">All Levels</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_exhibition') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header exhibition-header">
+                    <img src="{{ url_for('static', filename='images/exhibition.png') }}" 
+                         alt="Exhibition" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_exhibition') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Water Polo -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #209cff 0%, #68e0cf 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/water.png') }}" 
-             alt="Water Polo" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Aquatic robotics combining swimming, ball handling, and goal scoring in water environment.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">2x8 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_water_polo') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header waterpolo-header">
+                    <img src="{{ url_for('static', filename='images/water.png') }}" 
+                         alt="Water Polo" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_water_polo') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Weightlifting -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #f77062 0%, #fe5196 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/weightlifting diy robots.png') }}" 
-             alt="Weightlifting" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Strength competition where robots lift and move heavy objects testing mechanical power.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">3 attempts</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_weightlifting') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
+            <div class="sport-card-box">
+                <div class="card-header weightlifting-header">
+                    <img src="{{ url_for('static', filename='images/weightlifting diy robots.png') }}" 
+                         alt="Weightlifting" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_weightlifting') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Pentathlon -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/pentathlon.png') }}" 
-             alt="Pentathlon" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Five disciplines in one event - the ultimate test of robot versatility and team capability.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">Full day</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_pentathlon') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header pentathlon-header">
+                    <img src="{{ url_for('static', filename='images/pentathlon.png') }}" 
+                         alt="Pentathlon" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_pentathlon') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Shooting -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/shooting.png') }}" 
-             alt="Shooting" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Target shooting requiring precision aiming and firing mechanisms with sensor integration.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">10 shots</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_shooting') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
+            <div class="sport-card-box">
+                <div class="card-header shooting-header">
+                    <img src="{{ url_for('static', filename='images/shooting.png') }}" 
+                         alt="Shooting" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_shooting') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
 
             <!-- Rowing -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/rowing.png') }}" 
-             alt="Rowing" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Water-based linear racing with synchronized mechanical rowing motion and navigation.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">5 min race</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_rowing') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-            <!-- girling -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/girling.png') }}" 
-             alt="Curling" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Precision sliding sport with fine motor control and strategic stone placement.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">8 ends</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_curling') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-
-<!-- BEFORE Event Info section, add these new cards: -->
-
-<!-- Drones -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/drone drone .png') }}" 
-             alt="Drones" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Aerial racing challenge where drones navigate through obstacle courses testing flight control and precision.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">10 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_drones') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Drones Soccer -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #16a34a 0%, #14532d 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/drone soccer.png') }}" 
-             alt="Drones Soccer" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Aerial soccer competition where drones maneuver balls through goals requiring teamwork and aerial control.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">2x8 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_drones_soccer') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Weightlifting Humanoid -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #eab308 0%, #854d0e 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/weightlifting humanoid.png') }}" 
-             alt="Weightlifting Humanoid" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Humanoid robot weightlifting competition testing mechanical strength and stability with human-like movements.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">3 attempts</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_weightlifting_humanoid') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Humanoid Obstacle Race -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #06b6d4 0%, #164e63 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/humanoid.png') }}" 
-             alt="Humanoid Obstacle Race" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Humanoid robots navigate complex obstacle courses simulating human movement and balance challenges.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">15 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_humanoid_obstacle') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Humanoid -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #f97316 0%, #9a3412 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling humanoid.png') }}" 
-             alt="Wrestling Humanoid" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Humanoid robot combat sport testing balance, strategy, and autonomous decision-making in one-on-one matches.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">3x2 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_humanoid') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Cage 500gr -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #0891b2 0%, #164e63 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling cage.png') }}" 
-             alt="Wrestling Cage 500gr" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-blue">Elementary</span>
-            <span class="badge badge-green">High School</span>
-        </div>
-        <p class="card-description">
-            Lightweight robot combat in a cage arena. Robots up to 500g battle for dominance and points.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">500g</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_cage_500') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Cage 1.5kg -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #10b981 0%, #065f46 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wristling cage 1.5kg.png') }}" 
-             alt="Wrestling Cage 1.5kg" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            Mid-weight robot combat category. Robots up to 1.5kg compete in intense cage battles.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">1.5kg</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_cage_1500') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Mega 3kg -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling mega.png') }}" 
-             alt="Wrestling Mega 3kg" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            Heavyweight robot combat. Robots up to 3kg engage in powerful battles with maximum destruction.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">3kg</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_mega') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Classic 1kg -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #84cc16 0%, #365314 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling classic.png') }}" 
-             alt="Wrestling Classic 1kg" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            Classic weight category robot combat. Robots up to 1kg battle in traditional wrestling matches.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">1kg</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_classic') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Mini 500g -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #ec4899 0%, #831843 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling mini.png') }}" 
-             alt="Wrestling Mini 500g" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-blue">Elementary</span>
-            <span class="badge badge-green">High School</span>
-        </div>
-        <p class="card-description">
-            Mini robot wrestling for beginners. Compact robots up to 500g compete in fast-paced matches.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">500g</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Beginner</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_mini') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Micro 100g -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #facc15 0%, #713f12 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling micro.png') }}" 
-             alt="Wrestling Micro 100g" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-blue">Elementary</span>
-        </div>
-        <p class="card-description">
-            Micro robot wrestling for young engineers. Ultra-light robots up to 100g showcase precision control.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">100g</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Beginner</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_micro') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Wrestling Nano 25g -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #a855f7 0%, #581c87 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/wrestling nano.png') }}" 
-             alt="Wrestling Nano 25g" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-blue">Elementary</span>
-        </div>
-        <p class="card-description">
-            Nano robot wrestling - the tiniest category. Robots up to 25g demonstrate miniature engineering excellence.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Weight Limit:</span> <span class="value">25g</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Beginner</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-3 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_wrestling_nano') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Marathon Turbo -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #f97316 0%, #7c2d12 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/marthon turbo.png') }}" 
-             alt="Marathon Turbo" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-purple">University</span>
-            <span class="badge badge-orange">Adults</span>
-        </div>
-        <p class="card-description">
-            High-speed marathon racing with turbo-powered robots. Extreme endurance and velocity challenges.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">45 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Expert</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_marathon_turbo') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Hockey -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #bef264 0%, #3f6212 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/hockey.png') }}" 
-             alt="Hockey" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-green">High School</span>
-            <span class="badge badge-purple">University</span>
-        </div>
-        <p class="card-description">
-            Robot hockey matches with stick control, puck handling, and goal scoring in fast-paced team play.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">2x10 min</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Advanced</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">3-5 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_hockey') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-<!-- Bowling -->
-<div class="sport-card-box">
-    <div class="card-header" style="background: linear-gradient(135deg, #22d3ee 0%, #164e63 100%); padding: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-        <img src="{{ url_for('static', filename='images/bowling.png') }}" 
-             alt="Bowling" 
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-body">
-        <div class="badges-container">
-            <span class="badge badge-pink">All Categories</span>
-        </div>
-        <p class="card-description">
-            Robot bowling competition testing precision, trajectory calculation, and consistent performance.
-        </p>
-        <div class="card-details">
-            <div class="detail-item"><span class="label">Duration:</span> <span class="value">10 frames</span></div>
-            <div class="detail-item"><span class="label">Difficulty:</span> <span class="value">Intermediate</span></div>
-            <div class="detail-item"><span class="label">Team Size:</span> <span class="value">2-4 members</span></div>
-        </div>
-    </div>
-    <div class="card-footer">
-        <a href="{{ url_for('main.mrc_bowling') }}" class="btn-watch" style="text-decoration: none;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
-            View Details
-        </a>
-        <a href="http://www.minoanrobotsports.gr/" target="_blank" class="btn-register-card">Register Now</a>
-    </div>
-</div>
-
-
-        <!-- Event Info -->
-        <div class="event-info-section">
-            <h3 class="info-section-title">Event Information</h3>
-            <div class="info-cards">
-                <div class="info-card-modern">
-                    <div class="card-icon">💰</div>
-                    <h4>Registration Fee</h4>
-                    <p class="card-value">€95</p>
-                    <p class="card-label">Early Bird</p>
+            <div class="sport-card-box">
+                <div class="card-header rowing-header">
+                    <img src="{{ url_for('static', filename='images/rowing.png') }}" 
+                         alt="Rowing" 
+                         class="card-image"
+                         loading="lazy">
                 </div>
-                <div class="info-card-modern">
-                    <div class="card-icon">📅</div>
-                    <h4>Event Dates</h4>
-                    <p class="card-value">3-6 April</p>
-                    <p class="card-label">2026</p>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_rowing') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
                 </div>
-                <div class="info-card-modern">
-                    <div class="card-icon">🏆</div>
-                    <h4>Categories</h4>
-                    <p class="card-value">15</p>
-                    <p class="card-label">Sports</p>
+            </div>
+
+            <!-- Curling -->
+            <div class="sport-card-box">
+                <div class="card-header curling-header">
+                    <img src="{{ url_for('static', filename='images/girling.png') }}" 
+                         alt="Curling" 
+                         class="card-image"
+                         loading="lazy">
                 </div>
-                <div class="info-card-modern">
-                    <div class="card-icon">🌍</div>
-                    <h4>Location</h4>
-                    <p class="card-value">Crete</p>
-                    <p class="card-label">Greece</p>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_curling') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Drones -->
+            <div class="sport-card-box">
+                <div class="card-header drones-header">
+                    <img src="{{ url_for('static', filename='images/drone drone .png') }}" 
+                         alt="Drones" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_drones') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Drones Soccer -->
+            <div class="sport-card-box">
+                <div class="card-header drones-soccer-header">
+                    <img src="{{ url_for('static', filename='images/drone soccer.png') }}" 
+                         alt="Drones Soccer" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_drones_soccer') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Weightlifting Humanoid -->
+            <div class="sport-card-box">
+                <div class="card-header weightlifting-humanoid-header">
+                    <img src="{{ url_for('static', filename='images/weightlifting humanoid.png') }}" 
+                         alt="Weightlifting Humanoid" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_weightlifting_humanoid') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Humanoid Obstacle Race -->
+            <div class="sport-card-box">
+                <div class="card-header humanoid-obstacle-header">
+                    <img src="{{ url_for('static', filename='images/humanoid.png') }}" 
+                         alt="Humanoid Obstacle Race" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_humanoid_obstacle') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Humanoid -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-humanoid-header">
+                    <img src="{{ url_for('static', filename='images/wrestling humanoid.png') }}" 
+                         alt="Wrestling Humanoid" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_humanoid') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Cage 500gr -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-cage-500-header">
+                    <img src="{{ url_for('static', filename='images/wrestling cage.png') }}" 
+                         alt="Wrestling Cage 500gr" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_cage_500') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Cage 1.5kg -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-cage-1500-header">
+                    <img src="{{ url_for('static', filename='images/wristling cage 1.5kg.png') }}" 
+                         alt="Wrestling Cage 1.5kg" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_cage_1500') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Mega 3kg -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-mega-header">
+                    <img src="{{ url_for('static', filename='images/wrestling mega.png') }}" 
+                         alt="Wrestling Mega 3kg" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_mega') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Classic 1kg -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-classic-header">
+                    <img src="{{ url_for('static', filename='images/wrestling classic.png') }}" 
+                         alt="Wrestling Classic 1kg" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_classic') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Mini 500g -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-mini-header">
+                    <img src="{{ url_for('static', filename='images/wrestling mini.png') }}" 
+                         alt="Wrestling Mini 500g" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_mini') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Micro 100g -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-micro-header">
+                    <img src="{{ url_for('static', filename='images/wrestling micro.png') }}" 
+                         alt="Wrestling Micro 100g" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_micro') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Wrestling Nano 25g -->
+            <div class="sport-card-box">
+                <div class="card-header wrestling-nano-header">
+                    <img src="{{ url_for('static', filename='images/wrestling nano.png') }}" 
+                         alt="Wrestling Nano 25g" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_wrestling_nano') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Marathon Turbo -->
+            <div class="sport-card-box">
+                <div class="card-header marathon-turbo-header">
+                    <img src="{{ url_for('static', filename='images/marthon turbo.png') }}" 
+                         alt="Marathon Turbo" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_marathon_turbo') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Hockey -->
+            <div class="sport-card-box">
+                <div class="card-header hockey-header">
+                    <img src="{{ url_for('static', filename='images/hockey.png') }}" 
+                         alt="Hockey" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_hockey') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
+                </div>
+            </div>
+
+            <!-- Bowling -->
+            <div class="sport-card-box">
+                <div class="card-header bowling-header">
+                    <img src="{{ url_for('static', filename='images/bowling.png') }}" 
+                         alt="Bowling" 
+                         class="card-image"
+                         loading="lazy">
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url_for('main.mrc_bowling') }}" class="btn-watch">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2v12l10-6L3 2z"/></svg>
+                        View Details
+                    </a>
+                    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-register-card">Register Now</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-    
 </section>
 
 {% endblock %}
 
 {% block extra_css %}
 <style>
-
-        /* YouTube Video Hero Section */
+    /* Common styles */
     .video-hero-section {
-    background: transparent;
-}
+        padding-top: 100px;
+        padding-bottom: 60px;
+        background: transparent;
+    }
+
+    .mrc-stage-2 {
+        padding-top: 100px;
+    }
 
     .video-hero-container {
         max-width: 1200px;
@@ -1009,7 +656,7 @@
 
     .video-wrapper {
         position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         border-radius: 20px;
@@ -1026,33 +673,51 @@
         border-radius: 20px;
     }
 
-    .video-description {
-        text-align: center;
-        color: white;
+    /* Card Header Backgrounds */
+    .marathon-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .archery-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .relay-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .obstacle-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+    .mountain-header { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+    .football-header { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+    .rally-header { background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); }
+    .shotput-header { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+    .exhibition-header { background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%); }
+    .waterpolo-header { background: linear-gradient(135deg, #209cff 0%, #68e0cf 100%); }
+    .weightlifting-header { background: linear-gradient(135deg, #f77062 0%, #fe5196 100%); }
+    .pentathlon-header { background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%); }
+    .shooting-header { background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%); }
+    .rowing-header { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    .curling-header { background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%); }
+    .drones-header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+    .drones-soccer-header { background: linear-gradient(135deg, #16a34a 0%, #14532d 100%); }
+    .weightlifting-humanoid-header { background: linear-gradient(135deg, #eab308 0%, #854d0e 100%); }
+    .humanoid-obstacle-header { background: linear-gradient(135deg, #06b6d4 0%, #164e63 100%); }
+    .wrestling-humanoid-header { background: linear-gradient(135deg, #f97316 0%, #9a3412 100%); }
+    .wrestling-cage-500-header { background: linear-gradient(135deg, #0891b2 0%, #164e63 100%); }
+    .wrestling-cage-1500-header { background: linear-gradient(135deg, #10b981 0%, #065f46 100%); }
+    .wrestling-mega-header { background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%); }
+    .wrestling-classic-header { background: linear-gradient(135deg, #84cc16 0%, #365314 100%); }
+    .wrestling-mini-header { background: linear-gradient(135deg, #ec4899 0%, #831843 100%); }
+    .wrestling-micro-header { background: linear-gradient(135deg, #facc15 0%, #713f12 100%); }
+    .wrestling-nano-header { background: linear-gradient(135deg, #a855f7 0%, #581c87 100%); }
+    .marathon-turbo-header { background: linear-gradient(135deg, #f97316 0%, #7c2d12 100%); }
+    .hockey-header { background: linear-gradient(135deg, #bef264 0%, #3f6212 100%); }
+    .bowling-header { background: linear-gradient(135deg, #22d3ee 0%, #164e63 100%); }
+
+    .card-header {
+        padding: 0;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .video-description h2 {
-        font-size: 2.5rem;
-        font-weight: 900;
-        margin-bottom: 15px;
-        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-
-    .video-description p {
-        font-size: 1.25rem;
-        opacity: 0.95;
-    }
-
-    @media (max-width: 768px) {
-        .video-description h2 {
-            font-size: 1.75rem;
-        }
-
-        .video-description p {
-            font-size: 1rem;
-        }
-    }
-
 
     .section-header {
         text-align: center;
@@ -1060,149 +725,67 @@
     }
     
     .section-title-modern {
-        font-size: 3rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-    }
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
     
     .section-subtitle-modern {
         font-size: 1.25rem;
         color: #64748b;
     }
     
-    
+    /* Sports Cards Grid */
     .sports-cards-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
         margin-bottom: 60px;
     }
     
     .sport-card-box {
         background: white;
-        border-radius: 20px;
+        border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         transition: all 0.4s ease;
         display: flex;
         flex-direction: column;
+        max-height: 520px;
     }
     
     .sport-card-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    }
-    
-    .card-header {
-        padding: 30px;
-        text-align: center;
-        position: relative;
-    }
-    
-    .sport-icon-large {
-        font-size: 4rem;
-        margin-bottom: 15px;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-    }
-    
-    .card-title {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: white;
-        margin: 0;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    .card-body {
-        padding: 25px;
-        flex: 1;
-    }
-    
-    .badges-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 15px;
-    }
-    
-    .badge {
-        display: inline-block;
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    
-    .badge-blue { background: #dbeafe; color: #1e40af; }
-    .badge-green { background: #d1fae5; color: #065f46; }
-    .badge-purple { background: #e9d5ff; color: #6b21a8; }
-    .badge-orange { background: #fed7aa; color: #c2410c; }
-    .badge-pink { background: #fce7f3; color: #9f1239; }
-    
-    .card-description {
-        font-size: 0.9375rem;
-        line-height: 1.7;
-        color: #475569;
-        margin-bottom: 20px;
-    }
-    
-    .card-details {
-        background: #f8fafc;
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 15px;
-    }
-    
-    .detail-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-        border-bottom: 1px solid #e2e8f0;
-    }
-    
-    .detail-item:last-child {
-        border-bottom: none;
-    }
-    
-    .detail-item .label {
-        font-weight: 600;
-        color: #64748b;
-        font-size: 0.875rem;
-    }
-    
-    .detail-item .value {
-        font-weight: 700;
-        color: #1e293b;
-        font-size: 0.875rem;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     
     .card-footer {
-        padding: 20px 25px;
+        padding: 15px 18px;
         background: #f8fafc;
         display: flex;
-        gap: 12px;
+        gap: 10px;
     }
     
     .btn-watch {
         flex: 1;
         background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         color: white;
-        padding: 12px 20px;
+        padding: 10px 16px;
         border: none;
-        border-radius: 10px;
+        border-radius: 8px;
         cursor: pointer;
         font-weight: 700;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
         transition: all 0.3s ease;
+        text-decoration: none;
     }
     
     .btn-watch:hover {
@@ -1214,11 +797,11 @@
         flex: 1;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        padding: 12px 20px;
-        border-radius: 10px;
+        padding: 10px 16px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 700;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1230,81 +813,81 @@
         box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
     }
     
-    .event-info-section {
-        margin-top: 60px;
-    }
-    
-    .info-section-title {
-        font-size: 2rem;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 40px;
-        color: #1e293b;
-    }
-    
-    .info-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 25px;
-    }
-    
-    .info-card-modern {
-        background: white;
-        padding: 30px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-    
-    .info-card-modern:hover {
-        transform: translateY(-10px);
-        border-color: #667eea;
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-    }
-    
-    .card-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-    }
-    
-    .info-card-modern h4 {
-        font-size: 0.875rem;
-        color: #64748b;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 600;
-    }
-    
-    .card-value {
-        font-size: 2.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 5px;
-    }
-    
-    .card-label {
-        font-size: 0.875rem;
-        color: #94a3b8;
-        font-weight: 500;
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .sports-cards-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
     }
     
     @media (max-width: 992px) {
-        .section-title-modern { font-size: 2rem; }
+        .section-title-modern { 
+            font-size: 2.5rem; 
+        }
+        .section-subtitle-modern {
+            font-size: 1.1rem;
+        }
         .sports-cards-grid {
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 15px;
         }
     }
     
     @media (max-width: 768px) {
         .sports-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .video-hero-section {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        
+        .mrc-stage-2 {
+            padding-top: 80px;
+        }
+        
+        .section-title-modern {
+            font-size: 2rem;
+        }
+        
+        .section-header {
+            margin-bottom: 30px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .sports-cards-grid {
             grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .video-wrapper {
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .video-wrapper iframe {
+            border-radius: 15px;
+        }
+        
+        .section-title-modern {
+            font-size: 1.75rem;
+        }
+        
+        .section-subtitle-modern {
+            font-size: 1rem;
+        }
+        
+        .card-footer {
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .btn-watch,
+        .btn-register-card {
+            width: 100%;
         }
     }
 </style>
 {% endblock %}
-

@@ -3,7 +3,7 @@
 {% block title %}Obstacle Race - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -87,14 +87,14 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="downloads-section">
+        <!--<div class="downloads-section">
             <h2>📥 PRESS THE BUTTON BELOW TO VIEW THE QUICK GUIDE</h2>
             <div class="download-buttons">
                 <a href="https://www.he-ro.gr/minoan-robotsports-competition" target="_blank" class="download-btn primary">
                     📖 OBSTACLE RACE QUICK GUIDE
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -331,7 +331,7 @@
                 <li>The Robot Athlete must be in standby mode, ready to start as soon as the start button is pressed or the button on the remote control is activated.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🏁 START – RACE PROCEDURE</h3>
+            <h3 class="margin-top: 30px;">🏁 START – RACE PROCEDURE</h3>
             <ul>
                 <li>The Technician of the Robot Athlete starts the Robot Athlete after the referee's whistle, by pressing the Start button. The timer begins when the Robot Athlete passes in front of the time control sensor.</li>
                 <li>The Robot Athlete must start within the next 5 seconds.</li>
@@ -436,7 +436,7 @@
                 <div class="place">🥉 3rd Place</div>
             </div>
             <p>🏁 The ranking is determined based on the shortest time achieved by the Robot Athletes.</p>
-            <p style="margin-top: 20px;">➤ In Advanced Category, if a team registers multiple robots and places in multiple positions (e.g., 1st and 3rd), only the highest ranking is retained. The next best teams move up accordingly.</p>
+            <p class="margin-top: 20px;">➤ In Advanced Category, if a team registers multiple robots and places in multiple positions (e.g., 1st and 3rd), only the highest ranking is retained. The next best teams move up accordingly.</p>
         </div>
 
         <!-- Track Sample -->
@@ -452,11 +452,14 @@
         </div>
 
         <!-- Register Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -587,13 +590,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

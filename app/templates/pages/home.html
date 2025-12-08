@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}Home - Robofest India{% endblock %}
+{% block title %}Home - MRC India{% endblock %}
 
 {% block content %}
 
 <!-- Featured Video Section -->
-<section class="section fullscreen-video-section" style="background-color: var(--bg-light); padding-top: 100px;">
+<section class="section fullscreen-video-section">
     <div class="container-full">
         <h2 class="section-title">Watch H.E.R.O in Action</h2>
         <p class="section-subtitle">Experience the excitement of our robotics competitions</p>
         
         <div class="featured-video-container">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/oKCFd9VJs_Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/oKCFd9VJs_Q" 
+                        title="H.E.R.O Robotics Competition Video"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
@@ -20,14 +25,14 @@
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">Welcome to Robofest India</h2>
+        <h2 class="section-title">Welcome to MRC India</h2>
         <p class="section-subtitle">
             India's premier autonomous robotics program for students from 2nd grade through college. 
             Design, construct, and program robots to compete in exciting challenges that develop STEM skills, 
             creativity, and problem-solving abilities.
         </p>
         
-        <div class="grid grid-3 features-grid">
+        <!--<div class="grid grid-3 features-grid">
             <div class="card feature-card">
                 <div class="feature-icon">🏆</div>
                 <h3 class="feature-title">Competitions</h3>
@@ -54,11 +59,11 @@
                     from around the world.
                 </p>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 
-<section class="section" style="background-color: var(--bg-light);">
+<section class="section section-light-bg">
     <div class="container">
         <h2 class="section-title">Upcoming Events</h2>
         <p class="section-subtitle">Don't miss our exciting robotics competitions and educational programs</p>
@@ -69,13 +74,13 @@
             {% endfor %}
         </div>
         
-        <div style="text-align: center; margin-top: 40px;">
+        <div class="text-center mt-40">
             <a href="{{ url_for('competitions.competitions_list') }}" class="btn btn-primary">View All Competitions</a>
         </div>
     </div>
 </section>
 
-<section class="section">
+<!--<section class="section">
     <div class="container">
         <div class="stats-showcase">
             <div class="stat-box">
@@ -87,7 +92,7 @@
                 <div class="stat-label">Students Participated</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number">₹90</div>
+                <div class="stat-number">€95</div>
                 <div class="stat-label">Registration Fee</div>
             </div>
             <div class="stat-box">
@@ -96,9 +101,9 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
-<section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
+<!--<section class="section section-gradient">
     <div class="container">
         <div class="cta-box">
             <h2 class="cta-title">Ready to Start Your Robotics Journey?</h2>
@@ -108,15 +113,40 @@
             </p>
             <div class="cta-buttons">
                 <a href="{{ url_for('competitions.competitions_list') }}" class="btn btn-cta-primary">Browse Competitions</a>
-                <a href="https://script.google.com/macros/s/AKfycbzZsT-XY9Dx4uTxAt0rFWIzkIrWnsm-PAEH5oGrE2Xge38ddSgQaf9WaG3S5di6gEZPgw/exec" target="_blank" class="btn btn-cta-secondary">Register Now</a>
+                <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn btn-cta-secondary">Register Now</a>
             </div>
         </div>
     </div>
-</section>
+</section>-->
 {% endblock %}
 
 {% block extra_css %}
 <style>
+    /* Custom classes for this page */
+    .fullscreen-video-section {
+        background-color: var(--bg-light);
+        padding-top: 100px;
+    }
+    
+    .section-light-bg {
+        background-color: var(--bg-light);
+    }
+    
+    .section-gradient {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .mt-40 {
+        margin-top: 40px;
+    }
+    
     /* Full Screen Container */
     .container-full {
         width: 100%;

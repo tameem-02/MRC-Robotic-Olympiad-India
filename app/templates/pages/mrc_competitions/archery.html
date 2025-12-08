@@ -3,7 +3,7 @@
 {% block title %}Archery - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-section">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -68,18 +68,24 @@
             </ul>
         </div>
 
-        <!-- Downloads & Resources -->
-        <div class="downloads-section">
-            <h2>📥 RESOURCES & DOWNLOADS</h2>
-            <div class="download-buttons">
-                <a href="https://www.he-ro.gr/_files/ugd/75e4cb_2affb5053a994de2aa69324844587cfc.pdf" target="_blank" class="download-btn primary">
-                    🎯 DOWNLOAD TARGET FOR PRINT
-                </a>
-                <a href="https://0d4ff886-d4ea-480e-8a81-38cd352792cd.filesusr.com/ugd/75e4cb_04fa172bfafc4023a0f82ecaf7f50be6.psd?dn=%CE%A4%CE%9F%CE%9E%CE%9F%CE%92%CE%9F%CE%9B%CE%99%CE%91.psd" target="_blank" class="download-btn secondary">
-                    📄 DOWNLOAD FULL MAT FOR PRINT
-                </a>
-            </div>
-        </div>
+       <!-- Downloads & Resources -->
+<div class="downloads-section">
+    <h2>📥 RESOURCES & DOWNLOADS</h2>
+    <div class="download-buttons">
+        <a href="https://www.he-ro.gr/_files/ugd/75e4cb_2affb5053a994de2aa69324844587cfc.pdf" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="download-btn primary">
+            🎯 DOWNLOAD TARGET FOR PRINT
+        </a>
+        <!--<a href="https://0d4ff886-d4ea-480e-8a81-38cd352792cd.filesusr.com/ugd/75e4cb_04fa172bfafc4023a0f82ecaf7f50be6.psd?dn=%CE%A4%CE%9F%CE%9E%CE%9F%CE%92%CE%9F%CE%9B%CE%99%CE%91.psd" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="download-btn secondary">
+            📄 DOWNLOAD FULL MAT FOR PRINT
+        </a>-->
+    </div>
+</div>
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -234,7 +240,7 @@
                 <li>The Technician takes a position behind the Robot athlete and having previously put on the protective equipment.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🏁 START – RACE PROCEDURE</h3>
+           <h3 class="race-procedure-heading">🏁 START – RACE PROCEDURE</h3>
             <ul>
                 <li>The Athlete Robot must start autonomously, five seconds after its Technician presses the Start-Stop button (time delay).
                     <br>➤ During these five seconds, the Technician must move back a few steps for safety reasons.</li>
@@ -332,15 +338,17 @@
                 <div class="place">🥈 2nd Place</div>
                 <div class="place">🥉 3rd Place</div>
             </div>
-            <p style="margin-top: 20px;">In case of a tie, the previous best score of the team etc. is taken into account.</p>
-        </div>
-
-        <!-- Register Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+            <p class="tie-breaker-text">In case of a tie, the previous best score of the team etc. is taken into account.</p>
+    </div>
+<!-- In ALL competition pages (marathon.html, archery.html, etc.) -->
+<div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -462,13 +470,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

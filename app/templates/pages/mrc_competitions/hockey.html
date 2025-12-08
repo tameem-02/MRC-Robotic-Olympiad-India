@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Hockey - MRC Global Olympiad{% endblock %}
 {% block content %}
-<section class="competition-detail" style="padding-top:100px">
-<div class="container">
-<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-Back to All Sports</a>
+<section class="competition-detail competition-detail-container">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
 <div class="competition-header">
 <div class="header-icon">🏒🤖</div>
 <h1 class="competition-title">HOCKEY</h1>
@@ -35,8 +39,14 @@ Back to All Sports</a>
 </ul>
 </div>
 <div class="register-section">
-<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
-<a href="#" class="guide-btn">📖 HOCKEY QUICK GUIDE</a>
+<div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 </div>
 <div class="rule-section">
 <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
@@ -74,7 +84,7 @@ Back to All Sports</a>
 <li>If alliance disqualified = victory awarded to opposing alliance at any stage</li>
 </ul>
 </div>
-<div class="info-section robot-specs">
+<!--<div class="info-section robot-specs">
 <h2>⚙️ ROBOT TECHNICAL SPECIFICATIONS</h2>
 <div class="mandatory-robot">
 <h3>🚨 MANDATORY ROBOT MODEL</h3>
@@ -83,7 +93,7 @@ Back to All Sports</a>
 <a href="https://www.robocore.net/robocore-robotic/hockeybot/yellow" target="_blank" class="hockeybot-link">🤖 HOCKEYBOT</a>
 <p class="discount-note">💶 <strong>Organizing Committee Discount:</strong> 22% discount secured. Contact after registration for code. <strong>Coupon: MRC</strong></p>
 <p>Operation manual: <a href="https://www.robocore.net/tutorials/hockeybot" target="_blank">https://www.robocore.net/tutorials/hockeybot</a></p>
-</div>
+</div>-->
 
 <h3>Specifications:</h3>
 <ol>
@@ -369,7 +379,15 @@ Back to All Sports</a>
 .back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(20,184,166,.3)}
 .competition-header{text-align:center;margin-bottom:35px}
 .header-icon{font-size:4rem;margin-bottom:15px}
-.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#14b8a6 0%,#0d9488 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 .competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
 .section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}

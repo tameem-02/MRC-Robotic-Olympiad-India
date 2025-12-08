@@ -3,7 +3,7 @@
 {% block title %}Mountain Bike - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -76,14 +76,14 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="downloads-section">
+        <!--<div class="downloads-section">
             <h2>📥 RESOURCES & DOWNLOADS</h2>
             <div class="download-buttons">
                 <a href="https://drive.google.com/file/d/1fMRdcnV5K-ZaGwWjNr2NueYovNap3VWd/view?usp=sharing" target="_blank" class="download-btn primary">
                     📄 DOWNLOAD FULL MAT FOR PRINT
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -253,7 +253,7 @@
                 <li>The Bicycle must be in standby mode ready to start as soon as the distance sensor see the flag raise.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🏁 START - RACE PROCEDURE</h3>
+            <h3 class="margin-top: 30px;">🏁 START - RACE PROCEDURE</h3>
             <ul>
                 <li>Each Bike races alone around the track against time.</li>
                 <li>At the starting point on the track there is a time gate. In front of the gate a black flag is placed. Bicycles must locate the flag.</li>
@@ -287,7 +287,7 @@
                     <br>➤ however, no testing is allowed.</li>
             </ul>
             
-            <h3 style="margin-top: 30px;">Best of the Best – Final Stability Round (Top-8)</h3>
+            <h3 class="margin-top: 30px;">Best of the Best – Final Stability Round (Top-8)</h3>
             <p>After the 90-minute period has ended, the Best of the Best – Final Stability Round will follow:</p>
             <ul>
                 <li>➤ The top 8 of the overall ranking will compete in a second round, paired as follows: 1st–8th, 2nd–7th, 3rd–6th, 4th–5th. The races will take place on the same track and under the same conditions as the initial round, with the purpose of evaluating the stability and reliability of the robots. Two tracks will be used in parallel for this purpose. Each Robot Bicycle will compete on a separate track.</li>
@@ -370,10 +370,13 @@
 
         <!-- Register Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -504,13 +507,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

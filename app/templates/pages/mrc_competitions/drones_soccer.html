@@ -3,7 +3,7 @@
 {% block title %}Drones Soccer - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -62,20 +62,20 @@
         </div>
 
         <!-- Buy Drone Ball -->
-        <div class="buy-section">
+        <!--<div class="buy-section">
             <h2>🛸 REQUIRED DRONE BALL</h2>
             <p><strong>Only the specified Drone Ball model may be used for this sport.</strong></p>
-            <p>⚠️ WARNING: No other option is acceptable.</p>
+            <p>⚠️ WARNING: No other option is acceptable.</p>-->
             
             <!-- Product Image -->
-            <div class="product-showcase">
+            <!--<div class="product-showcase">
                 <img src="{{ url_for('static', filename='images/weightlifting/dronesoccer1.png') }}" alt="SVK Robotics Drone Ball" class="product-image">
             </div>
             
             <a href="https://svkroboticstore.com/products/soccer-drone-blue" target="_blank" class="buy-btn">
                 🛒 BUY YOUR DRONEBALL HERE
             </a>
-        </div>
+        </div>-->
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -202,7 +202,9 @@
                 </div>
             </div>
             
-            <p style="margin-top: 20px;"><strong>⚽ GOAL:</strong> A goal is achieved only when the Golden Ball Drone passes entirely through the opposing team's hoop.</p>
+           <p class="goal-definition">
+    <strong>⚽ GOAL:</strong> A goal is achieved only when the Golden Ball Drone passes entirely through the opposing team's hoop.
+</p>
         </div>
 
         <!-- Scoring System -->
@@ -233,7 +235,7 @@
                 </tbody>
             </table>
 
-            <h3 style="margin-top: 30px;">🏅 KNOCKOUT STAGE (Quarterfinals, Semifinals, Finals):</h3>
+            <h3 class="knockout-stage-heading">🏅 KNOCKOUT STAGE (Quarterfinals, Semifinals, Finals):</h3>
             <ul>
                 <li><strong>Advancement:</strong> Alliance with most points from group advances</li>
                 <li><strong>Tie #1:</strong> Alliance with most goals across all group matches advances</li>
@@ -263,7 +265,7 @@
                 <li><strong>Technician Change:</strong> 1 minute between group matches</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">🚦 MATCH START:</h3>
+           <h3 class="match-start-heading">🚦 MATCH START:</h3>
             <ul>
                 <li>Drone balls placed on court floor in red or blue area (by alliance color)</li>
                 <li>Referee blows whistle to start match</li>
@@ -271,7 +273,7 @@
                 <li>Technical check before each match by referee</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">⚠️ MATCH RULES & RESTRICTIONS:</h3>
+          <h3 class="match-rules-heading">⚠️ MATCH RULES & RESTRICTIONS:</h3>
             <ul>
                 <li>Goal scored → referee records without stopping time</li>
                 <li>Stuck drone balls → referee may order landing and restart</li>
@@ -315,7 +317,7 @@
             </ul>
 
             <div class="tournament-structure">
-                <h3 style="text-align: center; margin-top: 30px;">🏆 TOURNAMENT STRUCTURE</h3>
+                <h3 class="tournament-structure-heading">🏆 TOURNAMENT STRUCTURE</h3>
                 <div class="structure-flow">
                     <p>GROUP MATCHES → QUARTERFINALS → SEMIFINALS → SMALL FINAL & FINAL</p>
                 </div>
@@ -353,7 +355,7 @@
                 <li>Frequent battery changes between matches (necessary to keep drone ball ready)</li>
             </ul>
 
-            <h3 style="margin-top: 20px;">❌ PROHIBITED:</h3>
+           <h3 class="prohibited-heading">❌ PROHIBITED:</h3>
             <ul>
                 <li>Any modification of the drone ball</li>
                 <li>Using different motors from those provided with drone ball</li>
@@ -383,11 +385,14 @@
         </div>
 
         <!-- Register Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
     </div>
 </section>
@@ -438,15 +443,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
-
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
     .competition-subtitle {
         font-size: 1.5rem;
         color: #64748b;

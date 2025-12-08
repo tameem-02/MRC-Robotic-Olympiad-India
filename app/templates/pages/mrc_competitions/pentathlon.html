@@ -3,7 +3,7 @@
 {% block title %}Pentathlon - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -65,7 +65,7 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="downloads-section">
+        <!--<div class="downloads-section">
             <h2>📥 DOWNLOAD ARENA & 3D OBJECTS</h2>
             <p style="color: white; margin-bottom: 20px;">Arena dimensions: 300cm x 171.42cm | Print objects with 15% infill</p>
             <div class="download-buttons">
@@ -73,7 +73,7 @@
                     📄 DOWNLOAD PENTATHLON ARENA AND OBJECTS
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Goal -->
         <div class="info-section">
@@ -382,17 +382,17 @@
         <div class="info-section">
             <h2>🏁 ROUND PROCEDURE</h2>
             <ol style="list-style: decimal; padding-left: 20px;">
-                <li style="margin-bottom: 12px;">The Robot Athlete Technicians declare to the referee the Sports they are going to perform.</li>
-                <li style="margin-bottom: 12px;">The Referee conducts the secondary technical check and then signals the Technicians to position their Robot Athlete.</li>
-                <li style="margin-bottom: 12px;">Technicians place their Robot Athlete on the base they chose to start.</li>
-                <li style="margin-bottom: 12px;">The Technicians take a position on a base each.</li>
-                <li style="margin-bottom: 12px;">The Robot Athlete should be open and the program on hold.</li>
-                <li style="margin-bottom: 12px;">The Technician at the starting base prepares the Robot Athlete for the first sports. Preparation time 1 minute.</li>
-                <li style="margin-bottom: 12px;">The Referee after the end of 1 minute starts a countdown 3,2,1, go.</li>
+                <li class="margin-bottom: 12px;">The Robot Athlete Technicians declare to the referee the Sports they are going to perform.</li>
+                <li class="margin-bottom: 12px;">The Referee conducts the secondary technical check and then signals the Technicians to position their Robot Athlete.</li>
+                <li class="margin-bottom: 12px;">Technicians place their Robot Athlete on the base they chose to start.</li>
+                <li class="margin-bottom: 12px;">The Technicians take a position on a base each.</li>
+                <li class="margin-bottom: 12px;">The Robot Athlete should be open and the program on hold.</li>
+                <li class="margin-bottom: 12px;">The Technician at the starting base prepares the Robot Athlete for the first sports. Preparation time 1 minute.</li>
+                <li class="margin-bottom: 12px;">The Referee after the end of 1 minute starts a countdown 3,2,1, go.</li>
                 <li style="margin-bottom: 12px;">The Technician in charge at the starting base starts the Robot Athlete.</li>
-                <li style="margin-bottom: 12px;"><strong>The Robot Athlete can move as he pleases on the track. Technicians are strictly prohibited from touching the Robot Athlete. In such a case the Referee will give a penalty -80 points for each time the Technicians touch the Robot Athlete.</strong></li>
-                <li style="margin-bottom: 12px;"><strong>Accordingly, if the Robot Athlete gets stuck inside the track for any reason and the Technicians need to catch him, then the referee will give a penalty -50 points.</strong></li>
-                <li style="margin-bottom: 12px;">In both case 9 and case 10, the Robot Athlete can be restarted from any base chosen by the Technicians.</li>
+                <li class="margin-bottom: 12px;"><strong>The Robot Athlete can move as he pleases on the track. Technicians are strictly prohibited from touching the Robot Athlete. In such a case the Referee will give a penalty -80 points for each time the Technicians touch the Robot Athlete.</strong></li>
+                <li class="margin-bottom: 12px;"><strong>Accordingly, if the Robot Athlete gets stuck inside the track for any reason and the Technicians need to catch him, then the referee will give a penalty -50 points.</strong></li>
+                <li class="margin-bottom: 12px;">In both case 9 and case 10, the Robot Athlete can be restarted from any base chosen by the Technicians.</li>
             </ol>
         </div>
 
@@ -425,7 +425,7 @@
                 <li>If the Robot Athlete for any reason is unable to complete the Sports and its Technicians ask the referee to end the round.</li>
             </ul>
 
-            <h3 style="margin-top: 30px;">📊 SCORE</h3>
+            <h3 class="margin-top: 30px;">📊 SCORE</h3>
             <p><strong>The score for a round is the sum of the points of the sports performed by the Robot Athlete in the round and after any penalties have been deducted.</strong></p>
         </div>
 
@@ -481,10 +481,13 @@
 
         <!-- Register Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -619,13 +622,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

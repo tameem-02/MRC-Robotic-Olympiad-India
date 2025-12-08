@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Marathon Turbo - MRC Global Olympiad{% endblock %}
 {% block content %}
-<section class="competition-detail" style="padding-top:100px">
-<div class="container">
-<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-Back to All Sports</a>
+<section class="competition-detail competition-detail-container">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
 <div class="competition-header">
 <div class="header-icon">🏎️💨</div>
 <h1 class="competition-title">MARATHON TURBO</h1>
@@ -31,8 +35,12 @@ Back to All Sports</a>
 </ul>
 </div>
 <div class="register-section">
-<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
-<a href="#" class="guide-btn">📖 MARATHON QUICK GUIDE</a>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
 </div>
 <div class="rule-section">
 <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
@@ -88,7 +96,7 @@ Back to All Sports</a>
 <ol>
 <li>Initial inspection on competition day during Robot Athlete's first attempt</li>
 <li><strong>Program Questions:</strong> Team asked questions about critical program parts
-<ul style="margin-top:8px">
+<ul class="margin-top:8px">
 <li>Must have laptop with robot's program open</li>
 <li>If clear team doesn't understand program = <strong>+20% time penalty</strong></li>
 </ul>
@@ -203,7 +211,7 @@ Back to All Sports</a>
 <ul>
 <li>Parts/components that could harm other competitors</li>
 <li>Glue to increase traction:
-<ul style="margin-left:20px">
+<ul class="margin-left:20px">
 <li>Cleaning wheels with adhesive tapes leaving glue residue</li>
 <li>Use of suction cups</li>
 <li>Any adhesion method violating regulations</li>
@@ -213,7 +221,7 @@ Back to All Sports</a>
 <li>Use of gases (canisters, etc.) to increase speed</li>
 <li>Robot breaking/falling apart into pieces during match. Even if finishes = time recorded as 180 seconds (0)</li>
 <li>Connecting robot to external electronic devices via:
-<ul style="margin-left:20px">
+<ul class="margin-left:20px">
 <li>Bluetooth (except start/stop via controller)</li>
 <li>Wi-Fi</li>
 <li>Any other wireless technology</li>
@@ -247,7 +255,15 @@ Back to All Sports</a>
 .back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(239,68,68,.3)}
 .competition-header{text-align:center;margin-bottom:35px}
 .header-icon{font-size:4rem;margin-bottom:15px}
-.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 .competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
 .section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}

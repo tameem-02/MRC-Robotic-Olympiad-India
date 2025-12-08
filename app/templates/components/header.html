@@ -2,32 +2,24 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="{{ url_for('main.home') }}" class="logo">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Robofest India Logo" class="logo-img" onerror="this.style.display='none'">
-                    <span class="logo-text">H.E.R.O INDIA</span>
-                </a>
+                <div class="logo-section">
+                    <a href="/" class="logo">
+                        <img src="/static/images/mrc.png" alt="MRC India Logo" class="logo-img" onerror="this.style.display='none'">
+                        <span class="logo-text">MRC Robotic Olympiad India</span>
+                    </a>
+                </div>
                 
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="{{ url_for('main.home') }}" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="{{ url_for('competitions.competitions_list') }}" class="nav-link">Competitions</a></li>
-                    <li class="nav-item"><a href="{{ url_for('main.profile') }}" class="nav-link">About</a></li>
-                   {# <li class="nav-item"><a href="{{ url_for('main.partnerships') }}" class="nav-link">Partnerships</a></li> #}
-
-                    <!--<li class="nav-item"><a href="{{ url_for('main.contact') }}" class="nav-link">Contact</a></li>-->
-                    <li class="nav-item nav-item-cta">
-                        <!-- If your link is the Google Form -->
-                    <a href="https://script.google.com/macros/s/AKfycbzZsT-XY9Dx4uTxAt0rFWIzkIrWnsm-PAEH5oGrE2Xge38ddSgQaf9WaG3S5di6gEZPgw/exec" target="_blank" class="btn btn-register">Register Now</a>
-
-<!-- OR if you have a different registration page -->
-                    
-
-                    </li>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/competitions" class="nav-link">Competitions</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/register" class="nav-link register-btn">Register now</a></li>
                 </ul>
             </div>
         </div>
@@ -38,19 +30,38 @@
     .header {
         background: white;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
+        width: 100%;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .navbar {
         padding: 1rem 0;
+        width: 100%;
     }
     
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        width: 100%;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
     }
     
     .logo {
@@ -59,8 +70,9 @@
         gap: 12px;
         font-weight: 700;
         font-size: 1.5rem;
-        color: var(--primary-color);
+        color: #333;
         transition: transform 0.3s ease;
+        text-decoration: none;
     }
     
     .logo:hover {
@@ -68,40 +80,43 @@
     }
     
     .logo-img {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 100px;
         object-fit: contain;
+        flex-shrink: 0;
     }
     
     .logo-text {
         font-weight: 800;
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #F59E0B;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     
     .mobile-menu-btn {
         display: none;
         flex-direction: column;
-        gap: 5px;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
         background: none;
         border: none;
         cursor: pointer;
-        padding: 5px;
+        padding: 0;
         z-index: 1001;
     }
     
     .mobile-menu-btn span {
-        width: 25px;
+        display: block;
+        width: 100%;
         height: 3px;
-        background-color: var(--text-color);
+        background-color: #333;
         border-radius: 3px;
         transition: all 0.3s ease;
     }
     
     .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
+        transform: rotate(45deg) translate(6px, 6px);
     }
     
     .mobile-menu-btn.active span:nth-child(2) {
@@ -109,7 +124,7 @@
     }
     
     .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
+        transform: rotate(-45deg) translate(6px, -6px);
     }
     
     .nav-menu {
@@ -117,6 +132,9 @@
         list-style: none;
         gap: 30px;
         align-items: center;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
     }
     
     .nav-item {
@@ -129,6 +147,10 @@
         border-radius: 6px;
         transition: all 0.3s ease;
         position: relative;
+        text-decoration: none;
+        color: #333;
+        white-space: nowrap;
+        font-size: 1rem;
     }
     
     .nav-link::after {
@@ -139,23 +161,34 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background: var(--accent-color);
+        background: #F59E0B;
         transition: width 0.3s ease;
     }
     
     .nav-link:hover {
-        background-color: var(--bg-light);
-        color: var(--primary-color);
+        background-color: #f5f5f5;
+        color: #333;
     }
     
     .nav-link:hover::after {
         width: 80%;
     }
     
+    /* Active link styling */
+    .nav-link.active {
+        color: #F59E0B;
+        background-color: rgba(245, 158, 11, 0.1);
+    }
+    
+    .nav-link.active::after {
+        width: 80%;
+        background: #F59E0B;
+    }
+    
     /* Register Button Styling */
-    .btn-register {
-        background: linear-gradient(135deg, var(--accent-color) 0%, #d97706 100%);
-        color: white;
+    .register-btn {
+        background: linear-gradient(135deg, #F59E0B 0%, #d97706 100%);
+        color: white !important;
         padding: 10px 24px;
         border-radius: 25px;
         font-weight: 600;
@@ -163,17 +196,33 @@
         transition: all 0.3s ease;
         box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
         border: none;
-        display: inline-block;
     }
     
-    .btn-register:hover {
+    .register-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(245, 158, 11, 0.4);
-        background: linear-gradient(135deg, #d97706 0%, var(--accent-color) 100%);
+        background: linear-gradient(135deg, #d97706 0%, #F59E0B 100%);
     }
     
-    .nav-item-cta {
-        margin-left: 10px;
+    /* Add padding to body to account for fixed header */
+    body {
+        padding-top: 80px;
+        margin: 0;
+    }
+    
+    @media (max-width: 1024px) {
+        .logo-img {
+            width: 120px;
+            height: 80px;
+        }
+        
+        .logo-text {
+            font-size: 1.3rem;
+        }
+        
+        .nav-menu {
+            gap: 20px;
+        }
     }
     
     @media (max-width: 768px) {
@@ -191,9 +240,10 @@
             flex-direction: column;
             padding: 80px 20px 20px;
             box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-            gap: 10px;
+            gap: 15px;
             transition: left 0.3s ease;
             overflow-y: auto;
+            z-index: 1000;
         }
         
         .nav-menu.active {
@@ -204,34 +254,34 @@
             width: 100%;
         }
         
-        .nav-item-cta {
-            margin-left: 0;
-            margin-top: 10px;
-        }
-        
         .nav-link {
             display: block;
             width: 100%;
             text-align: left;
             padding: 12px 20px;
+            border-radius: 8px;
         }
         
-        .btn-register {
+        .register-btn {
             width: 100%;
             text-align: center;
-            display: block;
+            margin-top: 10px;
         }
         
         /* Overlay when mobile menu is open */
-        .nav-menu.active::before {
-            content: '';
+        .mobile-menu-overlay {
+            display: none;
             position: fixed;
             top: 0;
-            left: 280px;
-            width: calc(100vw - 280px);
-            height: 100vh;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
+            z-index: 999;
+        }
+        
+        .mobile-menu-overlay.active {
+            display: block;
         }
         
         .logo-text {
@@ -239,8 +289,48 @@
         }
         
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 100px;
+            height: 70px;
+        }
+        
+        .logo {
+            gap: 8px;
+        }
+        
+        body {
+            padding-top: 70px;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .logo-text {
+            font-size: 1.1rem;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 60px;
+        }
+        
+        .logo {
+            gap: 6px;
+        }
+    }
+    
+    @media (max-width: 540px) {
+        .logo-text {
+            font-size: 1rem;
+            white-space: normal;
+            max-width: 120px;
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 50px;
         }
     }
     
@@ -249,14 +339,85 @@
             width: 100%;
         }
         
-        .nav-menu.active::before {
-            left: 100%;
-            width: 0;
+        .logo-text {
+            font-size: 0.9rem;
+            max-width: 100px;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 40px;
+        }
+        
+        .logo {
+            gap: 4px;
+        }
+        
+        .container {
+            padding: 0 15px;
         }
     }
 </style>
 
-
-
-
-<!--i want this file puch in github in githhub give full process when i share link this any one it has to show my website not any code give full  process-->
+<script>
+    // Simple mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileMenuBtn && navMenu) {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            document.body.appendChild(overlay);
+            
+            // Toggle menu function
+            function toggleMenu() {
+                mobileMenuBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            }
+            
+            // Add click event to hamburger button
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+            
+            // Close menu when clicking on overlay
+            overlay.addEventListener('click', function() {
+                toggleMenu();
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Close mobile menu
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+            
+            // Set active link based on current URL
+            const currentUrl = window.location.pathname;
+            navLinks.forEach(link => {
+                const linkUrl = link.getAttribute('href');
+                if (linkUrl === currentUrl || 
+                   (currentUrl === '/' && linkUrl === '/') ||
+                   (currentUrl.includes('about') && linkUrl === '/about') ||
+                   (currentUrl.includes('competitions') && linkUrl === '/competitions') ||
+                   (currentUrl.includes('register') && linkUrl === '/register')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+</script>

@@ -3,7 +3,7 @@
 {% block title %}Marathon - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -20,10 +20,16 @@
             <!--<p class="competition-subtitle">Robot Endurance Racing Competition</p>-->
         </div>
 
-        <!-- Video Section -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/7mTL9O0d-Zc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+       <!-- Video Section -->
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/7mTL9O0d-Zc" 
+        title="MRC Global Olympiad Competition Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
 
         <!-- Age Categories -->
         <div class="section-box">
@@ -80,14 +86,17 @@
         <!-- Downloads & Resources -->
         <div class="downloads-section">
             <h2>📥 RESOURCES & DOWNLOADS</h2>
-            <p style="color: white; margin-bottom: 30px; font-size: 1.125rem;">PRESS THE BUTTON BELOW TO VIEW THE QUICK GUIDE</p>
+            <p class="color: white; margin-bottom: 30px; font-size: 1.125rem;">PRESS THE BUTTON BELOW TO VIEW THE QUICK GUIDE</p>
             <div class="download-buttons">
-                <a href="https://www.he-ro.gr/minoan-robotsports-competition" target="_blank" class="download-btn primary">
+                <!--<a href="https://www.he-ro.gr/minoan-robotsports-competition" target="_blank" class="download-btn primary">
                     📖 MARATHON QUICK GUIDE
-                </a>
-                <a href="https://www.he-ro.gr/_files/ugd/75e4cb_af8241d0fdd5480787aa77940115e4ee.pdf" target="_blank" class="download-btn secondary">
-                    📄 DOWNLOAD SAMPLE FOR PRACTICE
-                </a>
+                </a>-->
+               <a href="https://www.he-ro.gr/_files/ugd/75e4cb_af8241d0fdd5480787aa77940115e4ee.pdf" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="download-btn secondary">
+    📄 DOWNLOAD SAMPLE FOR PRACTICE
+</a>
             </div>
         </div>
 
@@ -247,7 +256,7 @@
                 <li>Between attempts, teams are allowed to make corrections to their Robot Athletes and their code/algorithm,
                     <br>➤ however, no testing is allowed.</li>
             </ul>
-            <h3 style="margin-top: 30px;">Best of the Best – Final Stability Round (Top-8)</h3>
+            <h3 class="margin-top: 30px;">Best of the Best – Final Stability Round (Top-8)</h3>
             <p>After the 90-minute period has ended, the Best of the Best – Final Stability Round will follow:</p>
             <ul>
                 <li>➤ The top 8 of the overall ranking will compete in a second round, paired as follows: 1st–8th, 2nd–7th, 3rd–6th, 4th–5th. The races will take place on the same track and under the same conditions as the initial round, with the purpose of evaluating the stability and reliability of the robots. Two tracks will be used in parallel for this purpose. Each Robot Athlete will compete on a separate track.</li>
@@ -326,7 +335,7 @@
                 <div class="place">🥉 3rd Place</div>
             </div>
             <p>🏁 The ranking is determined based on the shortest time achieved by the Robot Athletes at the Best of the Best round.</p>
-            <p style="margin-top: 20px;">➤ In Advanced category if a team has registered more than one robot and attains placements in more than one position (e.g., 1st and 3rd), it may retain only the highest position. The remaining positions are awarded to the next teams in order, based on the overall ranking.</p>
+            <p class="margin-top: 20px;">➤ In Advanced category if a team has registered more than one robot and attains placements in more than one position (e.g., 1st and 3rd), it may retain only the highest position. The remaining positions are awarded to the next teams in order, based on the overall ranking.</p>
         </div>
 
        <!-- Arena Diagram -->
@@ -335,9 +344,7 @@
             <div class="diagram-image-container">
                <img src="{{ url_for('static', filename='images/weightlifting/marathon.png') }}" 
      alt="Marathon Track Example" 
-     class="arena-track-image"
-     style="width: 400px !important; transform: rotate(180deg) !important;">
-
+     class="arena-track-image rotated-image">
                     <strong>Note:</strong> Actual arena design will be revealed on competition day
                 </p>
             </div>
@@ -345,11 +352,14 @@
 
 
         <!-- Register Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -409,13 +419,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

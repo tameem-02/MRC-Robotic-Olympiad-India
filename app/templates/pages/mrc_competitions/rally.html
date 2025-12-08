@@ -3,7 +3,7 @@
 {% block title %}Rally - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -87,14 +87,14 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="downloads-section">
+        <!--<div class="downloads-section">
             <h2>📥 RESOURCES & DOWNLOADS</h2>
             <div class="download-buttons">
                 <a href="https://drive.google.com/file/d/1Pdku9a7WtVbgaryG_HujkOHIFZLYakKj/view?usp=sharing" target="_blank" class="download-btn primary">
                     📄 DOWNLOAD FULL MAT FOR PRINT
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Rule Zero -->
         <div class="rule-section">
@@ -366,10 +366,13 @@
 
         <!-- Register Button -->
         <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -478,14 +481,15 @@
         50% { transform: translateY(-10px); }
     }
 
-    .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+   .competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

@@ -3,7 +3,7 @@
 {% block title %}Cage Wrestling - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -33,11 +33,14 @@
         </div>
 
         <!-- Registration Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
         <!-- Goal -->
         <div class="info-section goal-section">
@@ -60,7 +63,7 @@
                 <li><strong>One Robot:</strong> Each team can only compete with one robot</li>
                 <li><strong>No Replacement:</strong> Forbidden to replace robot (except for repairs within defined period)</li>
                 <li><strong>During Match:</strong> Only 2 people from each team allowed outside arena:
-                    <ul style="margin-top: 8px;">
+                    <ul class="margin-top: 8px;">
                         <li>Robot operator</li>
                         <li>One assistant</li>
                     </ul>
@@ -164,7 +167,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 25px;">🏁 MATCH OUTCOME</h3>
+            <h3 class="margin-top: 25px;">🏁 MATCH OUTCOME</h3>
             <ul>
                 <li><strong>Knockout Victory:</strong> One robot is knocked out before time expires</li>
                 <li><strong>Judge Decision:</strong> If match goes full 3 minutes, 3 judges decide winner based on performance</li>
@@ -173,7 +176,7 @@
         </div>
 
         <!-- Downloads & Resources -->
-        <div class="info-section resources-section">
+        <!--<div class="info-section resources-section">
             <h2>📥 DOWNLOADS & RESOURCES</h2>
             <div class="download-grid">
                 <a href="https://www.he-ro.gr/_files/ugd/75e4cb_21d30ccddeef40f2abc4ca03308a12d9.docx?dn=CAGE%20WRESTLING%20RULES%20ENGLISH.docx" 
@@ -192,7 +195,7 @@
                     <span class="download-btn">Download PDF</span>
                 </a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Key Highlights -->
         <div class="info-section highlights-section">
@@ -281,14 +284,14 @@
     }
 
     .competition-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 8px;
-    }
-
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
     .competition-subtitle {
         font-size: 1.25rem;
         color: #64748b;

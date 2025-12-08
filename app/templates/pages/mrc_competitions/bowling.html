@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Bowling - MRC Global Olympiad{% endblock %}
 {% block content %}
-<section class="competition-detail" style="padding-top:100px">
+<section class="competition-detail competition-detail-page">
 <div class="container">
 <a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -34,7 +34,20 @@ Back to All Sports</a>
 </ul>
 </div>
 <div class="register-section">
-<a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
+
+<div class="competition-rules">
+    <ul class="rules-list">
+        <li class="rule-item">Rule 1 content here</li>
+        <li class="rule-item">Rule 2 content here</li>
+        <!-- Add more list items as needed -->
+    </ul>
 </div>
 <div class="rule-section">
 <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
@@ -85,13 +98,13 @@ Back to All Sports</a>
 </div>
 <div class="info-section">
 <h2>🧪 TECHNICAL INSPECTION</h2>
-<ol>
-<li>Initial inspection on competition day during Robot Athlete's first attempt</li>
-<li><strong>Program Questions:</strong> Team asked questions about critical program parts
-<ul style="margin-top:8px">
-<li>Must have laptop with robot's program open</li>
-<li>If clear team doesn't understand program = <strong>-20% score penalty</strong></li>
-</ul>
+<ol><li>Initial inspection on competition day during Robot Athlete's first attempt</li>
+<li class="program-questions-item">
+    <strong>Program Questions:</strong> Team asked questions about critical program parts
+    <ul class="nested-program-list">
+        <li>Must have laptop with robot's program open</li>
+        <li class="penalty-item">If clear team doesn't understand program = <strong>-20% score penalty</strong></li>
+    </ul>
 </li>
 <li>Includes robot examination based on specifications. Non-compliance = automatic disqualification</li>
 <li>After initial inspection, Robot Athlete assigned unique ID code</li>
@@ -149,15 +162,15 @@ Back to All Sports</a>
 <ul>
 <li>Pins placed in triangular arrangement: 1 pin at apex, subsequent rows of 2, 3, 4 pins (1–2–3–4 formation)</li>
 <li><strong>Triangle Dimensions:</strong>
-<ul style="margin-left:20px">
-<li>Distance between adjacent pins: 12cm (center to center)</li>
-<li>Total depth of pin triangle: 36cm</li>
-<li>Total width of last row (4 pins): 36cm</li>
+<ul class="bowling-specs">
+    <li>Distance between adjacent pins: 12cm (center to center)</li>
+    <li>Total depth of pin triangle: 36cm</li>
+    <li>Total width of last row (4 pins): 36cm</li>
 </ul>
 </li>
 <li>Pin triangle placed at end of bowling lane, centered in width, aligned flush with back boundary of lane</li>
 </ul>
-<a href="https://drive.google.com/file/d/1TPlDl-CZI3fSJtGU9KiLKaxUw5xAV-dn/view?usp=sharing" target="_blank" class="download-btn">📥 DOWNLOAD 3D FILE OF BOWLING PIN</a>
+<!--<a href="https://drive.google.com/file/d/1TPlDl-CZI3fSJtGU9KiLKaxUw5xAV-dn/view?usp=sharing" target="_blank" class="download-btn">📥 DOWNLOAD 3D FILE OF BOWLING PIN</a>-->
 </div>
 <div class="info-section competition-section">
 <h2>🏆 COMPETITION</h2>
@@ -298,7 +311,16 @@ Back to All Sports</a>
 .back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(139,92,246,.3)}
 .competition-header{text-align:center;margin-bottom:35px}
 .header-icon{font-size:4rem;margin-bottom:15px}
-.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
 .competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
 .section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}

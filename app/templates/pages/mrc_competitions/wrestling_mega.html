@@ -3,8 +3,9 @@
 {% block title %}Sumo Wrestling - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
+        <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -41,9 +42,14 @@
             </div>
         </div>
 
-        <div class="register-section">
-            <a href="https://www.he-ro.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 
         <div class="info-section goal-section">
             <h2>🎯 GOAL</h2>
@@ -291,7 +297,15 @@
         <div class="info-section resources-section">
             <h2>📥 REMOTE START MODULE</h2>
             <p><strong>IR Kill Switch Information:</strong></p>
-            <p>Detailed information about using initial modules at: <a href="http://www.startmodule.com" target="_blank">www.startmodule.com</a></p>
+<p class="info-text reference-link">
+    Detailed information about using initial modules at: 
+    <a href="http://www.startmodule.com" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="external-resource">
+        www.startmodule.com
+    </a>
+</p>
         </div>
 
         <div class="info-section winners-section">
@@ -324,7 +338,15 @@
     .back-btn:hover { transform: translateX(-5px); box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); }
     .competition-header { text-align: center; margin-bottom: 35px; }
     .header-icon { font-size: 4rem; margin-bottom: 15px; }
-    .competition-title { font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
     .competition-subtitle { font-size: 1.25rem; color: #64748b; font-weight: 600; }
         /* Video Section */
     .video-section {

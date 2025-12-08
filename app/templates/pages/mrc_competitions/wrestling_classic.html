@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Wrestling Classic - MRC Global Olympiad{% endblock %}
 {% block content %}
-<section class="competition-detail" style="padding-top:100px">
-<div class="container">
-<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-Back to All Sports</a>
+<section class="competition-detail competition-detail-container">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
 <div class="competition-header">
 <div class="header-icon">🥋🤖</div>
 <h1 class="competition-title">WRESTLING CLASSIC</h1>
@@ -42,7 +46,14 @@ Back to All Sports</a>
 <li>⏱️ Match: 3 rounds of 1 minute each</li>
 </ul>
 </div>
-<div class="register-section"><a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a></div>
+<div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 <div class="rule-section">
 <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
 <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
@@ -79,7 +90,7 @@ Back to All Sports</a>
 <div class="division-icon">🔰</div>
 <h3>WRESTLING BASIC</h3>
 <p><strong>Educational Modular Kits:</strong></p>
-<ul style="text-align:left;font-size:0.875rem">
+<ul class="text-align:left;font-size:0.875rem">
 <li>LEGO® Education EV3/SPIKE/Robot Inventor</li>
 <li>ZMROBO, MAKERZOID, ENJOY AI</li>
 <li>Makeblock mBot, DFRobot Maqueen</li>
@@ -91,7 +102,7 @@ Back to All Sports</a>
 <div class="division-icon">🚀</div>
 <h3>WRESTLING ADVANCED</h3>
 <p><strong>Custom Microcontrollers:</strong></p>
-<ul style="text-align:left;font-size:0.875rem">
+<ul class="text-align:left;font-size:0.875rem">
 <li>Arduino, ESP32, STM32</li>
 <li>Raspberry Pi, Teensy</li>
 <li>NVIDIA Jetson, BeagleBone</li>
@@ -131,7 +142,15 @@ Back to All Sports</a>
 <div class="spec-card">
 <h4>🚀 WRESTLING ADVANCED</h4>
 <ul>
-<li><strong>MicroStart Module:</strong> Must be equipped with <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">MicroStart Module Jsumo</a></li>
+<li class="requirement-item">
+    <strong class="requirement-label">MicroStart Module:</strong> Must be equipped with 
+    <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="external-link">
+        MicroStart Module Jsumo
+    </a>
+</li>
 <li><strong>Unlimited:</strong> Multiple microcontrollers and sensors unrestricted</li>
 <li><strong>Batteries:</strong> Any type of battery or power source allowed</li>
 <li><strong>Voltage Limit:</strong> Upper limit 24V nominal voltage in any circuit/part. >24V prohibited</li>
@@ -169,7 +188,7 @@ Back to All Sports</a>
 <ol>
 <li>Initial inspection on competition day during Robot Athlete's first attempt</li>
 <li><strong>Program Questions:</strong> Team asked questions about critical program parts
-<ul style="margin-top:8px">
+<ul class="margin-top:8px">
 <li>Must have laptop with robot's program open</li>
 <li>If clear team doesn't understand program = <strong>-20% penalty</strong> on score</li>
 </ul>
@@ -191,11 +210,13 @@ Back to All Sports</a>
 <li><strong>Frame:</strong> 2.5cm thick white painted frame around perimeter</li>
 <li><strong>Placement:</strong> Arena placed on table</li>
 </ol>
-
 <div class="arena-download">
-<a href="https://0d4ff886-d4ea-480e-8a81-38cd352792cd.filesusr.com/ugd/75e4cb_67bedd6134c44dd0ab66b0c41bb2725c.psd?dn=PALI%20ROUND%20NEW.psd" target="_blank" class="download-btn">
-📥 DOWNLOAD ARENA FOR PRINT
-</a>
+    <a href="https://0d4ff886-d4ea-480e-8a81-38cd352792cd.filesusr.com/ugd/75e4cb_67bedd6134c44dd0ab66b0c41bb2725c.psd?dn=PALI%20ROUND%20NEW.psd" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="download-btn">
+        📥 DOWNLOAD ARENA FOR PRINT
+    </a>
 </div>
 
 <div class="arena-images">
@@ -335,7 +356,7 @@ Back to All Sports</a>
 <h2>⏱️ TECHNICIAN CHANGE TIME</h2>
 <p>Between group rounds: <strong>1 minute</strong> given to each team. Team can change technician if desired. If new technician doesn't arrive within 1 min, previous continues.</p>
 
-<h2 style="margin-top:25px">⚠️ WARNING!</h2>
+<h2 class="margin-top:25px">⚠️ WARNING!</h2>
 <p>If robot Athlete not in designated area or technician not in field at designated match time = team loses match, victory to opponent.</p>
 </div>
 
@@ -404,7 +425,15 @@ Back to All Sports</a>
 .back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(124,58,237,.3)}
 .competition-header{text-align:center;margin-bottom:35px}
 .header-icon{font-size:4rem;margin-bottom:15px}
-.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#7c3aed 0%,#5b21b6 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 .competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
 
     /* Video Section */

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
 
 main = Blueprint('main', __name__)
 
@@ -13,7 +13,19 @@ def profile():
 
 @main.route('/about')
 def about():
-    return render_template('pages/about.html')
+    return render_template('pages/profile.html')
+
+@main.route('/register')
+def register():
+    return render_template('pages/register.html')
+
+@main.route('/register/<competition>')
+def competition_register(competition):
+    """Handle registration for specific competitions - redirects to Google Form"""
+    # Log which competition they're trying to register for
+    print(f"Registration attempt for: {competition}")
+    # Redirect to the Google Form
+    return redirect("https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec")
 
 @main.route('/contact')
 def contact():
@@ -110,7 +122,6 @@ def mrc_rowing():
 def mrc_curling():
     return render_template('pages/mrc_competitions/curling.html')
 
-
 # New MRC Competition Routes
 @main.route('/mrc-olympiad/drones')
 def mrc_drones():
@@ -171,4 +182,3 @@ def mrc_hockey():
 @main.route('/mrc-olympiad/bowling')
 def mrc_bowling():
     return render_template('pages/mrc_competitions/bowling.html')
-

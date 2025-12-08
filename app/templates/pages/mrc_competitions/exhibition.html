@@ -3,7 +3,7 @@
 {% block title %}Exhibition - MRC Global Olympiad{% endblock %}
 
 {% block content %}
-<section class="competition-detail" style="padding-top: 100px;">
+<section class="competition-detail competition-detail-container">
     <div class="container">
         <!-- Back Button -->
         <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
@@ -116,8 +116,10 @@
         <div class="info-section">
             <h2>📋 COMPETITION CATEGORY REQUIREMENTS</h2>
             <p><strong>All teams / creators must submit (1) a video (maximum 60 seconds) and (2) team description (Maximum 2 pages) no later than 15 days before the competition.</strong></p>
-            <p>The video should be sent to the address: <a href="mailto:mrc@he-ro.gr" style="color: #c471f5; font-weight: 600;">mrc@he-ro.gr</a></p>
-        </div>
+           <p class="video-submission">
+    The video should be sent to the address: 
+    <a href="mailto:mrc@he-ro.gr" class="email-link">mrc@he-ro.gr</a>
+</p>
 
         <!-- Description Requirements -->
         <div class="info-section">
@@ -131,7 +133,7 @@
                 <li>• Top features and technical specifications.</li>
                 <li>• Estimated price.</li>
             </ul>
-            <p style="margin-top: 20px;"><strong>Note:</strong> The Organizing Committee may have at the site on the day of the competition, qualified professionals from the project categories that the teams are going to present, e.g. Medical sector, Industrial sector, etc.</p>
+            <p class="margin-top: 20px;"><strong>Note:</strong> The Organizing Committee may have at the site on the day of the competition, qualified professionals from the project categories that the teams are going to present, e.g. Medical sector, Industrial sector, etc.</p>
         </div>
 
         <!-- Kiosk -->
@@ -239,7 +241,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 30px;">📝 PRESENTATION CONTENTS</h3>
+            <h3 class="margin-top: 30px;">📝 PRESENTATION CONTENTS</h3>
             <ul>
                 <li>1. Introducing team members / Introducing creator</li>
                 <li>2. The concept of the project.</li>
@@ -248,7 +250,7 @@
                 <li>5. Business plan (for groups/individuals 13+).</li>
             </ul>
 
-            <p style="margin-top: 20px;"><strong>Note:</strong> A short video clip, commercial, animation, photos or other documents can be useful in explaining the project. Full video-only explanation is prohibited. Team members or a creator should give as much information as possible by talking about their work.</p>
+            <p class="margin-top: 20px;"><strong>Note:</strong> A short video clip, commercial, animation, photos or other documents can be useful in explaining the project. Full video-only explanation is prohibited. Team members or a creator should give as much information as possible by talking about their work.</p>
         </div>
 
         <!-- Important Notice -->
@@ -278,11 +280,14 @@
         </div>
 
         <!-- Register Button -->
-        <div class="register-section">
-            <a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">
-                ✍️ TEAM REGISTRATION
-            </a>
-        </div>
+       <div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
     </div>
 </section>
 {% endblock %}
@@ -342,13 +347,14 @@
     }
 
     .competition-title {
-        font-size: 3.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%);
-        background-clip: text; -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 
     .competition-subtitle {
         font-size: 1.5rem;

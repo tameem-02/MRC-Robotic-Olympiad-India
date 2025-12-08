@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Wrestling Nano - MRC Global Olympiad{% endblock %}
 {% block content %}
-<section class="competition-detail" style="padding-top:100px">
-<div class="container">
-<a href="{{url_for('main.mrc_olympiad')}}" class="back-btn">
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-Back to All Sports</a>
+<section class="competition-detail competition-detail-container">
+    <div class="container">
+        <!-- Back Button -->
+        <a href="{{ url_for('main.mrc_olympiad') }}" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Back to All Sports
+        </a>
 <div class="competition-header">
 <div class="header-icon">🦠🤖</div>
 <h1 class="competition-title">WRESTLING NANO</h1>
@@ -29,8 +33,14 @@ Back to All Sports</a>
 <li>🛑 <strong>IR Kill Switch MANDATORY:</strong> MicroStart Module Jsumo required</li>
 </ul>
 </div>
-<div class="register-section"><a href="http://www.minoanrobotsports.gr/" target="_blank" class="register-btn">✍️ TEAM REGISTRATION</a></div>
-<div class="rule-section">
+<div class="register-section"><div class="register-section">
+    <a href="https://script.google.com/macros/s/AKfycbyx8jwZm0SLvXbdorykwOFSBwOKOIfbYB1vwpgcbbTT3tEJFVDucfklNQRDUbPGNCTI/exec" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="register-btn">
+        ✍️ TEAM REGISTRATION
+    </a>
+</div>
 <h2>⚠️ RULE ZERO – Zero Tolerance & Common Sense</h2>
 <blockquote>"If you are not sure whether something is allowed, then it is probably NOT allowed."</blockquote>
 <p>All rules based on common sense, sport spirit, and safety. Deliberate misinterpretation or exploitation will not be tolerated and may lead to disqualification.</p>
@@ -53,24 +63,55 @@ Back to All Sports</a>
 <h3>1.1. Definition</h3>
 <p>Match fought between two teams, each with 1+ members. Only 2 team members from each team may approach ring; only operator enters game area.</p>
 <p>Each team competes on Dohyo (wrestling ring) with robot to specifications in Section 2. Match begins at judge's command, continues until 3 rounds completed. Judge determines winner (3-0, 2-1). After match, operator/assistant move to designated waiting area for next challenge.</p>
-</div>
-<div class="info-section robot-specs">
-<h2>🤖 2. REQUIREMENTS FOR ROBOTS</h2>
-<h3>2.1. General Robot Specifications</h3>
-<ol>
-<li>Any robot design allowed (if not restricted by 2.2)</li>
-<li><strong>🦠 Max Dimensions:</strong> 2.5cm × 2.5cm (25mm) square - <strong>TINIEST CATEGORY!</strong></li>
-<li><strong>Weight:</strong> Under 25g</li>
-<li><strong>🦠 Max Height:</strong> 2.5cm (25mm)</li>
-<li><strong>Expansion:</strong> May expand after match begins but must not physically separate. Must remain single centralized robot. Feet must not expand. Violation = lose match</li>
-<li><strong>Small Parts:</strong> Parts <5g falling off won't cause match loss</li>
-<li><strong>⚡ Autonomous:</strong> All components contained in robot. No external control</li>
-<li><strong>ID Number:</strong> Must display organizer-supplied number in visible place</li>
-</ol>
-
+</div><div class="info-section robot-specs">
+    <h2 class="section-title">🤖 2. REQUIREMENTS FOR ROBOTS</h2>
+    
+    <div class="spec-group">
+        <h3 class="subsection-title">2.1. General Robot Specifications</h3>
+        
+        <ol class="specifications-list">
+            <li class="spec-item">
+                Any robot design allowed (if not restricted by 2.2)
+            </li>
+            <li class="spec-item spec-item--highlight">
+                <strong class="spec-label">🦠 Max Dimensions:</strong> 
+                <span class="spec-value">2.5cm × 2.5cm (25mm) square - <strong class="highlight-text">TINIEST CATEGORY!</strong></span>
+            </li>
+            <li class="spec-item">
+                <strong class="spec-label">Weight:</strong> 
+                <span class="spec-value">Under 25g</span>
+            </li>
+            <li class="spec-item spec-item--critical">
+                <strong class="spec-label">🦠 Max Height:</strong> 
+                <span class="spec-value">2.5cm (25mm)</span>
+            </li>
+            <li class="spec-item">
+                <strong class="spec-label">Expansion:</strong> 
+                <span class="spec-value">May expand after match begins but must not physically separate. Must remain single centralized robot. Feet must not expand. Violation = lose match</span>
+            </li>
+            <li class="spec-item">
+                <strong class="spec-label">Small Parts:</strong> 
+                <span class="spec-value">Parts &lt;5g falling off won't cause match loss</span>
+            </li>
+            <li class="spec-item spec-item--important">
+                <strong class="spec-label">⚡ Autonomous:</strong> 
+                <span class="spec-value">All components contained in robot. No external control</span>
+            </li>
+            <li class="spec-item">
+                <strong class="spec-label">ID Number:</strong> 
+                <span class="spec-value">Must display organizer-supplied number in visible place</span>
+            </li>
+        </ol>
 <h3>2.2. Robot Restrictions</h3>
 <ol>
-<li><strong>🛑 IR Kill Switch (MANDATORY):</strong> Must have <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">MicroStart Module Jsumo</a> for judge operation. Not working/missing = <strong>disqualification</strong></li>
+<li class="rule-item rule-item--critical">
+    <strong class="rule-label">🛑 IR Kill Switch (MANDATORY):</strong> Must have 
+    <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="external-link">MicroStart Module Jsumo</a> 
+    for judge operation. Not working/missing = <strong class="penalty">disqualification</strong>
+</li>
 <li><strong>No Jamming:</strong> IR LEDs to saturate sensors not allowed</li>
 <li><strong>No Damage:</strong> Parts that break/damage ring not allowed. Normal pushes/bangs OK</li>
 <li><strong>No Projectiles:</strong> Devices storing/throwing liquid, powder, gas not allowed</li>
@@ -308,7 +349,14 @@ Back to All Sports</a>
 <div class="info-section resources-section">
 <h2>📑 APPENDIX – REMOTE START & KILL SWITCH</h2>
 <p>Detailed information about startmodules usage:</p>
-<p><a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">MicroStart Module Jsumo</a></p>
+<p class="external-link-container">
+    <a href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="external-link">
+        MicroStart Module Jsumo
+    </a>
+</p>
 </div>
 
 <div class="info-section winners-section">
@@ -333,7 +381,15 @@ Back to All Sports</a>
 .back-btn:hover{transform:translateX(-5px);box-shadow:0 4px 12px rgba(168,85,247,.3)}
 .competition-header{text-align:center;margin-bottom:35px}
 .header-icon{font-size:4rem;margin-bottom:15px}
-.competition-title{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#a855f7 0%,#9333ea 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.competition-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    -webkit-background-clip: text; /* Vendor prefix first */
+    background-clip: text; /* Standard property second */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
 .competition-subtitle{font-size:1.25rem;color:#64748b;font-weight:600}
 .section-box{background:#fff;padding:25px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .section-box h2{font-size:1.5rem;font-weight:800;color:#1e293b;margin-bottom:20px;text-align:center}
