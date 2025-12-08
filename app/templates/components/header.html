@@ -1,423 +1,950 @@
-<header class="header">
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo-section">
-                    <a href="/" class="logo">
-                        <img src="/static/images/mrc.png" alt="MRC India Logo" class="logo-img" onerror="this.style.display='none'">
-                        <span class="logo-text">MRC Robotic Olympiad India</span>
-                    </a>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/competitions" class="nav-link">Competitions</a></li>
-                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/register" class="nav-link register-btn">Register now</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<style>
-    .header {
-        background: white;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        width: 100%;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- ✅ Corrected viewport meta - allows zooming for accessibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        width: 100%;
-    }
+    <!-- ✅ Additional recommended meta tags -->
+    <meta name="description" content="MRC Robotic Olympiad India - Premier robotics competition platform">
+    <meta name="keywords" content="robotics, olympiad, competition, STEM, MRC, India">
+    <meta name="author" content="MRC India">
+    <meta property="og:title" content="MRC Robotic Olympiad India">
+    <meta property="og:description" content="Premier robotics competition platform in India">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     
-    .navbar {
-        padding: 1rem 0;
-        width: 100%;
-    }
+    <!-- ✅ Title with proper hierarchy -->
+    <title>MRC Robotic Olympiad India - Premier Robotics Competition</title>
     
-    .nav-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        width: 100%;
-    }
-    
-    .logo-section {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-    
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: #333;
-        transition: transform 0.3s ease;
-        text-decoration: none;
-    }
-    
-    .logo:hover {
-        transform: scale(1.05);
-    }
-    
-    .logo-img {
-        width: 150px;
-        height: 100px;
-        object-fit: contain;
-        flex-shrink: 0;
-    }
-    
-    .logo-text {
-        font-weight: 800;
-        color: #F59E0B;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-    
-    .mobile-menu-btn {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1001;
-    }
-    
-    .mobile-menu-btn span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #333;
-        border-radius: 3px;
-        transition: all 0.3s ease;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-    
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-    
-    .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        flex-shrink: 0;
-    }
-    
-    .nav-item {
-        position: relative;
-    }
-    
-    .nav-link {
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-        position: relative;
-        text-decoration: none;
-        color: #333;
-        white-space: nowrap;
-        font-size: 1rem;
-    }
-    
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: #F59E0B;
-        transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover {
-        background-color: #f5f5f5;
-        color: #333;
-    }
-    
-    .nav-link:hover::after {
-        width: 80%;
-    }
-    
-    /* Active link styling */
-    .nav-link.active {
-        color: #F59E0B;
-        background-color: rgba(245, 158, 11, 0.1);
-    }
-    
-    .nav-link.active::after {
-        width: 80%;
-        background: #F59E0B;
-    }
-    
-    /* Register Button Styling */
-    .register-btn {
-        background: linear-gradient(135deg, #F59E0B 0%, #d97706 100%);
-        color: white !important;
-        padding: 10px 24px;
-        border-radius: 25px;
-        font-weight: 600;
-        font-size: 0.9375rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
-        border: none;
-    }
-    
-    .register-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(245, 158, 11, 0.4);
-        background: linear-gradient(135deg, #d97706 0%, #F59E0B 100%);
-    }
-    
-    /* Add padding to body to account for fixed header */
-    body {
-        padding-top: 80px;
-        margin: 0;
-    }
-    
-    @media (max-width: 1024px) {
-        .logo-img {
-            width: 120px;
-            height: 80px;
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .logo-text {
-            font-size: 1.3rem;
+        :root {
+            --primary-color: #F59E0B;
+            --primary-dark: #D97706;
+            --primary-light: rgba(245, 158, 11, 0.1);
+            --text-color: #1F2937;
+            --text-light: #6B7280;
+            --bg-color: #FFFFFF;
+            --bg-light: #F3F4F6;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 6px;
+            --transition: all 0.3s ease;
+            --header-height: 90px;
         }
         
-        .nav-menu {
-            gap: 20px;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .mobile-menu-btn {
-            display: flex;
+        /* High Contrast Mode Support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #B45309;
+                --text-color: #000000;
+            }
         }
         
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 280px;
-            height: 100vh;
-            background: white;
-            flex-direction: column;
-            padding: 80px 20px 20px;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-            gap: 15px;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-            z-index: 1000;
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
         
-        .nav-menu.active {
-            left: 0;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding-top: var(--header-height);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            min-height: 100vh;
         }
         
-        .nav-item {
-            width: 100%;
+        /* Skip to Main Content Link for Keyboard Users */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1003;
+            transition: var(--transition);
         }
         
-        .nav-link {
-            display: block;
-            width: 100%;
-            text-align: left;
-            padding: 12px 20px;
-            border-radius: 8px;
+        .skip-link:focus {
+            top: 10px;
+            outline: 3px solid var(--primary-dark);
+            outline-offset: 3px;
         }
         
-        .register-btn {
-            width: 100%;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        /* Overlay when mobile menu is open */
-        .mobile-menu-overlay {
-            display: none;
+        /* Header Styles */
+        .header {
+            background: var(--bg-color);
+            box-shadow: var(--shadow);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        
-        .mobile-menu-overlay.active {
-            display: block;
-        }
-        
-        .logo-text {
-            font-size: 1.25rem;
-        }
-        
-        .logo-img {
-            width: 100px;
-            height: 70px;
-        }
-        
-        .logo {
-            gap: 8px;
-        }
-        
-        body {
-            padding-top: 70px;
-        }
-        
-        body.menu-open {
-            overflow: hidden;
-        }
-    }
-    
-    @media (max-width: 640px) {
-        .logo-text {
-            font-size: 1.1rem;
-        }
-        
-        .logo-img {
-            width: 80px;
-            height: 60px;
-        }
-        
-        .logo {
-            gap: 6px;
-        }
-    }
-    
-    @media (max-width: 540px) {
-        .logo-text {
-            font-size: 1rem;
-            white-space: normal;
-            max-width: 120px;
-        }
-        
-        .logo-img {
-            width: 70px;
-            height: 50px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .nav-menu {
+            z-index: 1000;
             width: 100%;
-        }
-        
-        .logo-text {
-            font-size: 0.9rem;
-            max-width: 100px;
-        }
-        
-        .logo-img {
-            width: 60px;
-            height: 40px;
-        }
-        
-        .logo {
-            gap: 4px;
+            height: var(--header-height);
         }
         
         .container {
-            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            height: 100%;
         }
-    }
-</style>
-
-<script>
-    // Simple mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
         
-        if (mobileMenuBtn && navMenu) {
-            // Create overlay
-            const overlay = document.createElement('div');
-            overlay.className = 'mobile-menu-overlay';
-            document.body.appendChild(overlay);
-            
-            // Toggle menu function
-            function toggleMenu() {
-                mobileMenuBtn.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                overlay.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
+        .navbar {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            z-index: 1002;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 5px;
+            border-radius: var(--border-radius);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-light);
+        }
+        
+        .logo:focus-visible {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+            background-color: var(--primary-light);
+        }
+        
+        .logo-img {
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        
+        .logo-text {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1.2;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            z-index: 1002;
+            position: relative;
+            border-radius: var(--border-radius);
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: var(--bg-light);
+        }
+        
+        .mobile-menu-btn:focus-visible {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+            background-color: var(--primary-light);
+        }
+        
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 3px;
+            transition: var(--transition);
+            display: block;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        /* Overlay for mobile menu */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            flex-shrink: 0;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+            text-decoration: none;
+            color: var(--text-color);
+            white-space: nowrap;
+            display: block;
+            font-size: 1rem;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .nav-link:focus-visible {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+            background-color: var(--primary-light);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            width: 80%;
+            background: var(--primary-color);
+        }
+        
+        /* Register Button */
+        .nav-link.register-btn {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .nav-link.register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(245, 158, 11, 0.4);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white !important;
+        }
+        
+        .nav-link.register-btn:focus-visible {
+            outline: 3px solid var(--primary-dark);
+            outline-offset: 3px;
+            border-color: white;
+        }
+        
+        .nav-link.register-btn::after {
+            display: none;
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - var(--header-height));
+        }
+        
+        .main-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .main-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .logo-img {
+                width: 120px;
+                height: 80px;
             }
             
-            // Add click event to hamburger button
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMenu();
-            });
+            .logo-text {
+                font-size: 1.3rem;
+            }
             
-            // Close menu when clicking on overlay
-            overlay.addEventListener('click', function() {
-                toggleMenu();
-            });
+            .nav-menu {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 80px;
+            }
+            
+            body {
+                padding-top: var(--header-height);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--bg-color);
+                flex-direction: column;
+                padding: 100px 20px 20px;
+                box-shadow: var(--shadow-heavy);
+                gap: 10px;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                z-index: 1001;
+                align-items: flex-start;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                width: 100%;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: left;
+                padding: 14px 20px;
+            }
+            
+            .nav-link.register-btn {
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .logo-text {
+                font-size: 1.25rem;
+            }
+            
+            .logo-img {
+                width: 100px;
+                height: 70px;
+            }
+            
+            .logo {
+                gap: 8px;
+            }
+            
+            .main-content h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            :root {
+                --header-height: 75px;
+            }
+            
+            body {
+                padding-top: var(--header-height);
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-img {
+                width: 80px;
+                height: 60px;
+            }
+            
+            .logo {
+                gap: 6px;
+            }
+        }
+        
+        @media (max-width: 540px) {
+            :root {
+                --header-height: 70px;
+            }
+            
+            body {
+                padding-top: var(--header-height);
+            }
+            
+            .logo-text {
+                font-size: 0.95rem;
+                white-space: normal;
+                max-width: 140px;
+                line-height: 1.2;
+            }
+            
+            .logo-img {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .navbar {
+                padding: 0.75rem 0;
+            }
+            
+            .nav-menu {
+                width: 100%;
+                left: -100%;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .main-content h1 {
+                font-size: 1.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --header-height: 65px;
+            }
+            
+            body {
+                padding-top: var(--header-height);
+            }
+            
+            .logo-text {
+                font-size: 0.85rem;
+                max-width: 110px;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 40px;
+            }
+            
+            .logo {
+                gap: 4px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            :root {
+                --header-height: 60px;
+            }
+            
+            body {
+                padding-top: var(--header-height);
+            }
+            
+            .logo-text {
+                font-size: 0.75rem;
+                max-width: 90px;
+            }
+            
+            .logo-img {
+                width: 50px;
+                height: 35px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            body {
+                padding-top: 0;
+            }
+            
+            .mobile-menu-btn,
+            .menu-overlay {
+                display: none !important;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+    
+    <header class="header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo-section">
+                        <a href="/" class="logo">
+                            <img src="/static/images/mrc_logo.png" 
+                                 alt="MRC India Logo" 
+                                 class="logo-img"
+                                 width="150" 
+                                 height="100">
+                            <span class="logo-text">MRC Robotic Olympiad India</span>
+                        </a>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" 
+                            id="mobileMenuBtn" 
+                            aria-label="Toggle menu"
+                            aria-expanded="false"
+                            aria-controls="navMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu" id="navMenu" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a href="/" class="nav-link" role="menuitem">Home</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="/competitions" class="nav-link" role="menuitem">Competitions</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="/profile" class="nav-link" role="menuitem">About</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="/register" class="nav-link register-btn" role="menuitem">Register now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+
+    <script>
+        (function() {
+            'use strict';
+            
+            // Get elements
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const skipLink = document.querySelector('.skip-link');
+            
+            // State management
+            let isMenuOpen = false;
+            let focusableElements = [];
+            
+            // Toggle menu function
+            function toggleMenu(event) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+            
+            // Open menu function
+            function openMenu() {
+                mobileMenuBtn.classList.add('active');
+                navMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                menuOverlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                isMenuOpen = true;
+                
+                // Get all focusable elements in the menu
+                focusableElements = Array.from(navMenu.querySelectorAll(
+                    'a[href], button, input, [tabindex]:not([tabindex="-1"])'
+                ));
+                
+                // Trap focus inside menu
+                trapFocus();
+                
+                // Announce menu opening to screen readers
+                announceToScreenReader('Menu opened');
+            }
+            
+            // Close menu function
+            function closeMenu() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                menuOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                isMenuOpen = false;
+                
+                // Return focus to menu button
+                mobileMenuBtn.focus();
+                
+                // Announce menu closing to screen readers
+                announceToScreenReader('Menu closed');
+            }
+            
+            // Trap focus inside menu for keyboard users
+            function trapFocus() {
+                if (!focusableElements.length) return;
+                
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                function handleKeyDown(e) {
+                    if (e.key === 'Tab') {
+                        if (!isMenuOpen) return;
+                        
+                        if (e.shiftKey) {
+                            // Shift + Tab
+                            if (document.activeElement === firstElement) {
+                                lastElement.focus();
+                                e.preventDefault();
+                            }
+                        } else {
+                            // Tab
+                            if (document.activeElement === lastElement) {
+                                firstElement.focus();
+                                e.preventDefault();
+                            }
+                        }
+                    }
+                }
+                
+                navMenu.addEventListener('keydown', handleKeyDown);
+                
+                // Store reference to remove later
+                navMenu._keydownHandler = handleKeyDown;
+            }
+            
+            // Remove focus trap
+            function removeFocusTrap() {
+                if (navMenu._keydownHandler) {
+                    navMenu.removeEventListener('keydown', navMenu._keydownHandler);
+                    delete navMenu._keydownHandler;
+                }
+            }
+            
+            // Announce to screen readers
+            function announceToScreenReader(message) {
+                const announcement = document.createElement('div');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.setAttribute('aria-atomic', 'true');
+                announcement.classList.add('sr-only');
+                announcement.textContent = message;
+                
+                document.body.appendChild(announcement);
+                
+                // Remove after announcement
+                setTimeout(() => {
+                    document.body.removeChild(announcement);
+                }, 1000);
+            }
+            
+            // Mobile menu button click
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMenu);
+                
+                // Touch support
+                mobileMenuBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    toggleMenu(e);
+                }, { passive: false });
+            }
+            
+            // Overlay click to close menu
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', closeMenu);
+                menuOverlay.addEventListener('touchstart', closeMenu);
+            }
             
             // Close menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    // Remove active class from all links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Close mobile menu
-                    if (navMenu.classList.contains('active')) {
-                        toggleMenu();
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    // Close menu on mobile
+                    if (window.innerWidth <= 768) {
+                        closeMenu();
+                        removeFocusTrap();
                     }
+                    
+                    // Set active link
+                    navLinks.forEach(function(l) {
+                        l.classList.remove('active');
+                        l.removeAttribute('aria-current');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-current', 'page');
                 });
             });
             
             // Set active link based on current URL
-            const currentUrl = window.location.pathname;
-            navLinks.forEach(link => {
-                const linkUrl = link.getAttribute('href');
-                if (linkUrl === currentUrl || 
-                   (currentUrl === '/' && linkUrl === '/') ||
-                   (currentUrl.includes('about') && linkUrl === '/about') ||
-                   (currentUrl.includes('competitions') && linkUrl === '/competitions') ||
-                   (currentUrl.includes('register') && linkUrl === '/register')) {
-                    link.classList.add('active');
+            function setActiveLink() {
+                const currentUrl = window.location.pathname;
+                navLinks.forEach(function(link) {
+                    const linkUrl = link.getAttribute('href');
+                    if (linkUrl === currentUrl || 
+                        (linkUrl === '/' && currentUrl === '/') ||
+                        (currentUrl.includes(linkUrl) && linkUrl !== '/')) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    }
+                });
+            }
+            
+            // Initialize active link
+            setActiveLink();
+            
+            // Close menu on window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 768 && isMenuOpen) {
+                        closeMenu();
+                        removeFocusTrap();
+                    }
+                }, 250);
+            });
+            
+            // Prevent menu close when clicking inside menu
+            if (navMenu) {
+                navMenu.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('nav-link')) {
+                        e.stopPropagation();
+                    }
+                });
+            }
+            
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    closeMenu();
+                    removeFocusTrap();
                 }
             });
+            
+            // Handle skip link
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    const target = document.getElementById('main-content');
+                    if (target) {
+                        e.preventDefault();
+                        target.setAttribute('tabindex', '-1');
+                        target.focus();
+                        
+                        // Remove tabindex after focus
+                        setTimeout(() => {
+                            target.removeAttribute('tabindex');
+                        }, 1000);
+                    }
+                });
+            }
+            
+            // Add focus styles for keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+            
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+            
+            // Initialize ARIA attributes
+            function initializeAria() {
+                navMenu.setAttribute('aria-label', 'Main navigation menu');
+                
+                // Add aria-current to active link
+                const activeLink = document.querySelector('.nav-link.active');
+                if (activeLink) {
+                    activeLink.setAttribute('aria-current', 'page');
+                }
+            }
+            
+            // Call initialization
+            initializeAria();
+            
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function() {
+                removeFocusTrap();
+            });
+            
+        })();
+    </script>
+    
+    <!-- Screen Reader Only Styles -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
-    });
-</script>
+        
+        /* Enhanced focus for keyboard users */
+        body.keyboard-navigation .nav-link:focus,
+        body.keyboard-navigation .mobile-menu-btn:focus,
+        body.keyboard-navigation .logo:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+        }
+        
+        /* Hover media query for devices that support hover */
+        @media (hover: hover) and (pointer: fine) {
+            .nav-link:hover {
+                background-color: var(--bg-light);
+            }
+            
+            .mobile-menu-btn:hover {
+                background-color: var(--bg-light);
+            }
+            
+            .logo:hover {
+                background-color: var(--primary-light);
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1F2937;
+                --bg-light: #374151;
+                --text-color: #F9FAFB;
+                --text-light: #D1D5DB;
+                --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                --shadow-heavy: 0 4px 6px rgba(0, 0, 0, 0.4);
+            }
+            
+            .header {
+                background: var(--bg-color);
+            }
+            
+            .nav-menu {
+                background: var(--bg-color);
+            }
+            
+            .menu-overlay {
+                background: rgba(0, 0, 0, 0.7);
+            }
+            
+            .mobile-menu-btn span {
+                background-color: var(--text-color);
+            }
+        }
+    </style>
+</body>
+</html>
